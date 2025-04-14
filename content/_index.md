@@ -28,14 +28,10 @@ sections:
           parallax: false
 
 
-- block: markdown
-  content:
-    text: |
+  - block: markdown
+    content:
+      text: |
       **© 2025 Ayantika Khanra · Built with [Hugo Blox](https://github.com/HugoBlox/hugo-blox-builder)**
-  design:
-    css_class: "text-center"  # Optional: center-align the text
-    spacing:
-      padding: [3rem, 0, 0, 0]  # Optional: adjust padding if needed
 
 # All blocks below this point have been removed:
 # - Research section
