@@ -11,7 +11,7 @@ sections:
   - block: resume-biography-3
     content:
       username: admin
-      text: ""
+      text: ""  # This can remain empty, but ensure it's properly formatted
       button:
         text: Download CV
         url: uploads/resume.pdf
@@ -27,8 +27,18 @@ sections:
           position: center
           parallax: false
 
+  # Optional: Add more sections if needed
 
-# All blocks below this point have been removed:
+  - block: markdown
+    content:
+      text: |
+        **© 2025 Ayantika Khanra · Built with [Hugo Blox](https://github.com/HugoBlox/hugo-blox-builder)**
+    design:
+      css_class: "text-center"
+      spacing:
+        padding: [3rem, 0, 0, 0]  # Adjust padding as needed
+
+# If you have sections below this point that should be removed, comment them out properly:
 # - Research section
 # - Publications
 # - Talks
