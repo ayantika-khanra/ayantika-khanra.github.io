@@ -24,7 +24,7 @@ sections:
         color: black
         image:
           # Add your image background to `assets/media/`.
-          filename: mjh-shikder-EEmxj4HwDdQ-unsplash.jpg
+          filename: diego-ph-5LOhydOtTKU-unsplash-2.jpg
           filters:
             brightness: 1.0
           size: cover
