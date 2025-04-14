@@ -28,11 +28,6 @@ sections:
           parallax: false
 
 
-  - block: markdown
-    content:
-      text: |
-      **© 2025 Ayantika Khanra · Built with [Hugo Blox](https://github.com/HugoBlox/hugo-blox-builder)**
-
 # All blocks below this point have been removed:
 # - Research section
 # - Publications
