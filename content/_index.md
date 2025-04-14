@@ -27,16 +27,15 @@ sections:
           position: center
           parallax: false
 
-  # Optional: Add more sections if needed
-
+  # Footer text section with custom CSS styling
   - block: markdown
     content:
       text: |
-        **© 2025 Ayantika Khanra · Built with [Hugo Blox](https://github.com/HugoBlox/hugo-blox-builder)**
+        © 2025 Ayantika Khanra · Built with [Hugo Blox](https://github.com/HugoBlox/hugo-blox-builder)
     design:
-      css_class: "text-center"
+      css_class: "small-text"  # Apply custom class
       spacing:
-        padding: [3rem, 0, 0, 0]  # Adjust padding as needed
+        padding: [1rem, 0, 0, 0]  # Reduce space under the image
 
 # If you have sections below this point that should be removed, comment them out properly:
 # - Research section
