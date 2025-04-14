@@ -1,0 +1,9 @@
+/* Custom styling for small footer text */
+.small-text {
+  font-size: 0.8rem;  /* Adjust the size as needed */
+  font-weight: normal;  /* Remove bold */
+  color: #ffffff;  /* Optional: change text color */
+  text-align: center;  /* Center align the text */
+  padding-top: 1rem;  /* Optional: adjust padding if needed */
+  margin-bottom: 1rem;  /* Optional: adjust bottom margin to reduce space */
+}
