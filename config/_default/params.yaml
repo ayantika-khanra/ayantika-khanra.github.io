@@ -35,17 +35,14 @@ header:
     show_search: true
     show_theme_chooser: true
     logo:
-      text: "Your Name"
+      text: "Ayantika Khanra"
 
 # Site footer
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© 2025 Ayantika Khanra · Built with [Hugo Blox](https://github.com/HugoBlox/hugo-blox-builder)'
     license:
-      enable: true
-      allow_derivatives: false
-      share_alike: true
-      allow_commercial: false
+      enable: false
 
 # Localization
 locale:
