@@ -194,14 +194,15 @@ Strong foundation in programming and data analysis in context of experimental bi
 
 **Technical Skills:** Python, MATLAB, R 
 
+
 <div style="display: flex; gap: 10px; margin-top: 10px;">
   <a href="/link-one" 
-     style="display: inline-flex; align-items: center; justify-content: center; height: 45px; padding: 0 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">
+     style="display: inline-flex; align-items: center; justify-content: center; height: 45px; padding: 0 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; box-sizing: border-box;">
      Button One
   </a>
 
   <a href="/link-two" 
-     style="display: inline-flex; align-items: center; justify-content: center; height: 45px; padding: 0 20px; background-color: #28A745; color: white; text-decoration: none; border-radius: 5px;">
+     style="display: inline-flex; align-items: center; justify-content: center; height: 45px; padding: 0 20px; background-color: #28A745; color: white; text-decoration: none; border-radius: 5px; box-sizing: border-box;">
      Button Two
   </a>
 </div>
