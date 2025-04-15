@@ -15,6 +15,7 @@ sections:
       button:
         text: Download CV
         url: uploads/resume.pdf
+      button:
         text: lolal
         url: uploads/resume.pdf
     design:
