@@ -7,10 +7,6 @@ design:
   spacing: "6rem"
 
 sections:
-  - block: resume-biography-3
-    content:
-      username: admin
-      text: "hi hi hi hggkjhlhkjh"
 
   - block: resume-biography-3
     content:
