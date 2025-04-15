@@ -20,11 +20,11 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Biophysicist and Image Analyst
+role:  Analyst Focused on Data-Driven Insights
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: IISc Bangalore
+#  - name: IISc Bangalore
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -142,10 +142,11 @@ skills:
 languages:
   - name: English
     percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+  - name: Hindi
+    percent: 40
+  - name: Bengali
+    percent: 100
+
 
 # Awards.
 #   Add/remove as many awards below as you like.
