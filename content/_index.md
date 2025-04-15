@@ -7,6 +7,11 @@ design:
   spacing: "6rem"
 
 sections:
+  - block: markdown
+    content:
+      title: Technical Skills
+      username: admin
+    text: python
   - block: resume-biography-3
     content:
       username: admin
@@ -26,12 +31,7 @@ sections:
           position: center
           parallax: false
 
-  - block: resume-skills
-    content:
-      title: Skills
-      username: admin
-    design:
-      show_skill_percentage: false
+
 
   - block: markdown
     content:
