@@ -20,7 +20,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role:  Analyst Focused on Data-Driven Insights
+role:  Analyst Focused on<br>Data-Driven Insights
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -45,12 +45,14 @@ profiles:
 #  - icon: academicons/orcid
 #    url: https://orcid.org/
 
+
+
 interests:
   - Data Analytics
   - Digital Image Analysis
 
 education:
-  - area: PhD Artificial Intelligence
+  - area: PhD Biophysics with Microscopy Image analysis
     institution: Stanford University
     date_start: 2016-01-01
     date_end: 2020-12-31
