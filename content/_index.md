@@ -27,20 +27,14 @@ sections:
           position: center
           parallax: false
 
-  # Footer text section with custom CSS styling
+  # Footer text section with inline styling
   - block: markdown
     content:
       text: |
-        © 2025 Ayantika Khanra · Built with [Hugo Blox](https://github.com/HugoBlox/hugo-blox-builder)
+        <p style="font-size: 0.8rem; font-weight: normal; text-align: center; margin-top: 1rem;">
+          © 2025 Ayantika Khanra · Built with <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" style="color: inherit; text-decoration: underline;">Hugo Blox</a>
+        </p>
     design:
-      css_class: "small-text"  # Apply custom class
       spacing:
-        padding: [1rem, 0, 0, 0]  # Reduce space under the image
-
-# If you have sections below this point that should be removed, comment them out properly:
-# - Research section
-# - Publications
-# - Talks
-# - News
-# - Call to Action (CTA) card
+        padding: [1rem, 0, 0, 0]
 ---
