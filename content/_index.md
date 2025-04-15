@@ -4,7 +4,7 @@ date: 2022-10-24
 type: landing
 
 design:
-  spacing: "2rem"
+  spacing: "1rem"
 
 sections:
 
