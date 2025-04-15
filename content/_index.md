@@ -7,16 +7,12 @@ design:
   spacing: "6rem"
 
 sections:
-  - block: markdown
-    content:
-      title: Technical Skills
-      text: |
-        Python, Data Science, SQL
+
 
   - block: resume-biography-3
     content:
       username: admin
-      text: ""
+      text: "jhfhjgkh gkgkh ghgkghk"
       button:
         text: Download CV
         url: uploads/resume.pdf
