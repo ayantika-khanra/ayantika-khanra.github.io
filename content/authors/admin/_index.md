@@ -193,12 +193,14 @@ awards:
 Strong foundation in programming and data analysis in context of experimental biophysics research. Experienced in developing custom Python, MATLAB, and R codes for quantitative analysis of complex data. Passionate about analyzing data into actionable insights in healthcare, biotech, and business contexts.
 
 <a href="/portfolio" 
-   style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; 
-          background: linear-gradient(135deg, #8A2BE2, #6A0DAD); 
-          color: white; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; 
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
-          transition: transform 0.2s, box-shadow 0.2s;">
-   <span style="margin-right: 8px;">📁</span> Portfolio
+   style="display: inline-block; padding: 14px 28px; 
+          background: linear-gradient(135deg, #9B30FF, #6A0DAD); 
+          color: white; text-decoration: none; border-radius: 10px; font-size: 18px; font-weight: bold; 
+          box-shadow: 0 10px 20px rgba(106, 13, 173, 0.6); 
+          transition: transform 0.2s, box-shadow 0.2s;"
+   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 14px 28px rgba(106,13,173,0.8)';"
+   onmouseout="this.style.transform='none'; this.style.boxShadow='0 10px 20px rgba(106, 13, 173, 0.6)';">
+   Portfolio
 </a>
 
 **Technical Skills:** Python, MATLAB, R 
