@@ -192,7 +192,7 @@ awards:
 
 Strong foundation in programming and data analysis in context of experimental biophysics research. Experienced in developing custom Python, MATLAB, and R codes for quantitative analysis of complex data. Passionate about analyzing data into actionable insights in healthcare, biotech, and business contexts.
 
-<a href="/portfolio" 
+<a href="/projects" 
    style="display: inline-block; padding: 14px 28px; 
           background: linear-gradient(135deg, #9B30FF, #6A0DAD); 
           color: white; text-decoration: none; border-radius: 10px; font-size: 18px; font-weight: bold; 
