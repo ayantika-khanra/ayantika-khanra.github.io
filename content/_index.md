@@ -12,7 +12,7 @@ sections:
   - block: resume-biography-3
     content:
       username: admin
-      text: "jhfhjgkh gkgkh ghgkghk"
+      text: ""
       button:
         text: Download CV
         url: uploads/resume.pdf
