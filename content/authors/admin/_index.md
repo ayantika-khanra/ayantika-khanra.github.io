@@ -199,14 +199,14 @@ Strong foundation in programming and data analysis in context of experimental bi
    Click Me
 </a>
 
-<div style="margin-top: 10px;">
+<div style="display: flex; gap: 10px; margin-top: 10px;">
   <a href="/link-one" 
-     style="display: inline-block; padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;">
+     style="padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">
      Button One
   </a>
 
   <a href="/link-two" 
-     style="display: inline-block; padding: 10px 20px; background-color: #28A745; color: white; text-decoration: none; border-radius: 5px;">
+     style="padding: 10px 20px; background-color: #28A745; color: white; text-decoration: none; border-radius: 5px;">
      Button Two
   </a>
 </div>
