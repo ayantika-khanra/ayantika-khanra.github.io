@@ -195,12 +195,12 @@ Strong foundation in programming and data analysis in context of experimental bi
 <a href="/projects" 
    style="display: inline-block; padding: 14px 28px; 
           background: linear-gradient(135deg, #9B30FF, #6A0DAD); 
-          color: white; text-decoration: none; border-radius: 10px; font-size: 18px; font-weight: bold; 
+          color: white; text-decoration: none; border-radius: 30px; font-size: 18px; font-weight: bold; 
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); 
           transition: transform 0.2s, box-shadow 0.2s;"
    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 14px 28px rgba(0,0,0,0.8)';"
    onmouseout="this.style.transform='none'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.6)';">
-   View Portfolio 
+   View Portfolio
 </a>
 
 
