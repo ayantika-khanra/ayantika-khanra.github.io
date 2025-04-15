@@ -74,8 +74,8 @@ education:
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
   - area: BSc, Physics
     institution: Presidency University, Kolkata
-    date_start: 2013
-    date_end: 2016
+    date_start: 2013-07-31
+    date_end: 2016-08-01
     summary: |
       GPA: 8.9/10.0
       
