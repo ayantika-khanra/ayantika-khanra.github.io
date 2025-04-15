@@ -27,6 +27,26 @@ sections:
           position: center
           parallax: false
 
+  - block: resume-biography-3
+    content:
+      username: admin
+      text: ""
+      button:
+        text: Download CV
+        url: uploads/resume.pdf
+    design:
+      css_class: dark
+      background:
+        color: black
+        image:
+          filename: diego-ph-5LOhydOtTKU-unsplash-2.jpg
+          filters:
+            brightness: 1.0
+          size: cover
+          position: center
+          parallax: false
+
+
   - block: markdown
     content:
       text: |
