@@ -200,8 +200,7 @@ Strong foundation in programming and data analysis in context of experimental bi
           transition: transform 0.2s, box-shadow 0.2s;"
    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 14px 28px rgba(0,0,0,0.8)';"
    onmouseout="this.style.transform='none'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.6)';">
-   View Portfolio
+   View Portfolio → 
 </a>
-
 
 **Technical Skills:** Python, MATLAB, R 
