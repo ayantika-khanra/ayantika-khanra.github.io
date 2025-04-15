@@ -15,12 +15,6 @@ sections:
       button:
         text: Download CV
         url: uploads/resume.pdf
-      # Add another button below
-      additional_buttons:
-        - text: Contact Me
-          url: "mailto:your-email@example.com"
-        - text: LinkedIn
-          url: "https://www.linkedin.com/in/your-profile"
     design:
       css_class: dark
       background:
@@ -33,11 +27,12 @@ sections:
           position: center
           parallax: false
 
+
   - block: markdown
     content:
       text: |
         <p style="font-size: 0.8rem; font-weight: normal; text-align: center; margin-top: 1rem; color: gray;">
-          © {{ now.Format "2006" }} Ayantika Khanra · Built with <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" style="color: inherit; text-decoration: underline;">Hugo Blox</a>
+          © 2025 Ayantika Khanra · Built with <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" style="color: inherit; text-decoration: underline;">Hugo Blox</a>
         </p>
     design:
       spacing:
