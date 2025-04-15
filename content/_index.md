@@ -32,7 +32,7 @@ sections:
     content:
       text: |
         <p style="font-size: 0.8rem; font-weight: normal; text-align: center; margin-top: 1rem;">
-          © {year} Ayantika Khanra · Built with <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" style="color: inherit; text-decoration: underline;">Hugo Blox</a>
+          © 2025 Ayantika Khanra · Built with <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" style="color: inherit; text-decoration: underline;">Hugo Blox</a>
         </p>
     design:
       spacing:
