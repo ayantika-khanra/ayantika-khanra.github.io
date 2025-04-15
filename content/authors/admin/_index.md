@@ -54,17 +54,17 @@ interests:
 education:
   - area: PhD, Biophysics with Microscopy Image Analysis
     institution: IISc Bangalore
-    date_start: 2018
-    date_end: 2025
-    summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+    date_start: 2018-08-01
+    date_end: 2025-03-27
+#    summary: |
+#      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
 #    button:
 #      text: 'Read Thesis'
 #      url: 'https://example.com'
   - area: MSc, Physics
     institution: IISc Bangalore
-    date_start: 2016
-    date_end: 2018
+    date_start: 2016-08-01
+    date_end: 2018-07-31
     summary: |
       GPA: 8.8/10.0
 
@@ -74,8 +74,8 @@ education:
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
   - area: BSc, Physics
     institution: Presidency University, Kolkata
-    date_start: 2013-07-31
-    date_end: 2016-08-01
+    date_start: 2013-08-01
+    date_end: 2016-07-31
     summary: |
       GPA: 8.9/10.0
       
