@@ -1,5 +1,4 @@
 ---
-# Leave the homepage title empty to use the site title
 title: ""
 date: 2022-10-24
 type: landing
@@ -11,7 +10,7 @@ sections:
   - block: resume-biography-3
     content:
       username: admin
-      text: ""  # This can remain empty, but ensure it's properly formatted
+      text: ""
       button:
         text: Download CV
         url: uploads/resume.pdf
@@ -27,7 +26,13 @@ sections:
           position: center
           parallax: false
 
-# Footer text section with inline styling
+  - block: resume-skills
+    content:
+      title: Skills
+      username: admin
+    design:
+      show_skill_percentage: false
+
   - block: markdown
     content:
       text: |
