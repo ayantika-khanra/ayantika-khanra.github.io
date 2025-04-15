@@ -193,3 +193,8 @@ awards:
 Strong foundation in programming and data analysis in context of experimental biophysics research. Experienced in developing custom Python, MATLAB, and R codes for quantitative analysis of complex data. Passionate about analyzing data into actionable insights in healthcare, biotech, and business contexts.
 
 **Technical Skills:** Python, MATLAB, R 
+
+<a href="/path-to-somewhere" 
+   style="display: inline-block; padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">
+   Click Me
+</a>
