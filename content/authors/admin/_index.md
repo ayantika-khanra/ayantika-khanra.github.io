@@ -128,22 +128,22 @@ skills:
         description: ''
 #        percent: 40
         icon: circle-stack
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking
-        description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Cats
-        description: ''
-        percent: 100
-        icon: cat
-      - name: Photography
-        description: ''
-        percent: 80
-        icon: camera
+#  - name: Hobbies
+#    color: '#eeac02'
+#    color_border: '#f0bf23'
+#    items:
+#      - name: Hiking
+#        description: ''
+#        percent: 60
+#        icon: person-simple-walk
+#      - name: Cats
+#        description: ''
+#        percent: 100
+#        icon: cat
+#      - name: Photography
+#        description: ''
+#        percent: 80
+#        icon: camera
 
 languages:
   - name: English
@@ -166,16 +166,18 @@ awards:
     icon: coursera
     summary: |
       I studied the foundational concept of neural networks and deep learning. By the end, I was familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
-  - title: Blockchain Fundamentals
-    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-    date: '2023-07-01'
-    awarder: edX
-    icon: edx
-    summary: |
-      Learned:
-      - Synthesize your own blockchain solutions
-      - Gain an in-depth understanding of the specific mechanics of Bitcoin
-      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
+
+#  - title: Blockchain Fundamentals
+#    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
+#    date: '2023-07-01'
+#    awarder: edX
+#    icon: edx
+#    summary: |
+#      Learned:
+#      - Synthesize your own blockchain solutions
+#      - Gain an in-depth understanding of the specific mechanics of Bitcoin
+#      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
+
   - title: 'Object-Oriented Programming in R'
     url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
     certificate_url: https://www.datacamp.com
