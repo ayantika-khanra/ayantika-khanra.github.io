@@ -12,9 +12,9 @@ sections:
     content:
       username: admin
       text: ""
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
+#      button:
+#        text: Download CV
+#        url: uploads/resume.pdf
     design:
       css_class: dark
       background:

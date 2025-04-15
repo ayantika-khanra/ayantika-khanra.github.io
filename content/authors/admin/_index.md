@@ -194,10 +194,6 @@ Strong foundation in programming and data analysis in context of experimental bi
 
 **Technical Skills:** Python, MATLAB, R 
 
-<a href="/path-to-somewhere" 
-   style="display: inline-block; padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">
-   Click Me
-</a>
 
 <div style="display: flex; gap: 10px; margin-top: 10px;">
   <a href="/link-one" 
