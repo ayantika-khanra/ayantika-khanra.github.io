@@ -10,8 +10,9 @@ sections:
   - block: markdown
     content:
       title: Technical Skills
-      username: admin
-    text: python
+      text: |
+        Python, Data Science, SQL
+
   - block: resume-biography-3
     content:
       username: admin
@@ -30,8 +31,6 @@ sections:
           size: cover
           position: center
           parallax: false
-
-
 
   - block: markdown
     content:
