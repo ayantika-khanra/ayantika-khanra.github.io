@@ -11,10 +11,11 @@ sections:
   - block: resume-biography-3
     content:
       username: admin
-      text: ""
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
+      text: |
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+          <a href="uploads/resume.pdf" target="_blank" style="background-color: #1f2937; color: white; padding: 0.75rem 1.25rem; border-radius: 0.375rem; text-decoration: none; font-weight: 500;">Download CV</a>
+          <a href="uploads/portfolio.pdf" target="_blank" style="background-color: #1f2937; color: white; padding: 0.75rem 1.25rem; border-radius: 0.375rem; text-decoration: none; font-weight: 500;">Download Portfolio</a>
+        </div>
     design:
       css_class: dark
       background:
@@ -26,7 +27,6 @@ sections:
           size: cover
           position: center
           parallax: false
-
 
   - block: markdown
     content:
