@@ -52,7 +52,9 @@ interests:
   - Digital Image Analysis
 
 education:
-  - area: PhD<br>Biophysics with Microscopy Image analysis
+  - area: |
+  PhD
+  Biophysics with Microscopy Image Analysis
     institution: IISc Bangalore
     date_start: 2018
     date_end: 2025
@@ -61,12 +63,12 @@ education:
 #    button:
 #      text: 'Read Thesis'
 #      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
+  - area: MSc, Physics
+    institution: IISc Bangalore
     date_start: 2016-01-01
-    date_end: 2020-12-31
+    date_end: 2018-12-31
     summary: |
-      GPA: 3.8/4.0
+      GPA: 8.8/10.0
 
       Courses included:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
