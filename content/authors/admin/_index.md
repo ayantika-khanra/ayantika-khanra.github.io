@@ -52,9 +52,7 @@ interests:
   - Digital Image Analysis
 
 education:
-  - area: |
-      PhD,
-      Biophysics with Microscopy Image Analysis
+  - area: PhD, Biophysics with Microscopy Image Analysis
     institution: IISc Bangalore
     date_start: 2018
     date_end: 2025
