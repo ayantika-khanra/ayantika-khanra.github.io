@@ -26,6 +26,8 @@ sections:
           size: cover
           position: center
           parallax: false
+      spacing:
+        padding: [0rem, 0, 1.5rem, 0]
 
 
   - block: markdown
