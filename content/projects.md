@@ -7,7 +7,7 @@ design:
   # Section spacing
   spacing: '5rem'
 
- Page sections
+# Page sections
 sections:
   - block: collection
     content:
