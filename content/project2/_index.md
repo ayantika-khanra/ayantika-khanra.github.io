@@ -55,7 +55,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
 
   <div class="project-block">
     <a href="https://example.com/microscopy-analyzer">
-      <img src="/images/microscopy-image.jpg" alt="Microscopy Analyzer">
+      <img src="/images/spotify2000.jpg" alt="Microscopy Analyzer">
       <h3>Microscopy Analyzer</h3>
     </a>
     <p class="tag">Tag: Research</p>
