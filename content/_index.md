@@ -36,5 +36,5 @@ sections:
         </p>
     design:
       spacing:
-        padding: [1rem, 0, 0, 0]
+        padding: [0rem, 0, 0 rem, 0]
 ---
