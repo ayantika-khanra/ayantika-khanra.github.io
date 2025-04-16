@@ -1,5 +1,5 @@
 ---
-title: "Projects"
+title: 
 ---
 
 ## My Projects
@@ -7,8 +7,8 @@ title: "Projects"
 <style>
   .project-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     justify-items: center;
     padding: 10px;
     margin-top: 20px;
@@ -22,26 +22,30 @@ title: "Projects"
 
   .project-block img {
     width: 100%;
-    max-height: 120px;
+    max-height: 150px;
     object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .project-block h3,
+  .project-block p,
+  .project-block .tag {
+    color: #ffffff;
   }
 
   .project-block h3 {
-    font-size: 0.85rem;
-    margin: 5px 0;
-    color: #333;
+    font-size: 0.95rem;
+    margin: 8px 0 4px;
+  }
+
+  .project-block .tag {
+    font-size: 0.75rem;
+    font-weight: bold;
   }
 
   .project-block p {
     font-size: 0.7rem;
     margin-top: 5px;
-    color: #666;
-  }
-
-  .project-block .tag {
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #777;
   }
 </style>
 
@@ -74,6 +78,15 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
     </a>
     <p class="tag">Tag: DIY</p>
     <p>Designed and 3D printed custom plant labels for my garden.</p>
+  </div>
+
+  <div class="project-block">
+    <a href="https://example.com/stats-dashboard">
+      <img src="/images/stats-dashboard.jpg" alt="Stats Dashboard">
+      <h3>Stats Dashboard</h3>
+    </a>
+    <p class="tag">Tag: Data</p>
+    <p>A simple dashboard for displaying statistical summaries.</p>
   </div>
 
 </div>
