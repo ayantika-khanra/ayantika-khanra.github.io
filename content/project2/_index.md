@@ -62,31 +62,5 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
     <p>A script that processes and analyzes microscopy images.</p>
   </div>
 
-  <div class="project-block">
-    <a href="https://example.com/download-folder-sorter">
-      <img src="/images/folder-sorter-image.jpg" alt="Download Folder Sorter">
-      <h3>Download Folder Sorter</h3>
-    </a>
-    <p class="tag">Tag: Tool</p>
-    <p>A Python tool that organizes your downloads folder.</p>
-  </div>
-
-  <div class="project-block">
-    <a href="https://example.com/plant-labels">
-      <img src="/images/plant-labels-image.jpg" alt="3D Printed Plant Labels">
-      <h3>3D Printed Plant Labels</h3>
-    </a>
-    <p class="tag">Tag: DIY</p>
-    <p>Designed and 3D printed custom plant labels for my garden.</p>
-  </div>
-
-  <div class="project-block">
-    <a href="https://example.com/stats-dashboard">
-      <img src="/images/stats-dashboard.jpg" alt="Stats Dashboard">
-      <h3>Stats Dashboard</h3>
-    </a>
-    <p class="tag">Tag: Data</p>
-    <p>A simple dashboard for displaying statistical summaries.</p>
-  </div>
 
 </div>
