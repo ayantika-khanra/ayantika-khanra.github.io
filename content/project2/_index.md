@@ -5,41 +5,29 @@ title:
 ## My Projects
 
 <style>
-  .project-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-items: center;
-    padding: 10px;
-    margin-top: 20px;
-  }
-
   .project-block {
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
-  }
-
-  .project-block img {
-    width: 100%;
-    max-height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
+    line-height: 1.3; /* Reduced line spacing */
   }
 
   .project-block h3 {
     font-size: 0.95rem;
     margin: 8px 0 4px;
+    line-height: 1.2; /* Tighter heading spacing */
   }
 
   .project-block .tag {
     font-size: 0.75rem;
     font-weight: bold;
+    line-height: 1.1; /* Compact */
   }
 
   .project-block p {
     font-size: 0.7rem;
     margin-top: 5px;
+    line-height: 1.3; /* Paragraphs */
   }
 </style>
 
