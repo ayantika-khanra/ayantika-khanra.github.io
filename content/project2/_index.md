@@ -27,12 +27,6 @@ title:
     border-radius: 8px;
   }
 
-  .project-block h3,
-  .project-block p,
-  .project-block .tag {
-    color: #ffffff;
-  }
-
   .project-block h3 {
     font-size: 0.95rem;
     margin: 8px 0 4px;
