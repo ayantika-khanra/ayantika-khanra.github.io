@@ -4,11 +4,20 @@ date: 2024-05-19
 type: landing
 
 design:
-  spacing: '3rem'
+  # Section spacing
+  spacing: '5rem'
 
+# Page sections
 sections:
-  - block: markdown
+  - block: collection
     content:
-      text: |
-        ## Projects
-        I enjoy making things. Here is a selection of projects I've worked on — a mix of creative ideas, technical builds, and experiments.
+      title: Selected Projects
+      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
+      filters:
+        folders:
+          - project
+    design:
+      view: article-grid
+      fill_image: false
+      columns: 3
+---
