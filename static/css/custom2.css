@@ -1,28 +1,30 @@
 /* Style for project blocks */
 .project-block {
-  width: 200px;
+  width: 150px; /* Smaller width for project blocks */
   text-align: center;
   margin: 10px;
 }
 
 .project-block img {
-  width: 100%;
+  width: 100%; /* Keep image within the block */
   height: auto;
-  max-height: 150px;
+  max-height: 100px; /* Reduce image size */
 }
 
 .project-block h3 {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Smaller text size for titles */
+  margin: 5px 0;
 }
 
 .project-block p {
-  font-size: 0.8rem;
+  font-size: 0.75rem; /* Even smaller text size for descriptions */
   margin-top: 5px;
 }
 
 .project-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px; /* Smaller gap between blocks */
   justify-content: center;
+  margin: 10px;
 }
