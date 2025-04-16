@@ -1,30 +1,45 @@
-/* Style for project blocks */
-.project-block {
-  width: 150px; /* Smaller width for project blocks */
-  text-align: center;
-  margin: 10px;
-}
-
-.project-block img {
-  width: 100%; /* Keep image within the block */
-  height: auto;
-  max-height: 100px; /* Reduce image size */
-}
-
-.project-block h3 {
-  font-size: 0.9rem; /* Smaller text size for titles */
-  margin: 5px 0;
-}
-
-.project-block p {
-  font-size: 0.75rem; /* Even smaller text size for descriptions */
-  margin-top: 5px;
-}
-
+/* Container for the project blocks */
 .project-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Smaller gap between blocks */
-  justify-content: center;
-  margin: 10px;
+  display: grid; /* Use grid for 3-column layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  gap: 15px; /* Space between columns */
+  justify-items: center; /* Align items centrally */
+  padding: 10px; /* Padding around the container */
+  margin-top: 20px; /* Optional: Adds a little space at the top */
+}
+
+/* Style for each project block */
+.project-block {
+  width: 100%; /* Ensure blocks take full width of column */
+  text-align: center;
+  margin: 0; /* Remove margins */
+}
+
+/* Image styles */
+.project-block img {
+  width: 100%; /* Ensure images take up the full width */
+  height: auto;
+  max-height: 120px; /* Limit image height to 120px */
+  object-fit: cover; /* Make sure images fill without stretching */
+}
+
+/* Title styles */
+.project-block h3 {
+  font-size: 0.85rem; /* Reduce title font size */
+  margin: 5px 0;
+  color: #333; /* Optional: Make titles a darker color */
+}
+
+/* Description styles */
+.project-block p {
+  font-size: 0.7rem; /* Much smaller text for descriptions */
+  margin-top: 5px;
+  color: #666; /* Optional: Slightly lighter text color */
+}
+
+/* Tag styles */
+.project-block .tag {
+  font-size: 0.7rem; /* Smaller tag text */
+  font-weight: bold;
+  color: #777; /* Optional: Lighter color for tags */
 }

@@ -2,8 +2,6 @@
 title: "Projects"
 ---
 
-<link rel="stylesheet" href="/css/custom.css">
-
 ## My Projects
 
 Here are some of the projects I’ve worked on. Click on the titles to learn more.
@@ -15,7 +13,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
       <img src="/images/microscopy-image.jpg" alt="Microscopy Analyzer">
       <h3>Microscopy Analyzer</h3>
     </a>
-    <p><strong>Tag:</strong> Research</p>
+    <p class="tag"><strong>Tag:</strong> Research</p>
     <p>A script that processes and analyzes microscopy images.</p>
   </div>
 
@@ -24,7 +22,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
       <img src="/images/folder-sorter-image.jpg" alt="Download Folder Sorter">
       <h3>Download Folder Sorter</h3>
     </a>
-    <p><strong>Tag:</strong> Tool</p>
+    <p class="tag"><strong>Tag:</strong> Tool</p>
     <p>A Python tool that organizes your downloads folder.</p>
   </div>
 
@@ -33,7 +31,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
       <img src="/images/plant-labels-image.jpg" alt="3D Printed Plant Labels">
       <h3>3D Printed Plant Labels</h3>
     </a>
-    <p><strong>Tag:</strong> DIY</p>
+    <p class="tag"><strong>Tag:</strong> DIY</p>
     <p>Designed and 3D printed custom plant labels for my garden.</p>
   </div>
 
