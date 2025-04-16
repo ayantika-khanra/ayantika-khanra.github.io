@@ -1,34 +1,36 @@
 ---
-title: 
+title: "Projects"
 ---
+
+<link rel="stylesheet" href="/css/custom.css">
 
 ## My Projects
 
 Here are some of the projects I’ve worked on. Click on the titles to learn more.
 
-<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+<div class="project-container">
 
-  <div style="width: 250px; text-align: center;">
+  <div class="project-block">
     <a href="https://example.com/microscopy-analyzer">
-      <img src="/images/microscopy-image.jpg" alt="Microscopy Analyzer" style="width: 100%; height: auto;">
+      <img src="/images/microscopy-image.jpg" alt="Microscopy Analyzer">
       <h3>Microscopy Analyzer</h3>
     </a>
     <p><strong>Tag:</strong> Research</p>
     <p>A script that processes and analyzes microscopy images.</p>
   </div>
 
-  <div style="width: 250px; text-align: center;">
+  <div class="project-block">
     <a href="https://example.com/download-folder-sorter">
-      <img src="/images/folder-sorter-image.jpg" alt="Download Folder Sorter" style="width: 100%; height: auto;">
+      <img src="/images/folder-sorter-image.jpg" alt="Download Folder Sorter">
       <h3>Download Folder Sorter</h3>
     </a>
     <p><strong>Tag:</strong> Tool</p>
     <p>A Python tool that organizes your downloads folder.</p>
   </div>
 
-  <div style="width: 250px; text-align: center;">
+  <div class="project-block">
     <a href="https://example.com/plant-labels">
-      <img src="/images/plant-labels-image.jpg" alt="3D Printed Plant Labels" style="width: 100%; height: auto;">
+      <img src="/images/plant-labels-image.jpg" alt="3D Printed Plant Labels">
       <h3>3D Printed Plant Labels</h3>
     </a>
     <p><strong>Tag:</strong> DIY</p>
