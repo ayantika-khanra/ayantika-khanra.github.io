@@ -62,5 +62,4 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
     <p>A script that processes and analyzes microscopy images.</p>
   </div>
 
-
 </div>
