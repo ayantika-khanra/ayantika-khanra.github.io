@@ -25,8 +25,8 @@ title:
   }
 
   .project-block p {
-    font-size: 0.7rem;
-    margin-top: 5px;
+    font-size: 0.95rem;
+    margin-top: 3px;
     line-height: 1.3; /* Paragraphs */
   }
 </style>
