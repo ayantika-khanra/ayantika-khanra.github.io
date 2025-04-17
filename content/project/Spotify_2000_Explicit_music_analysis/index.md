@@ -40,7 +40,7 @@ I have used the [spotify 2000 dataset from Kaggle](https://www.kaggle.com/datase
 
 When the percentage of explicit tracks per year from 2000 to 2020 is plotted, we see the percentage of explicit music has decreased till 2015, however it has increased after that quiet rapidly. In 2019 the percentage of explicit track was close to 50%. This made me curious about this specific trend, and I wanted to dive deeper. 
 
-<div class='tableauPlaceholder' id='viz1744856667295' style='position: relative; width: 400px; height: 300px; margin: auto;'>
+<div class='tableauPlaceholder' id='viz1744856667295' style='position: relative; width: 600px; height: 400px; margin: auto;'>
   <noscript>
     <a href='#'>
       <img alt='Sheet 1' src='https://public.tableau.com/static/images/Bo/Book1_17448566116240/Sheet1/1_rss.png' style='border: none' />
@@ -66,8 +66,8 @@ When the percentage of explicit tracks per year from 2000 to 2020 is plotted, we
 <script type='text/javascript'>
   var divElement = document.getElementById('viz1744856667295');
   var vizElement = divElement.getElementsByTagName('object')[0];
-  vizElement.style.width = '400px';
-  vizElement.style.height = '300px';
+  vizElement.style.width = '600px';
+  vizElement.style.height = '400px';
   var scriptElement = document.createElement('script');
   scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
   vizElement.parentNode.insertBefore(scriptElement, vizElement);
