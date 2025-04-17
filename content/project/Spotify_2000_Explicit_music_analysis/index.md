@@ -1,17 +1,15 @@
 ---
-title: Trends of Explicit Themes  in Music over Two Decades using Spotify’s Top 2000
-summary: date: 2025-17-04
+title: 🧠 Sharpen your thinking with a second brain
+summary: Create a personal knowledge base and share your knowledge with your peers.
+date: 2023-10-26
 authors:
   - admin
 tags:
-  - Exploratory data analysis
-  - Tableau
+  - Second Brain
   - Markdown
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
 ---
-
-The analysis focuses on how explicit themes in music has evolved over time, its musical characteristics, and the role of genres popularities in these trends. 
 
 Create a personal knowledge base and share your knowledge with your peers.
 
