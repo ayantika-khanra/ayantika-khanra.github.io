@@ -11,6 +11,8 @@ image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
 ---
 
+The analysis focuses on how explicit themes in music has evolved over time, its musical characteristics, and the role of genres popularities in these trends. 
+
 Create a personal knowledge base and share your knowledge with your peers.
 
 Hugo Blox web framework empowers you with one of the most flexible note-taking capabilities out there.
