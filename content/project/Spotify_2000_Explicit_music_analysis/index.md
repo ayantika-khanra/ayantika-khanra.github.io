@@ -1,7 +1,7 @@
 ---
 title: Trends of Explicit Themes  in Music over Two Decades using Spotify’s Top 2000
-summary: Create a personal knowledge base and share your knowledge with your peers.
-date: 2023-10-26
+summary: 
+date: 2025-04-17
 authors:
   - admin
 tags:
