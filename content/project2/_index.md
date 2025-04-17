@@ -74,11 +74,11 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
 
   <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/spotify_2000_explicit_music_analysis/">
-      <img src="/images/spotify2000.jpg" alt="Explicit Music Trends in Spotify’s Top 2000">
-      <h3>Trends of Explicit Themes  in Music over Two Decades using Spotify’s Top 2000</h3>
+      <img src="/images/spotify2000.jpg" alt="Microscopy Analyzer">
+      <h3>Explicit Music Trends in Spotify’s Top 2000 (2000–2020)</h3>
     </a>
     <p class="tag">Tag: Exploratory data analysis, Tableau</p>
-    <p>jdshsgh</p>
+    <p>A script that processes and analyzes microscopy images.</p>
   </div>
 
 </div>

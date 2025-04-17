@@ -4,7 +4,7 @@ summary: date: 2025-17-04
 authors:
   - admin
 tags:
-  - Exploratory data analysis, 
+  - Exploratory data analysis
   - Tableau
   - Markdown
 image:
