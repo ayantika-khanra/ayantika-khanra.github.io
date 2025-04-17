@@ -1,5 +1,5 @@
 ---
-title: 🧠 Sharpen your thinking with a second brain
+title: Trends of Explicit Themes  in Music over Two Decades using Spotify’s Top 2000
 summary: Create a personal knowledge base and share your knowledge with your peers.
 date: 2023-10-26
 authors:

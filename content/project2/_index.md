@@ -78,7 +78,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
       <h3>Trends of Explicit Themes  in Music over Two Decades using Spotify’s Top 2000</h3>
     </a>
     <p class="tag">Tag: Tableau, Data visualization, Exploratory data analysis</p>
-    <p>A script that processes and analyzes microscopy images.</p>
+    <p></p>
   </div>
 
 </div>
