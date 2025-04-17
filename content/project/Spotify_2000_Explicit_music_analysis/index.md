@@ -1,11 +1,11 @@
 ---
-title: 🧠 Sharpen your thinking with a second brain
-summary: Create a personal knowledge base and share your knowledge with your peers.
-date: 2023-10-26
+title: Trends of Explicit Themes  in Music over Two Decades using Spotify’s Top 2000
+summary: date: 2025-17-04
 authors:
   - admin
 tags:
-  - Second Brain
+  - Exploratory data analysis, 
+  - Tableau
   - Markdown
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
