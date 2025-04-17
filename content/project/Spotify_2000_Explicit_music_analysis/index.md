@@ -27,6 +27,15 @@ tags:
     line-height: 1.4;
     margin-bottom: 0.8rem;
   }
+  ul, ol {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
+  }
 </style>
 
 
@@ -74,7 +83,9 @@ When the percentage of explicit tracks per year from 2000 to 2020 is plotted, we
 </script>
 
 
+#### Musical signature of explicit songs
 
+I filtered the 
 
 
 - Each music in this dataset has 1-3 genre identifiers, as many songs have multiple genre influences. In this 
