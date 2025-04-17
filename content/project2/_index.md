@@ -1,33 +1,52 @@
 ---
-title: 
+title: "Projects"
 ---
 
 ## My Projects
 
 <style>
+  .project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+    justify-items: center;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
   .project-block {
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
-    line-height: 1.3; /* Reduced line spacing */
+    line-height: 1.3;
+  }
+
+  .project-block img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
   .project-block h3 {
     font-size: 0.95rem;
     margin: 8px 0 4px;
-    line-height: 1.2; /* Tighter heading spacing */
+    line-height: 1.2;
+    color: inherit;
   }
 
   .project-block .tag {
     font-size: 0.75rem;
     font-weight: bold;
-    line-height: 1.1; /* Compact */
+    line-height: 1.1;
+    color: inherit;
   }
 
   .project-block p {
-    font-size: 0.95rem;
-    margin-top: 3px;
-    line-height: 1.3; /* Paragraphs */
+    font-size: 0.7rem;
+    margin-top: 5px;
+    line-height: 1.3;
+    color: inherit;
   }
 </style>
 
