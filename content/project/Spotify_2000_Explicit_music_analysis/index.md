@@ -10,6 +10,24 @@ tags:
   - Tableau
 ---
 
+<style>
+  body {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  h1, h2, h3, h4 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+  }
+</style>
+
 *This exploratory data analysis analysis focuses on how explicit themes in music has evolved over time, musical characteristics of explicit music, and the role of genres in these trends.*
 
 **Dataset:** 
