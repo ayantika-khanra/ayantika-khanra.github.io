@@ -36,11 +36,11 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
 <div class="project-container">
 
   <div class="project-block">
-    <a href="https://example.com/microscopy-analyzer">
+    <a href="https://ayantika-khanra.github.io/project/spotify_2000_explicit_music_analysis/">
       <img src="/images/spotify2000.jpg" alt="Microscopy Analyzer">
       <h3>Microscopy Analyzer</h3>
     </a>
-    <p class="tag">Tag: Research</p>
+    <p class="tag">Tag: Exploratory data analysis, Tableau</p>
     <p>A script that processes and analyzes microscopy images.</p>
   </div>
 
