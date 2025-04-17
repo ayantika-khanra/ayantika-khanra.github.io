@@ -10,6 +10,7 @@ tags:
   - Tableau
 ---
 
+
 <style>
   body {
     font-size: 1rem;
@@ -19,26 +20,15 @@ tags:
   h1, h2, h3, h4 {
     font-size: 1.2rem;
     line-height: 1.2;
-    margin-top: 1.2rem;   /* space before heading */
-    margin-bottom: 0.6rem; /* space after heading */
   }
 
   p {
     font-size: 1rem;
     line-height: 1.4;
-    margin-top: 0.4rem;     /* space before paragraph (usually small or 0) */
-    margin-bottom: 0.8rem;  /* space after paragraph */
-  }
-
-  ul, ol {
-    margin-top: 0.5rem;
     margin-bottom: 0.8rem;
   }
-
-  li {
-    margin-bottom: 0.4rem;
-  }
 </style>
+
 
 *This exploratory data analysis analysis focuses on how explicit themes in music has evolved over time, musical characteristics of explicit music, and the role of genres in these trends.*
 
@@ -49,8 +39,9 @@ tags:
 
 #### Driving question:
 
+When the percentage of explicit tracks per year from 2000 to 2020 is plotted, we see the percentage of explicit music has decreased till 2015, however it has increased after that quiet rapidly. In 2019 the percentage of explicit track was close to 50%. This made me curious about this specific trend, and I wanted to dive deeper. 
 
-The first step in the analysis was to simply track how the share of explicit songs changed over time. By plotting the percentage of explicit tracks per year from 2000 to 2020, a distinct U-shaped trend emerged. There was a decline in explicit content leading up to 2015, followed by a steep rise in the years after. The increase post-2015 is particularly notable and more rapid than the previous decline.
+
 
 
 
