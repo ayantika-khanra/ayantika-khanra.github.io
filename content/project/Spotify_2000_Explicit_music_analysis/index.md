@@ -33,15 +33,14 @@ tags:
 *This exploratory data analysis analysis focuses on how explicit themes in music has evolved over time, musical characteristics of explicit music, and the role of genres in these trends.*
 
 #### Dataset:
-- I have used the [spotify 2000 dataset from Kaggle](https://www.kaggle.com/datasets/paradisejoy/top-hits-spotify-from-20002019) (year 2000-2020 included) for this analysis. which contains songs from the years 2000 to 2020. The dataset has approximately an equal number of songs per year, with the exception of the years <2001 and 2020, which had fewer entries. I filtered out songs from these years in Tableau for consistency.
-- The popularity metric in the dataset is normalized.
+I have used the [spotify 2000 dataset from Kaggle](https://www.kaggle.com/datasets/paradisejoy/top-hits-spotify-from-20002019) (year 2000-2020 included) for this analysis. which contains songs from the years 2000 to 2020. The dataset has approximately an equal number of songs per year, with the exception of the years <2001 and 2020, which had fewer entries. I filtered out songs from these years in Tableau for consistency. The popularity metric in the dataset is normalized.
 
 
 #### Driving question:
 
 When the percentage of explicit tracks per year from 2000 to 2020 is plotted, we see the percentage of explicit music has decreased till 2015, however it has increased after that quiet rapidly. In 2019 the percentage of explicit track was close to 50%. This made me curious about this specific trend, and I wanted to dive deeper. 
 
-<div class='tableauPlaceholder' id='viz1744856667295' style='position: relative; width: 600px; height: 400px; margin: auto;'>
+<div class='tableauPlaceholder' id='viz1744856667295' style='position: relative; width: 400px; height: 300px; margin: auto;'>
   <noscript>
     <a href='#'>
       <img alt='Sheet 1' src='https://public.tableau.com/static/images/Bo/Book1_17448566116240/Sheet1/1_rss.png' style='border: none' />
@@ -67,8 +66,8 @@ When the percentage of explicit tracks per year from 2000 to 2020 is plotted, we
 <script type='text/javascript'>
   var divElement = document.getElementById('viz1744856667295');
   var vizElement = divElement.getElementsByTagName('object')[0];
-  vizElement.style.width = '600px';
-  vizElement.style.height = '400px';
+  vizElement.style.width = '400px';
+  vizElement.style.height = '300px';
   var scriptElement = document.createElement('script');
   scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
   vizElement.parentNode.insertBefore(scriptElement, vizElement);
