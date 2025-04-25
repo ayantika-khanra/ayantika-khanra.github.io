@@ -37,6 +37,7 @@ tags:
   }
 </style>
 
+<div class='tableauPlaceholder' id='viz1745585415094' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_17454320271010&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book2_17454320271010&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_17454320271010&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1745585415094');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='920px';vizElement.style.minHeight='713px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='920px';vizElement.style.minHeight='713px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1877px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
 *This interactive dashboard provides a detailed view of pharmacy sales trends from a single pharmacy, using six years of data (2014–2019) covering sales of drugs classified into eight ATC categories.*
 
@@ -49,18 +50,12 @@ Thus, the dashboard is focused on stocking and staffing needs rather than revenu
 
 - **Last 30 Days Snapshot:** Displays total units sold, units sold per drug category (to identify top-selling drugs), and the average number of units sold per day.
 
-Sales Forecast:
-Forecasts upcoming sales based on historical data for selected medicine categories, helping management better plan inventory and avoid stockouts.
+- **Sales Forecast:** Forecasts upcoming sales based on historical data for selected medicine categories, helping management better plan inventory.
 
-Seasonal Sales Trend Analysis:
-Sales trends across different months are visualized using a heatmap and bar chart.
-This helps quickly identify seasonal patterns (e.g., increased cold medicine sales in winter) and allows pharmacies to stock up appropriately and plan pharmacist staffing based on expected demand.
+- **Seasonal Sales Trend Analysis:** Sales trends across different months visualized using a heatmap. This helps (1) plan pharmacist staffing based on expected total demand, and (2) quickly identify seasonal patterns in medicine sales category-wise and allows pharmacies to stock up appropriately and .
 
-Hourly Sales Trend:
-Sales trends are broken down by hour and weekday.
-This enables better scheduling of pharmacist shifts, lunch breaks, and closing hours based on real customer traffic patterns.
+- **Hourly Sales Trend:** Sales trends are broken down by hour, can be filtered for specific weekdays, months and years. Helps better scheduling of pharmacist shifts, lunch breaks, and closing hours based on customer traffic patterns.
 
-When the percentage of explicit tracks per year from 2000 to 2020 is plotted, we see the percentage of explicit music has a decreasing trend till 2014, however it has increased after that quiet rapidly. In 2018 the percentage of explicit track was close to 50%. This made me curious about this specific trend, and I wanted to dive deeper. 
 
 <div class='tableauPlaceholder' id='viz1744856667295' style='position: relative; width: 600px; height: 400px; margin: auto;'>
   <noscript>
