@@ -40,11 +40,25 @@ tags:
 
 *This interactive dashboard provides a detailed view of pharmacy sales trends from a single pharmacy, using six years of data (2014–2019) covering sales of drugs classified into eight ATC categories.*
 
-Dataset Link:
-I have used the [spotify 2000 dataset from Kaggle](https://www.kaggle.com/datasets/paradisejoy/top-hits-spotify-from-20002019) (year 2000-2020 included) for this analysis. which contains songs from the years 2000 to 2020. The dataset has approximately an equal number of songs per year, with the exception of the years <2001 and 2020, which had fewer entries. I filtered out songs from these years in Tableau for consistency. The popularity metric in the dataset is normalized.
+[Dataset Link](https://www.kaggle.com/datasets/milanzdravkovic/pharma-sales-data/data)
 
+Note: No revenue information was provided, only the number of units sold.
+Thus, the dashboard is focused on stocking and staffing needs rather than revenue analysis.
 
-#### Driving question:
+#### Dashboard Features:
+
+- **Last 30 Days Snapshot:** Displays total units sold, units sold per drug category (to identify top-selling drugs), and the average number of units sold per day.
+
+Sales Forecast:
+Forecasts upcoming sales based on historical data for selected medicine categories, helping management better plan inventory and avoid stockouts.
+
+Seasonal Sales Trend Analysis:
+Sales trends across different months are visualized using a heatmap and bar chart.
+This helps quickly identify seasonal patterns (e.g., increased cold medicine sales in winter) and allows pharmacies to stock up appropriately and plan pharmacist staffing based on expected demand.
+
+Hourly Sales Trend:
+Sales trends are broken down by hour and weekday.
+This enables better scheduling of pharmacist shifts, lunch breaks, and closing hours based on real customer traffic patterns.
 
 When the percentage of explicit tracks per year from 2000 to 2020 is plotted, we see the percentage of explicit music has a decreasing trend till 2014, however it has increased after that quiet rapidly. In 2018 the percentage of explicit track was close to 50%. This made me curious about this specific trend, and I wanted to dive deeper. 
 
