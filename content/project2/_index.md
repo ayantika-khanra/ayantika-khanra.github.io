@@ -55,7 +55,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
 <div class="project-container">
 
   <div class="project-block">
-    <a href="https://ayantika-khanra.github.io/project/Pharmacy_dashboard/">
+    <a href="https://ayantika-khanra.github.io/project/pharmacy_dashboard/">
       <img src="/images/Pharmacy_dashboard.jpg" alt="Pharmacy_dashboard">
       <h3>Dashboard for sales in a Pharmacy</h3>
     </a>

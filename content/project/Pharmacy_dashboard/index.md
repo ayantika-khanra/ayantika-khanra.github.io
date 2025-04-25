@@ -1,12 +1,11 @@
 ---
-title: Trends of Explicit Themes  in Music over Two Decades using Spotify’s Top 2000
+title: Dashboard for sales in a Pharmacy
 summary: 
 date: 2025-04-17
 authors:
   - admin
 tags:
   - Data visualization
-  - Exploratory data analysis
   - Tableau
 ---
 
@@ -39,9 +38,9 @@ tags:
 </style>
 
 
-*This exploratory data analysis analysis focuses on how explicit themes in music has evolved over time, musical characteristics of explicit music, and the role of genres in these trends.*
+*This interactive dashboard provides a detailed view of pharmacy sales trends from a single pharmacy, using six years of data (2014–2019) covering sales of drugs classified into eight ATC categories.*
 
-#### Dataset:
+Dataset Link:
 I have used the [spotify 2000 dataset from Kaggle](https://www.kaggle.com/datasets/paradisejoy/top-hits-spotify-from-20002019) (year 2000-2020 included) for this analysis. which contains songs from the years 2000 to 2020. The dataset has approximately an equal number of songs per year, with the exception of the years <2001 and 2020, which had fewer entries. I filtered out songs from these years in Tableau for consistency. The popularity metric in the dataset is normalized.
 
 
