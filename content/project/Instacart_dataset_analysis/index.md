@@ -72,15 +72,17 @@ orders_pt.reset_index(drop=True, inplace=True)
 # Joining the order and product dataframe on product id column,
 # and dropping the unnecessary columns
 orders_pt = orders_pt.merge(products, on='product_id', how='left')
-orders_pt=orders_pt.drop(columns=['product_id','add_to_cart_order', 'reordered', 'aisle_id','department_id'])
+orders_pt=orders_pt.drop(columns=['product_id','add_to_cart_order', 
+                                  'reordered', 'aisle_id','department_id'])
 
-# Creating a multi-index Pandas Series with `order_id` and `product_name` 
+# Creating a multi-index Pandas Series with order_id and product_name 
 # as index and the values showing count of purchase of the product in that
-# `order_id`: value 0 for no purchase, value 1 for one or more purchase
+# order_id: value 0 for no purchase, value 1 for one or more purchase
 orders_pt=orders_pt.groupby(['order_id','product_name'])['product_name'].count()
 orders_pt=orders_pt.apply(lambda x: 1 if x>1 else x)
 
-# unstacking the grouped `orders_pt`, to create 
+# unstacking the grouped orders_pt, to create basket dataframe that
+# is one hot coded with indices having order_id and columns as prodyct name
 basket=orders_pt.unstack().fillna(0).astype('int8')
-basket = basket.reindex(all_orders, fill_value=0)
+basket = basket.reindex(all_order_IDs, fill_value=0)
 ```
