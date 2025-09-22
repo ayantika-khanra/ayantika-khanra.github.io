@@ -42,6 +42,9 @@ tags:
     font-size: 1.0rem;   /* smaller font size */
     line-height: 1.4;    /* optional: adjust line spacing */
   }
+
+img { margin-top: 0; }
+pre + img { margin-top: 0; }
 </style>
 
 
@@ -100,11 +103,11 @@ Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxt
 **Association Rules:** After frequent itemsets are found, we can generate association rules of the form $X\rightarrow Y$ (if X is bought, Y is likely bought as well). Here item/itemset X is called the antecedant, and Y the consequent. Other than $Support(X→Y)$ = # of orders containing $X\cap Y$/ Total # of orders, two other quantites are used to queantify these association rules:
 
 **Confidence:** A measure of how often Y is purchased when X is purchased:
-$$\textstyle Confidence(X \rightarrow Y)= \frac{Support(X \cap Y)}{(Support(X)}$$
+$$\scriptstyle Confidence(X \rightarrow Y)= \frac{Support(X \cap Y)}{Support(X)}$$
 
 **Lift:** Measures how much more likely X and Y occur together than if they were independent:
 
-$$Lift(X \rightarrow Y)= \frac{Support(X \cap Y)}{Support(X)\times Support (Y)}$$
+$$\scriptstyle Lift(X \rightarrow Y)= \frac{Support(X \cap Y)}{Support(X)\times Support (Y)}$$
 
 High confidence indicates a strong predictive relationship, and a lift > 1 indicates that a positive association exists that is stronger than a random chance.
 
