@@ -38,10 +38,10 @@ tags:
   }
 
 
-pre code {
-    font-size: 0.8rem;   /* smaller font size */
-    line-height: 1.2;    /* optional: adjust line spacing */
-}
+  pre code {
+    font-size: 0.2rem;   /* smaller font size */
+    line-height: 0.2;    /* optional: adjust line spacing */
+  }
 </style>
 
 
