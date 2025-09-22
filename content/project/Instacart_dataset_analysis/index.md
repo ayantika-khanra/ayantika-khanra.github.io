@@ -91,9 +91,10 @@ basket = basket.reindex(all_order_IDs, fill_value=0)
 ```
 Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxtend library.
 
-# Applying FP-Growth Algorithm for Association Rule Mining
+## Applying FP-Growth Algorithm for Association Rule Mining
 
 **Support** measures how often an item or combination of items appears in the same order, divided by the total number of orders, indicating which items or item combinations are frequent enough to matter.
+
 \\(x^2\\)
 
 # Applying FP-Growth algorithm for associative rule mining
