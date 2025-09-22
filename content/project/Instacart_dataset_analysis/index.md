@@ -38,7 +38,6 @@ tags:
   }
 </style>
 
-<div class='tableauPlaceholder' id='viz1745585415094' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_17454320271010&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book2_17454320271010&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_17454320271010&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1745585415094');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='920px';vizElement.style.minHeight='713px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*1)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='920px';vizElement.style.minHeight='713px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*1)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1877px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
 Understanding customer purchasing behavior is important for retail businesses. Market Basket Analysis (MBA) is performed to uncover patterns in what products are frequently bought together. Here, I will discuss how I applied FP-Growth algorithm for mining frequent itemsets on a retail dataset to generate insights into customer purchase pattern.
 
@@ -53,13 +52,16 @@ import pandas as pd
 orders_pt = pd.read_csv("order_products__train.csv")
 products = pd.read_csv("products.csv")
 
-#
-all_order_IDs = orders_pt['order_id'].unique()
+# Finding the Top 1000 products purchased
 histogram_order=orders_pt.groupby(['product_id'])['product_id'].count()
 top_N_products=histogram_order.sort_values(ascending=False).iloc[0:1000].index.to_list()
+
+# Selecting only rows containing atleast one of the top 1000 products
+all_order_IDs = orders_pt['order_id'].unique()
 selected_rows=orders_pt['product_id'].isin(top_N_products)
 orders_pt=orders_pt.loc[selected_rows]
 orders_pt.reset_index(drop=True, inplace=True)
+
 orders_pt = orders_pt.merge(products, on='product_id', how='left')
 orders_pt=orders_pt.drop(columns=['product_id','add_to_cart_order', 'reordered', 'aisle_id','department_id'])
 orders_pt=orders_pt.groupby(['order_id','product_name'])['product_name'].count()
