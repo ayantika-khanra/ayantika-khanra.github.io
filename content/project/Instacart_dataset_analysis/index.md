@@ -91,18 +91,28 @@ basket = basket.reindex(all_order_IDs, fill_value=0)
 ```
 Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxtend library.
 
-# Applying FP-Growth algorithm
+# Applying FP-Growth algorithm for associative rule mining
+$a+b$
 
-FP-Growth algorithm is a faster alternative to the Apriori algorithm. Unlike Apriori, it doesn’t generate candidate sets, which makes it much faster for large datasets. I set a minimum support of 0.1% to capture patterns that appear frequently enough.
+**Support:** Here, the support measures how often an item or combination of items together appears in the same order_ID in the dataset, divided by the total number of order_IDs
 
+**FP growth algorithm:** This algorithm scans the dataset once to count the frequency (support) of each item. Items below the minimum support are discarded. Then it constructs a compact tree structure called an FP-Tree, where shared paths represent shared purchase patterns across orders. Then the tree is traversed from the bottom up, and frequent itemsets are generated. FP-Growth algorithm is a faster alternative to the Apriori algorithm. 
+
+In the association rules (X->Y) calculated we find two other quantities other than support (frequency of XUY in orders/number of order), confidence and lift
+confidence: definition and math equation please insert
+Lift: 
+
+I have set a minimum support of 0.5%. I have set conidence to be 0.03 so that only strong wenough rules are shown. I have set lift>1 to only find relationships that are unlikely to be random.
 ```python
+# FP tree creation
 from mlxtend.frequent_patterns import fpgrowth, association_rules
 frequent_itemsets = fpgrowth(basket, min_support=0.005, use_colnames=True)
 
+# association rule mining
 rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
-rules = rules[(rules['confidence'] > 0.3)]
+rules = rules[rules['confidence'] > 0.3]
 rules = rules.sort_values(by='lift', ascending=False)
 display(rules[['antecedents', 'consequents', 'support',	'confidence',	'lift']	])
 ```
-
+Output:
 ![instacart](/images/instacart232338.png)
