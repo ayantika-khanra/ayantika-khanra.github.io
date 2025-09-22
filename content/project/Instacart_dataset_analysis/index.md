@@ -98,7 +98,7 @@ Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxt
 **FP growth algorithm:** The frequent pattern growth algorithm is an efficient method for finding frequent itemsets. Here,  the dataset once to count the frequency, and thus support of each item. Items having support values below a chosen threshold are discarded. Then, an FP-Tree is bulit, which is a compact branched structure where each branch represent purchase patterns across orders. Then the tree is traversed bottom-up to find all frequent itemsets.
 
 **Association Rules:** After frequent itemsets are found, we can generate association rules of the form $X\rightarrow Y$ (if X is bought, Y is likely bought as well). Here item/itemset X is called the antecedant, and Y the consequent. Other than $Support(X→Y)$ = # of orders containing $X\cap Y$/ Total # of orders, two other quantites are used to queantify these association rules:
-	​
+
 **Confidence:** A measure of how often Y is purchased when X is purchased:
 $$Confidence(X \rightarrow Y)= \frac{Support(X \cap Y)}{(Support(X)}$$
 
