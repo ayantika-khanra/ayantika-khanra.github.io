@@ -64,13 +64,15 @@ histogram_order=orders_pt.groupby(['product_id'])['product_id'].count()
 top_N_products=(histogram_order.sort_values(ascending=False).
                 iloc[0:1000].index.to_list())
 
+# Saving all order IDs before modifying the dataframe
+all_order_IDs = orders_pt['order_id'].unique() 
+
 # Selecting only rows containing atleast one of the top 1000 products
-all_order_IDs = orders_pt['order_id'].unique() #Saving all order IDs before modifying the dataframe
 selected_rows=orders_pt['product_id'].isin(top_N_products)
 orders_pt=orders_pt.loc[selected_rows]
 orders_pt.reset_index(drop=True, inplace=True)
 
-# Joining the order and product dataframe on product id column,
+# Joining the orders_pt and products dataframe on product_id column,
 # and dropping the unnecessary columns
 orders_pt = orders_pt.merge(products, on='product_id', how='left')
 orders_pt=orders_pt.drop(columns=['product_id','add_to_cart_order', 
@@ -82,8 +84,9 @@ orders_pt=orders_pt.drop(columns=['product_id','add_to_cart_order',
 orders_pt=orders_pt.groupby(['order_id','product_name'])['product_name'].count()
 orders_pt=orders_pt.apply(lambda x: 1 if x>1 else x)
 
-# unstacking the grouped orders_pt, to create basket dataframe that
-# is one hot coded with indices having order_id and columns as prodyct name
+# Unstacking the grouped orders_pt to create a basket dataframe
+# Rows = orders, columns = products, values = 0/1 indicating 
+# if product was purchased
 basket=orders_pt.unstack().fillna(0).astype('int8')
 basket = basket.reindex(all_order_IDs, fill_value=0)
 ```
