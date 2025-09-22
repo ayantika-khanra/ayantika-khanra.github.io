@@ -43,8 +43,16 @@ tags:
     line-height: 1.4;    /* optional: adjust line spacing */
   }
 
-img { margin-top: 0; }
-pre + img { margin-top: 0; }
+img {
+    display: block;   /* ensures it behaves like a block element */
+    margin-top: 0 !important;
+}
+pre + img,
+p + img,
+div + img {
+    margin-top: 0 !important;
+}
+
 </style>
 
 
