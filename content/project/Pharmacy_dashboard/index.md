@@ -39,7 +39,9 @@ tags:
 
 <div class='tableauPlaceholder' id='viz1745585415094' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_17454320271010&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book2_17454320271010&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book2_17454320271010&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1745585415094');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='920px';vizElement.style.minHeight='713px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*1)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='920px';vizElement.style.minHeight='713px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*1)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1877px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
-*This interactive dashboard provides a detailed view of pharmacy sales trends from a single pharmacy, using six years of data (2014–2019) covering sales of drugs classified into eight ATC categories.*
+https://public.tableau.com/views/Book2_17454320271010/Dashboard2
+
+*This interactive dashboard provides a detailed view of pharmacy sales trends from a single pharmacy in serbia, using six years of data (2014–2019) covering sales of drugs classified into eight ATC categories.*
 
 [Dataset Link](https://www.kaggle.com/datasets/milanzdravkovic/pharma-sales-data/data)
 
@@ -56,8 +58,21 @@ Thus, the dashboard is focused on stocking and staffing needs rather than revenu
 
 - **Hourly Sales Trend:** Sales trends are broken down by hour, can be filtered for specific weekdays, months and years. Helps better scheduling of pharmacist shifts, lunch breaks, and closing hours based on customer traffic patterns.
 
-Interactivity:Users can filter by weekday, year, month, and medicine category to customize their analysis.
+- **Interactivity:** Users can filter by weekday, year, month, and medicine category to customize their analysis.
 
 
+#### Insights:
+- **Last 30 Days Snapshot:** with 66 units of medicine being sold in the last 30 days, antipyretics being the highest sold medicine, sedative beinf the lowest
+
+- **Seasonal Sales Trend Analysis:**
+   - total sales: peaks october to march in the flue season in winter
+antipyretic PA: oct to feb it peaks. again due to flue season
+- antipyretic Salicylic acid derivative (such as aspirin): no particularpeaking behaviour but its sales have reduced since 2017. Aspirin is not typically the first choice for fever,  Aspirin is less commonly used for fever now due to safety concerns and its use is more generic for pain and inflammation, so this makes sense.
+   - Antihistamines: April to July is the highest sale of antihistamines, probably due to tree and grass pollen season. antihistamine sales have also increased over the years. 
+   - Acetic acid NSAID: shows year around prevalence, probably as it is a standard pain medication. showed lower sales in 2014
+-   Propionic acid NSAID: shows year around prevalence
+-   bronchodialators: peaks around October to march, again due to winter and flue season most likely 
+anxityolytic:shows high sales in 2014, but year around similar sales throughour the seasons.
+- sedative: no particular trend
 
 
