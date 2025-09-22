@@ -94,4 +94,4 @@ Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxt
 Applying FP-Growth
 
 FP-Growth algorithm is a faster alternative to the Apriori algorithm. Unlike Apriori, it doesn’t generate candidate sets, which makes it much faster for large datasets. I set a minimum support of 0.1% to capture patterns that appear frequently enough.
-![instacart](instacart232338.png)
+![instacart](/images/instacart232338.png)
