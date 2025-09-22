@@ -106,10 +106,13 @@ $$Confidence(X \rightarrow Y)= \frac{Support(X \cap Y)}{(Support(X)}$$
 
 $$Lift(X \rightarrow Y)= \frac{Support(X \cap Y)}{Support(X)\times Support (Y)}$$
 
+High confidence indicates a strong predictive relationship, and a lift > 1 indicates that a positive association exists that is stronger than a random chance.
 
+For this analysis, I have set:
+- Minimum support = 0.5% 
+- Minimum confidence = 0.3, to ignore weak rules
+- Lift > 1, to view only non-random associations
 
-
-I have set a minimum support of 0.5%. I have set conidence to be 0.03 so that only strong wenough rules are shown. I have set lift>1 to only find relationships that are unlikely to be random.
 ```python
 # FP tree creation
 from mlxtend.frequent_patterns import fpgrowth, association_rules
