@@ -72,4 +72,14 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
     <p></p>
   </div>
 
+  <div class="project-block">
+    <a href="https://ayantika-khanra.github.io/project/Instacart_data_analysis/">
+      <img src="/images/instacart_dataset-cover.jpg" alt="Instacart_dataset_analysis">
+      <h3>Instacart_dataset_analysis</h3>
+    </a>
+    <p class="tag">Tag:  Data Visualization, Exploratory Data Analysis, Market Basket Analysis</p>
+    <p></p>
+  </div>
+
+
 </div>
