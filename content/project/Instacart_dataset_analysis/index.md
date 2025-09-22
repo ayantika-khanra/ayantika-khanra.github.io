@@ -47,7 +47,7 @@ tags:
 
 Understanding customer purchasing behavior is important for retail businesses. Market Basket Analysis (MBA) is performed to uncover patterns in what products are frequently bought together. Here, I will discuss how I applied FP-Growth algorithm for mining frequent itemsets on a retail dataset to generate insights into customer purchase pattern.
 
-## Data Preparation
+#### Data Preparation
 
 To focus on the most popular products, I only selected the top 1000 most frequently purchased products for this analysis, and I have used `order_products__train.csv` for this analysis. Each order was then transformed into a basket format, where rows represent individual orders IDs and columns represent product names. A value of 1 indicates that the specific product was purchased in that order ID.
 
@@ -91,18 +91,15 @@ basket = basket.reindex(all_order_IDs, fill_value=0)
 ```
 Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxtend library.
 
-## Applying FP-Growth Algorithm for Association Rule Mining
+#### Applying FP-Growth Algorithm for Association Rule Mining
 
 **Support** measures how often an item or combination of items appears in the same order, divided by the total number of orders, indicating which items or item combinations are frequent enough to matter.
 
-\\(x^2\\)
+**FP growth algorithm:** The frequent pattern growth algorithm is an efficient method for finding frequent itemsets. Here,  the dataset once to count the frequency, and thus support of each item. Items having support values below a chosen threshold are discarded. Then, an FP-Tree is bulit, which is a compact structure where each branch represent purchase patterns across orders. Then the tree is traversed bottom-up to find all frequent itemsets.
 
-# Applying FP-Growth algorithm for associative rule mining
-$a+b$
+**Association Rules:** After frequent itemsets are found, we can generate association rules of the form 𝑋→𝑌 (if X is bought, Y is likely bought as well).
 
-**Support:** Here, the support measures how often an item or combination of items together appears in the same order_ID in the dataset, divided by the total number of order_IDs
-
-**FP growth algorithm:** This algorithm scans the dataset once to count the frequency (support) of each item. Items below the minimum support are discarded. Then it constructs a compact tree structure called an FP-Tree, where shared paths represent shared purchase patterns across orders. Then the tree is traversed from the bottom up, and frequent itemsets are generated. FP-Growth algorithm is a faster alternative to the Apriori algorithm. 
+This algorithm scans the dataset once to count the frequency (support) of each item. Items below the minimum support are discarded. Then it constructs a compact tree structure called an FP-Tree, where shared paths represent shared purchase patterns across orders. Then the tree is traversed from the bottom up, and frequent itemsets are generated. FP-Growth algorithm is a faster alternative to the Apriori algorithm. 
 
 In the association rules (X->Y) calculated we find two other quantities other than support (frequency of XUY in orders/number of order), confidence and lift
 confidence: definition and math equation please insert
