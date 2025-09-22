@@ -36,6 +36,12 @@ tags:
   li {
     margin-bottom: 0.4rem;
   }
+
+
+pre code {
+    font-size: 0.8rem;   /* smaller font size */
+    line-height: 1.2;    /* optional: adjust line spacing */
+}
 </style>
 
 
