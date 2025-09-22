@@ -95,17 +95,15 @@ Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxt
 
 **Support** measures how often an item or combination of items appears in the same order, divided by the total number of orders, indicating which items or item combinations are frequent enough to matter.
 
-**FP growth algorithm:** The frequent pattern growth algorithm is an efficient method for finding frequent itemsets. Here,  the dataset once to count the frequency, and thus support of each item. Items having support values below a chosen threshold are discarded. Then, an FP-Tree is bulit, which is a compact structure where each branch represent purchase patterns across orders. Then the tree is traversed bottom-up to find all frequent itemsets.
+**FP growth algorithm:** The frequent pattern growth algorithm is an efficient method for finding frequent itemsets. Here,  the dataset once to count the frequency, and thus support of each item. Items having support values below a chosen threshold are discarded. Then, an FP-Tree is bulit, which is a compact branched structure where each branch represent purchase patterns across orders. Then the tree is traversed bottom-up to find all frequent itemsets.
 
-**Association Rules:** After frequent itemsets are found, we can generate association rules of the form $X\rightarrow Y$ (if X is bought, Y is likely bought as well). Other than $Support(X→Y) = # of orders containing X\cap Y/ Total # of orders$, two other quantites are used to queantify these association rules:
+**Association Rules:** After frequent itemsets are found, we can generate association rules of the form $X\rightarrow Y$ (if X is bought, Y is likely bought as well). Here item/itemset X is called the antecedant, and Y the consequent. Other than $Support(X→Y)$ = # of orders containing $X\cap Y$/ Total # of orders, two other quantites are used to queantify these association rules:
 	​
+Confidence: A measure of how often Y is purchased when X is purchased:
+$$Confidence(X \rigtharrow Y)= \frac{Support(X \cap Y)}(Support (X))$$
 
 
 
-
-In the association rules (X->Y) calculated we find two other quantities other than support (frequency of XUY in orders/number of order), confidence and lift
-confidence: definition and math equation please insert
-Lift: 
 
 I have set a minimum support of 0.5%. I have set conidence to be 0.03 so that only strong wenough rules are shown. I have set lift>1 to only find relationships that are unlikely to be random.
 ```python
