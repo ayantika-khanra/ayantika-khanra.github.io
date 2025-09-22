@@ -46,3 +46,21 @@ Understanding customer purchasing behavior is important for retail businesses. M
 
 To focus on the most popular products, I only selected the top 1000 most frequently purchased products for this analysis, and I have used `order_products__train.csv` for this analysis. Each order was then transformed into a basket format, where rows represent individual orders IDs and columns represent product names. A value of 1 indicates that the specific product was purchased in that order ID.
 
+```python
+import pandas as pd
+
+# Load relevant datasets
+orders_pt = pd.read_csv("order_products__train.csv")
+products = pd.read_csv("products.csv")
+
+#
+all_order_IDs = orders_pt['order_id'].unique()
+histogram_order=orders_pt.groupby(['product_id'])['product_id'].count()
+top_N_products=histogram_order.sort_values(ascending=False).iloc[0:1000].index.to_list()
+selected_rows=orders_pt['product_id'].isin(top_N_products)
+orders_pt=orders_pt.loc[selected_rows]
+orders_pt.reset_index(drop=True, inplace=True)
+orders_pt = orders_pt.merge(products, on='product_id', how='left')
+orders_pt=orders_pt.drop(columns=['product_id','add_to_cart_order', 'reordered', 'aisle_id','department_id'])
+orders_pt=orders_pt.groupby(['order_id','product_name'])['product_name'].count()
+```
