@@ -61,7 +61,8 @@ products = pd.read_csv("products.csv")
 
 # Finding the Top 1000 products purchased
 histogram_order=orders_pt.groupby(['product_id'])['product_id'].count()
-top_N_products=histogram_order.sort_values(ascending=False).iloc[0:1000].index.to_list()
+top_N_products=(histogram_order.sort_values(ascending=False).
+                iloc[0:1000].index.to_list())
 
 # Selecting only rows containing atleast one of the top 1000 products
 all_order_IDs = orders_pt['order_id'].unique() #Saving all order IDs before modifying the dataframe
@@ -76,8 +77,8 @@ orders_pt=orders_pt.drop(columns=['product_id','add_to_cart_order',
                                   'reordered', 'aisle_id','department_id'])
 
 # Creating a multi-index Pandas Series with order_id and product_name 
-# as index and the values showing count of purchase of the product in that
-# order_id: value 0 for no purchase, value 1 for one or more purchase
+# as index. Values show purchase count in that order 
+# (converted to 1 for any purchase > 1)
 orders_pt=orders_pt.groupby(['order_id','product_name'])['product_name'].count()
 orders_pt=orders_pt.apply(lambda x: 1 if x>1 else x)
 
