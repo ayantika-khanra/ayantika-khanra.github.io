@@ -91,7 +91,18 @@ basket = basket.reindex(all_order_IDs, fill_value=0)
 ```
 Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxtend library.
 
-Applying FP-Growth
+# Applying FP-Growth algorithm
 
 FP-Growth algorithm is a faster alternative to the Apriori algorithm. Unlike Apriori, it doesn’t generate candidate sets, which makes it much faster for large datasets. I set a minimum support of 0.1% to capture patterns that appear frequently enough.
+
+```python
+from mlxtend.frequent_patterns import fpgrowth, association_rules
+frequent_itemsets = fpgrowth(basket, min_support=0.005, use_colnames=True)
+
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
+rules = rules[(rules['confidence'] > 0.3)]
+rules = rules.sort_values(by='lift', ascending=False)
+display(rules[['antecedents', 'consequents', 'support',	'confidence',	'lift']	])
+```
+
 ![instacart](/images/instacart232338.png)
