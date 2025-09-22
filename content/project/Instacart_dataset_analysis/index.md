@@ -37,7 +37,8 @@ tags:
     margin-bottom: 0.4rem;
   }
 
-
+  .highlight pre,
+  .chroma pre,
   pre code {
     font-size: 0.2rem;   /* smaller font size */
     line-height: 0.2;    /* optional: adjust line spacing */
