@@ -100,7 +100,7 @@ Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxt
 **Association Rules:** After frequent itemsets are found, we can generate association rules of the form $X\rightarrow Y$ (if X is bought, Y is likely bought as well). Here item/itemset X is called the antecedant, and Y the consequent. Other than $Support(X→Y)$ = # of orders containing $X\cap Y$/ Total # of orders, two other quantites are used to queantify these association rules:
 
 **Confidence:** A measure of how often Y is purchased when X is purchased:
-$$\scriptstyle Confidence(X \rightarrow Y)= \frac{Support(X \cap Y)}{(Support(X)}$$
+$$\textstyle Confidence(X \rightarrow Y)= \frac{Support(X \cap Y)}{(Support(X)}$$
 
 **Lift:** Measures how much more likely X and Y occur together than if they were independent:
 
@@ -114,11 +114,11 @@ For this analysis, I have set:
 - Lift > 1, to view only non-random associations
 
 ```python
-# FP tree creation
+# Find frequent itemsets using FP-Growth
 from mlxtend.frequent_patterns import fpgrowth, association_rules
 frequent_itemsets = fpgrowth(basket, min_support=0.005, use_colnames=True)
 
-# association rule mining
+# Find association rules from frequent itemsets
 rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
 rules = rules[rules['confidence'] > 0.3]
 rules = rules.sort_values(by='lift', ascending=False)
