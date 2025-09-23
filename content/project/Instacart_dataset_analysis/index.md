@@ -137,6 +137,7 @@ display(rules[['antecedents', 'consequents', 'support',	'confidence',	'lift']	])
 ```
 Output:
 ![instacart](/images/instacart232338.png)
+
 Customers buying Organic Strawberries and Organic Hass Avocado together also buy Bag of Organic Bananas with 46% confidence and a lift of 3.91, and buying Organic Raspberries predicts a purchase of Organic Strawberries with 30% confidence and lift 3.63. Many rules have Bananas as a common consequent. 
 
 **Insights like these can guide targeted marketing, promotions, product placement, and inventory planning.**
