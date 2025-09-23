@@ -46,11 +46,14 @@ tags:
 img {
     display: block;   /* ensures it behaves like a block element */
     margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 pre + img,
 p + img,
 div + img {
     margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
 }
 
 </style>
@@ -142,16 +145,7 @@ Customers buying Organic Strawberries and Organic Hass Avocado together also buy
 
 **Insights like these can guide targeted marketing, promotions, product placement, and inventory planning.**
 
-Most of the association rules were initially dominated by produce items due to their high purchase frequency. When I performed FP growth on non-produce items, the high confidence and high lift relationships were between different flavors or variations of the same product. For example, `Lime Sparkling Water → Grapefruit Sparkling Water` purchase pattern has a confidence of 0.25 and a lift of 10, and `(Passionfruit Sparkling Water, Lime Sparkling Water) → Grapefruit Sparkling Water`  purchase pattern has a much higher confidence of 0.72 and lift of 28. Similar high lift relationships can be found between products like `Chocolate Sea Salt → Coconut Chocolate Bar` 
-
-frozenset({'Chocolate Sea Salt'})	frozenset({'Coconut  Chocolate Bar'})	0.002019679	0.001417586	0.000647821	0.32075471698113206	226.2683100020288
-
-
-frozenset({'Organic Pinto Beans'})	frozenset({'Organic Black Beans'})	0.00293425	0.012011371171184903	0.000701171	0.23896103896103896	19.894567868679545
-
-frozenset({'Apple Pie Fruit & Nut Food Bar'})	frozenset({'Cherry Pie Fruit & Nut Bar'})	0.0019206	0.001463314	0.000594471	0.30952380952380953	211.52244543650792
-
-frozenset({'Broccoli & Apple Stage 2 Baby Food'})	frozenset({'Baby Food Stage 2 Blueberry Pear & Purple Carrot'})	0.00165385	0.002362643	0.000510636	0.3087557603686636	130.6823695555225
+Most of the association rules were initially dominated by produce items due to their high purchase frequency. When I performed FP growth on non-produce items, the high confidence and high lift relationships were between different flavors or variations of the same product. For example, `Lime Sparkling Water → Grapefruit Sparkling Water` purchase pattern has a confidence of 0.25 and a lift of 10, while `(Passionfruit Sparkling Water, Lime Sparkling Water) → Grapefruit Sparkling Water`  purchase pattern has a much higher confidence of 0.72 and lift of 28. Similar high lift relationships can be found between products like `Chocolate Sea Salt → Coconut Chocolate Bar` (Conf: 0.32, Lift: 226), `Organic Pinto Beans →  Organic Black Beans` (Conf: 0.24, Lift: 20), `Apple Pie Fruit & Nut Food Bar → Cherry Pie Fruit & Nut Bar` (Conf: 0.31, Lift: 212), `Broccoli & Apple Stage 2 Baby Food → Blueberry Pear & Purple Carrot Stage 2 Baby Food` *Conf: 0.31, Lift: 131)
 
 -----
 
