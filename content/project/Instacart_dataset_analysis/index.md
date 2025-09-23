@@ -228,10 +228,10 @@ node_size=node_size-node_size.min()*0.6; # normalization
 node_size=(node_size/node_size.max()*0.5).to_list() # normalization
 aisle_support_dict=dict(zip(all_aisle_names,node_size))
 ```
+In the network plot, the nodes are aisles, and edges represent aisle-to-aisle relationships. Node are shown as circles, with its size representing aisle support. The edges/relationships are shown as arrows, with its width and color encoding the strength of the relationship: lift and confidence.
 
-Now we plot the network plot using networkx library. the nodes are basically aisles, and the relationships between aisles are edges. node size, and relationship line thickness and line color will be encoded by support anconfidecne 
 
-```pyhton
+```python
 import networkx as nx
 G = nx.DiGraph()
 
