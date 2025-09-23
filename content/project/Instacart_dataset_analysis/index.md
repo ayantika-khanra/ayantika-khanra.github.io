@@ -145,13 +145,21 @@ Customers buying Organic Strawberries and Organic Hass Avocado together also buy
 
 **Insights like these can guide targeted marketing, promotions, product placement, and inventory planning.**
 
-When I performed FP growth on non-produce items, the high confidence and high lift relationships were between different flavors or variations of the same product. For example, `Lime Sparkling Water → Grapefruit Sparkling Water` purchase pattern has a confidence of 0.25 and a lift of 10, while `(Passionfruit Sparkling Water, Lime Sparkling Water) → Grapefruit Sparkling Water`  purchase pattern has a much higher confidence of 0.72 and lift of 28. 
 
-Similar high lift relationships can be found between different flavour of the same products like 
+#### Interesting relationships Other than these high support items, by reducing the support threshold reducing
+
+When I performed FP growth on non-produce items, the high confidence and high lift relationships were between different flavors or variations of the same product. For example, 
+
+Similar high lift relationships can be found between similar or different flavour of the same products like 
+- `Lime Sparkling Water → Grapefruit Sparkling Water` (Conf: 0.25, Lift:  10)
+- `(Passionfruit Sparkling Water, Lime Sparkling Water) → Grapefruit Sparkling Water` (Conf: 0.72, Lift: 28)
+- `Total 2% Lowfat Greek Strained Yogurt With Blueberry → Total 2% with Strawberry Lowfat Greek Strained Yogurt` (Conf: 0.36, Lift: 49)
 - `Chocolate Sea Salt → Coconut Chocolate Bar` (Conf: 0.32, Lift: 226)
-- `Organic Pinto Beans →  Organic Black Beans` (Conf: 0.24, Lift: 20)
 - `Apple Pie Fruit & Nut Food Bar → Cherry Pie Fruit & Nut Bar` (Conf: 0.31, Lift: 212)
+- `Organic Pinto Beans →  Organic Black Beans` (Conf: 0.24, Lift: 20)
 - `Broccoli & Apple Stage 2 Baby Food → Blueberry Pear & Purple Carrot Stage 2 Baby Food` (Conf: 0.31, Lift: 131)
+
+
 
 Other than these, notable relationships are found between not completely related products such as 85% Lean Ground Beef'})	frozenset({'Boneless Skinless Chicken Breasts'})	0.004892957	0.015913542516138374	0.000785007	0.16043613707165108	10.081736163330588
 
@@ -159,18 +167,16 @@ frozenset({'Sea Salt Pita Chips'})	frozenset({'Original Hummus'})	0.00538835	0.0
 
 While these rules are practically useful, grouping items by aisle can help understand broader patterns of which product categories drive purchases in other categories.
 
-# FP growth Algorithm Applied at Aisle Level Grouping  
+#### FP growth Algorithm Applied at Aisle Level Grouping  
+
+
+
+
+
+
+
 
 Due to the customers buying produce with a high frequency most of th associative rules mined were produce based. removing produce items from the dataset helped us mine rules from rest of the departments, however what we noticed is customers oftem buy different falvour of the same product with high lift and high confidence,
 
 
- thus once again dominating the mined results. for ecample  antecedents	consequents	antecedent support	consequent support	support	confidence	lift	representativity	leverage	conviction	zhangs_metric	jaccard	certainty	kulczynski
-760	(Cherry Pie Fruit & Nut Bar, Lemon Fruit & Nut...	(Apple Pie Fruit & Nut Food Bar)	0.000335	0.001921	0.000236	0.704545	366.836129
 
-(Baby Food Stage 2 Pumpkin Banana, Spinach Pea...	(Baby Food Stage 2 Blueberry Pear & Purple Car...
-
-
-
-(Total 0% Blueberry Acai Greek Yogurt, Fat Fre...	(Total 0% Raspberry Yogurt)
-
-while these rules remain important practically, we coul use the aisle groupijngs to draw larger scale conclusions from our own understanding, to realize what product group causes users to buy the second product group.
