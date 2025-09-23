@@ -194,12 +194,12 @@ orders_pt = (pd.read_csv("order_products__train.csv").
              merge(pd.read_csv("products.csv"), on='product_id', how='left')
              .merge(pd.read_csv("aisles.csv"), on='aisle_id', how='left'))
 
-# Drop columns that are not needed for aisle-level analysis
+# Drop columns that are not needed
 orders_pt = orders_pt.drop(columns=['product_id','add_to_cart_order',
                                     'reordered', 'product_name', 
                                     'aisle_id','department_id'])
 
-# Create basket dataframe: each row is an order, each column is an aisle
+# Creating basket dataframe: each row is an order, each column is an aisle
 orders_pt = orders_pt.groupby(['order_id','aisle'])['aisle'].count()
 orders_pt = orders_pt.apply(lambda x: 1 if x>1 else x)
 basket = orders_pt.unstack().fillna(0).astype('int8')
@@ -210,18 +210,18 @@ frequent_itemsets = fpgrowth(basket, min_support=0.075, use_colnames=True)
 rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
 rules = rules[(rules['confidence'] > 0.3) & (rules['lift'] > 1)]
 ```
-
-
-
-----------------------------------------------------------------------------------------------------------------------------------------
 Association rule mining can generate item-to-itemset or itemset-to-item relationships, but here we only focus on one aisle to one aisle relationships. This helps us create a clean network plot showing the strength of the relationships between aisles, without dealing with more complex multi-aisle combinations.
 ```python
-# the resultant consequent and antecedent lists are a frozenset,and they can have more than one items in this set, we only want to uncover one item to one item relationship for the ease of drawing the network graph
+# Each antecedent and consequent in the rules is a frozenset
+# and we only keep rules where both the antecedent and consequent
+# consist of a single item, representing a one-to-one aisle relationship.
 rules_1to1 = rules[
     (rules['antecedents'].apply(lambda x: len(x)) == 1) &
     (rules['consequents'].apply(lambda x: len(x)) == 1)]
+```
+In the network plot, each antecedent and consequent is represented as a circular node. We want the node size to reflect the support of that aisle (frequency of the aisle in orders). So, we create `aisle_support_dict` to map each aisle to a node size based on its support.
 
-# in network plot each of the antecedent and consequent name is shown in a circular node. we wanted to respresent the size of the node as the support of that aisle (not aisle to aisle relationship. Here we create aisle_support_dict to creat a node size corresponding to each aisle that codes its support
+```python
 all_aisle_names=pd.concat([rules_1to1['antecedents'],rules_1to1['consequents']]).apply(lambda x: list(x)[0]).to_list()
 node_size=pd.concat([rules_1to1['antecedent support'],rules_1to1['consequent support']])
 node_size=node_size-node_size.min()*0.6; # normalization
