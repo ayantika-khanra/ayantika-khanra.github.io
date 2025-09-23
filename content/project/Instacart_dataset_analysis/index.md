@@ -167,16 +167,106 @@ frozenset({'Sea Salt Pita Chips'})	frozenset({'Original Hummus'})	0.00538835	0.0
 
 While these rules are practically useful, grouping items by aisle can help understand broader patterns of which product categories drive purchases in other categories.
 
-#### FP growth Algorithm Applied at Aisle Level Grouping  
+
+
+
+Organic 90% Ground Beef	Organic Yellow Onion	0.211679	6.474165	0.000221
+Tonic Water	Limes	0.278351	6.053720	0.000412
+226108	Mild Diced Green Chiles	Limes	0.273764	5.953976	0.000549
+Bag of Large Lemons	Hass Avocados	0.225434	12.996005	0.000297
+Tortillas, Corn, Organic	Organic Hass Avocado	0.287805	5.177923	0.000450
+Organic Large Brown Eggs	Organic Avocado	0.231018	4.091188	0.001090
+Organic Tahini	Large Lemon	0.228261	3.681608	
+Organic Egg Whites	Organic Baby Spinach	0.238609	3.199884	0.001517
 
 
 
 
+#### Finding Connections at the Aisle Level Using Network Visualization
+
+Instead of focusing on individual products, we now aggregate at the aisle level. Each `basket` dataframe now has `aisle` as columns and `order_ID` as rows. Values indicate whether that aisle was part of the order (0 → False, 1 → True).
+
+```python
+import pandas as pd
+
+# Merge necessary dataframes
+orders_pt = (pd.read_csv("order_products__train.csv").
+             merge(pd.read_csv("products.csv"), on='product_id', how='left')
+             .merge(pd.read_csv("aisles.csv"), on='aisle_id', how='left'))
+
+# Drop columns that are not needed for aisle-level analysis
+orders_pt = orders_pt.drop(columns=['product_id','add_to_cart_order',
+                                    'reordered', 'product_name', 
+                                    'aisle_id','department_id'])
+
+# Create basket dataframe: each row is an order, each column is an aisle
+orders_pt = orders_pt.groupby(['order_id','aisle'])['aisle'].count()
+orders_pt = orders_pt.apply(lambda x: 1 if x>1 else x)
+basket = orders_pt.unstack().fillna(0).astype('int8')
+
+# Association rule mining
+from mlxtend.frequent_patterns import association_rules, fpgrowth
+frequent_itemsets = fpgrowth(basket, min_support=0.075, use_colnames=True)
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
+rules = rules[(rules['confidence'] > 0.3) & (rules['lift'] > 1)]
+```
 
 
 
+----------------------------------------------------------------------------------------------------------------------------------------
+Association rule mining can generate item-to-itemset or itemset-to-item relationships, but here we only focus on one aisle to one aisle relationships. This helps us create a clean network plot showing the strength of the relationships between aisles, without dealing with more complex multi-aisle combinations.
+```python
+# the resultant consequent and antecedent lists are a frozenset,and they can have more than one items in this set, we only want to uncover one item to one item relationship for the ease of drawing the network graph
+rules_1to1 = rules[
+    (rules['antecedents'].apply(lambda x: len(x)) == 1) &
+    (rules['consequents'].apply(lambda x: len(x)) == 1)]
 
-Due to the customers buying produce with a high frequency most of th associative rules mined were produce based. removing produce items from the dataset helped us mine rules from rest of the departments, however what we noticed is customers oftem buy different falvour of the same product with high lift and high confidence,
+# in network plot each of the antecedent and consequent name is shown in a circular node. we wanted to respresent the size of the node as the support of that aisle (not aisle to aisle relationship. Here we create aisle_support_dict to creat a node size corresponding to each aisle that codes its support
+all_aisle_names=pd.concat([rules_1to1['antecedents'],rules_1to1['consequents']]).apply(lambda x: list(x)[0]).to_list()
+node_size=pd.concat([rules_1to1['antecedent support'],rules_1to1['consequent support']])
+node_size=node_size-node_size.min()*0.6; # normalization
+node_size=(node_size/node_size.max()*0.5).to_list() # normalization
+aisle_support_dict=dict(zip(all_aisle_names,node_size))
+```
+
+Now we plot the network plot using networkx library. the nodes are basically aisles, and the relationships between aisles are edges. node size, and relationship line thickness and line color will be encoded by support anconfidecne 
+
+```pyhton
+import networkx as nx
+G = nx.DiGraph()
+
+for _, row in rules_1to1.iterrows():
+    a = list(row['antecedents'])[0]
+    c = list(row['consequents'])[0]
+    conf = row['confidence']
+    lift = row['lift']
+    supp = row['support']
+
+# lift is using as weight so that in spring latout thedistance between te nodes is deendetn pn lift of relationship. hufh lift rlationships stay closr to each other
+    G.add_edge(a, c, weight=(lift), confidence=conf, support=supp, lift=lift)
 
 
+plt.figure(figsize=(12, 10))
+pos = nx.spring_layout(G, k=1.5, seed=42)
 
+edges = G.edges(data=True)
+labels = {node: node.replace(" ", "\n") for node in G.nodes()}
+node_sizes = [aisle_support_dict[node] * 2000 for node in G.nodes()]
+# Draw nodes with size coded to indicate aisle support
+nx.draw_networkx_nodes(G, pos, node_color="lightblue",edgecolors="gray",  node_size=node_sizes)
+nx.draw_networkx_labels(G, pos,labels=labels, font_size=10)
+
+# Draw edges with width proportional to confidence
+nx.draw_networkx_edges(
+    G, pos, edgelist=edges,
+    width=[(d['lift']-1)*10 for (_,_,d) in edges], # relationship width=lift
+    edge_color=[d['confidence'] for (_,_,d) in edges],  # relationship color = confidence
+    edge_cmap=plt.cm.Greens,    alpha=0.7,
+    edge_vmin=0, edge_vmax=rules_1to1['confidence'].max(),#colormap normalization
+    connectionstyle="arc3,rad=0.05", # slightly curved connections to properly show bir=durectional connections
+    arrows=True, arrowstyle='-|>', arrowsize=15
+)
+
+plt.axis("off")
+plt.show()
+```
