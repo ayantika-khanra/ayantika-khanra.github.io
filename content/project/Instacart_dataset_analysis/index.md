@@ -274,26 +274,34 @@ plt.show()
  > **Note:** The edge colors and node sizes were scaled separately to reflect confidence and support, respectively.
 
 
-#### 5. 
-bubble heatmap layout to
-Visualizing aisle to aisle connection with lift and confidence encoded in 
+#### 5. Bubble heatmap layout to visualize all aisle to aisle relationships 
 
-here we choose the top 40 most aisles having the top most support. then the support and confiencen is calculated. however we should say that here we needed to calculate aisle aisle lift and onfidence for each and every combination. This was calculated manually from the basket using the support lift and coniecne equations.
+Here I visualize aisle-to-aisle connections, encoding **lift** and **confidence** for each pair of aisles. We focus on the top 40 aisles with the highest support in orders.  
 
-```pyhton
+The support, confidence, and lift of relationship between every pair of these aisles were calculated from the basket using the standard equations. 
+
+```python
+# top 40 aisles with the highest support selected
 num_aisles_selected=40
 selected_aisles=(basket.sum().sort_values(ascending=False).
                  iloc[0:num_aisles_selected].index)
 basket=basket[selected_aisles]
 
+# Compute support for each aisle to aisle relationship, store in a matrix
 support_matrix=np.zeros([num_aisles_selected,num_aisles_selected])
 for i in range(num_aisles_selected):
   for j in range(num_aisles_selected):
     support_matrix[i][j]=(basket[selected_aisles[i]] & basket[selected_aisles[j]]).sum()
 support_matrix=support_matrix/basket.shape[0]
-# in this support matrix the diagonal quantities np.diag(support_matrix) represent support of a single aisle, not a aisle to aisle relationshio support
+
+# Diagonal entries represent support of individual aisles, and thus
+# can be sued to calculate confidence 
 confidence_matrix=support_matrix/(np.diag(support_matrix).reshape(-1,1))
-# the diagonal position represengint a single aisle, doesn't have a meaningful confidence value thus it was filled with nan values.
+
+# Diagonal confidence is not meaningful since it represents
+# a single aisle, thus it is set to NaN 
 np.fill_diagonal(confidence_matrix, np.nan)  
+
+# Compute lift matrix
 lift_matrix=confidence_matrix/(np.diag(support_matrix).reshape(1,-1))
 ```
