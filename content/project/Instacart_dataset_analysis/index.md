@@ -61,7 +61,7 @@ div + img {
 
 Understanding customer purchasing behavior is important for retail businesses. Market Basket Analysis (MBA) is performed to uncover patterns in what products are frequently bought together. Here, I will discuss how I applied FP-Growth algorithm for mining frequent itemsets on a retail dataset to generate insights into customer purchase pattern.
 
-#### Data Preparation
+#### 1. Data Preparation
 
 To focus on the most popular products, I only selected the top 1000 most frequently purchased products for this analysis, and I have used `order_products__train.csv` for this analysis. Each order was then transformed into a basket format, where rows represent individual orders IDs and columns represent product names. A value of 1 indicates that the specific product was purchased in that order ID.
 
@@ -105,7 +105,7 @@ basket = basket.reindex(all_order_IDs, fill_value=0)
 ```
 Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxtend library.
 
-#### Applying FP-Growth Algorithm for Association Rule Mining
+#### 2. Applying FP-Growth Algorithm for Association Rule Mining
 
 **Support** measures how often an item or combination of items appears in the same order, divided by the total number of orders, indicating which items or item combinations are frequent enough to matter.
 
@@ -146,7 +146,7 @@ Customers buying Organic Strawberries and Organic Hass Avocado together also buy
 **Insights like these can guide targeted marketing, promotions, product placement, and inventory planning.**
 
 
-#### Interesting relationships Other than these high support items, by reducing the support threshold reducing
+#### 3. Interesting relationships Other than these high support items, by reducing the support threshold reducing
 
 When I performed FP growth on non-produce items, the high confidence and high lift relationships were between different flavors or variations of the same product. For example, 
 
@@ -182,7 +182,7 @@ Organic Egg Whites	Organic Baby Spinach	0.238609	3.199884	0.001517
 
 
 
-#### Finding Connections at the Aisle Level Using Network Visualization
+#### 4. Finding Connections at the Aisle Level Using Network Visualization
 
 Instead of focusing on individual products, we now aggregate at the aisle level. Each `basket` dataframe now has `aisle` as columns and `order_ID` as rows. Values indicate whether that aisle was part of the order (0 → False, 1 → True).
 
@@ -271,4 +271,29 @@ plt.axis("off")
 plt.show()
 ```
 ![instacart](/images/instacart032914.png)
+ > **Note:** The edge colors and node sizes were scaled separately to reflect confidence and support, respectively.
 
+
+#### 5. 
+bubble heatmap layout to
+Visualizing aisle to aisle connection with lift and confidence encoded in 
+
+here we choose the top 40 most aisles having the top most support. then the support and confiencen is calculated. however we should say that here we needed to calculate aisle aisle lift and onfidence for each and every combination. This was calculated manually from the basket using the support lift and coniecne equations.
+
+```pyhton
+num_aisles_selected=40
+selected_aisles=(basket.sum().sort_values(ascending=False).
+                 iloc[0:num_aisles_selected].index)
+basket=basket[selected_aisles]
+
+support_matrix=np.zeros([num_aisles_selected,num_aisles_selected])
+for i in range(num_aisles_selected):
+  for j in range(num_aisles_selected):
+    support_matrix[i][j]=(basket[selected_aisles[i]] & basket[selected_aisles[j]]).sum()
+support_matrix=support_matrix/basket.shape[0]
+# in this support matrix the diagonal quantities np.diag(support_matrix) represent support of a single aisle, not a aisle to aisle relationshio support
+confidence_matrix=support_matrix/(np.diag(support_matrix).reshape(-1,1))
+# the diagonal position represengint a single aisle, doesn't have a meaningful confidence value thus it was filled with nan values.
+np.fill_diagonal(confidence_matrix, np.nan)  
+lift_matrix=confidence_matrix/(np.diag(support_matrix).reshape(1,-1))
+```
