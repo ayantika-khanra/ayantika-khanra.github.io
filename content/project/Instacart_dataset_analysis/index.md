@@ -271,7 +271,7 @@ plt.axis("off")
 plt.show()
 ```
 ![instacart](/images/instacart032914.png)
- > **Note:** The edge colors and node sizes were scaled separately to reflect confidence and support, respectively.
+Note: The edge and node legends were created separately.
 
 
 #### 5. Bubble heatmap layout to visualize all aisle to aisle relationships 
@@ -305,3 +305,41 @@ np.fill_diagonal(confidence_matrix, np.nan)
 # Compute lift matrix
 lift_matrix=confidence_matrix/(np.diag(support_matrix).reshape(1,-1))
 ```
+
+A bubble heatmap was created using scatter plot, with each bubble representing relationship between two aisles. size of the bubble shows lift whereas color of the bubble represents 
+the diagonal positions were not plotted as it representa a ailes relationship with itself which is not meaningful
+
+```python
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+figsize=(7,7)
+plt.figure(figsize=figsize)
+
+# Bubble color represents relationship confidence
+cmap = plt.cm.magma_r
+norm = mpl.colors.Normalize(vmin=0, vmax=np.nanmax(confidence_matrix))
+sm = mpl.cm.ScalarMappable(cmap=cmap, norm=norm)
+
+# Bubble size represents relationship lift subtracted by 1. 
+# Relationships with lift<1 were not visualized (size set to 0)
+size_matrix=(lift_matrix-1); 
+size_matrix=np.where(size_matrix>0, size_matrix, 0)
+
+# Plotting the bubbles in a grid
+for i in range(len(confidence_matrix)):
+  for j in range(len(confidence_matrix)):
+    if (i!=j) & (size_matrix[i][j]>0):
+      plt.scatter(j,i,
+                  s=size_matrix[i][j]*30,                  color=sm.to_rgba(confidence_matrix[i][j]))
+
+# Axis and Label setup
+plt.gca().invert_yaxis()
+plt.gca().xaxis.tick_top()         # move x-axis ticks to the top
+plt.gca().xaxis.set_label_position('top')  # move x-axis label to the top
+plt.ylabel('Antecedants', fontweight='bold', fontsize=12)
+plt.xlabel('Consequents', fontweight='bold', fontsize=12)
+plt.xticks(range(len(selected_aisles)), selected_aisles,  rotation=90)
+plt.yticks(range(len(selected_aisles)), selected_aisles)
+plt.show()
+```
+Note: The edge and node legends were created separately.
