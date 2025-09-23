@@ -270,3 +270,5 @@ nx.draw_networkx_edges(
 plt.axis("off")
 plt.show()
 ```
+![instacart](/images/instacart032914.png)
+
