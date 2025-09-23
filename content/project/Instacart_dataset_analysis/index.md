@@ -229,8 +229,6 @@ node_size=(node_size/node_size.max()*0.5).to_list() # normalization
 aisle_support_dict=dict(zip(all_aisle_names,node_size))
 ```
 In the network plot, the nodes are aisles, and edges represent aisle-to-aisle relationships. Node are shown as circles, with its size representing aisle support. The edges/relationships are shown as arrows, with its width and color encoding the strength of the relationship: lift and confidence.
-
-
 ```python
 import networkx as nx
 G = nx.DiGraph()
@@ -242,8 +240,8 @@ for _, row in rules_1to1.iterrows():
     lift = row['lift']
     supp = row['support']
 
-# lift is using as weight so that in spring latout thedistance between te nodes is deendetn pn lift of relationship. hufh lift rlationships stay closr to each other
-    G.add_edge(a, c, weight=(lift), confidence=conf, support=supp, lift=lift)
+    # We Use lift as a weight, higher lift pulls nodes closer in spring layout
+    G.add_edge(a, c, weight=lift, confidence=conf, support=supp, lift=lift)
 
 
 plt.figure(figsize=(12, 10))
@@ -251,20 +249,22 @@ pos = nx.spring_layout(G, k=1.5, seed=42)
 
 edges = G.edges(data=True)
 labels = {node: node.replace(" ", "\n") for node in G.nodes()}
-node_sizes = [aisle_support_dict[node] * 2000 for node in G.nodes()]
-# Draw nodes with size coded to indicate aisle support
-nx.draw_networkx_nodes(G, pos, node_color="lightblue",edgecolors="gray",  node_size=node_sizes)
-nx.draw_networkx_labels(G, pos,labels=labels, font_size=10)
 
-# Draw edges with width proportional to confidence
+# Node sizes scaled according to support
+node_sizes = [aisle_support_dict[node] * 2000 for node in G.nodes()]
+
+# Draw nodes and labels
+nx.draw_networkx_nodes(G, pos, node_color="lightblue", edgecolors="gray", node_size=node_sizes)
+nx.draw_networkx_labels(G, pos, labels=labels, font_size=10)
+
+# Draw edges: line width proportional to lift, color proportional to confidence
 nx.draw_networkx_edges(
     G, pos, edgelist=edges,
-    width=[(d['lift']-1)*10 for (_,_,d) in edges], # relationship width=lift
-    edge_color=[d['confidence'] for (_,_,d) in edges],  # relationship color = confidence
-    edge_cmap=plt.cm.Greens,    alpha=0.7,
-    edge_vmin=0, edge_vmax=rules_1to1['confidence'].max(),#colormap normalization
-    connectionstyle="arc3,rad=0.05", # slightly curved connections to properly show bir=durectional connections
-    arrows=True, arrowstyle='-|>', arrowsize=15
+    width=[(d['lift']-1)*10 for (_,_,d) in edges],
+    edge_color=[d['confidence'] for (_,_,d) in edges],
+    edge_cmap=plt.cm.Greens, alpha=0.7,
+    edge_vmin=0, edge_vmax=rules_1to1['confidence'].max(),
+    connectionstyle="arc3,rad=0.05", arrows=True, arrowstyle='-|>', arrowsize=15
 )
 
 plt.axis("off")
