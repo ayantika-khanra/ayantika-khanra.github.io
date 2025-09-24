@@ -102,7 +102,10 @@ orders_pt=orders_pt.apply(lambda x: 1 if x>1 else x)
 # if product was purchased
 basket=orders_pt.unstack().fillna(0).astype('int8')
 basket = basket.reindex(all_order_IDs, fill_value=0)
+display(basket)
 ```
+![instacart](/images/instacart145455.png)
+
 Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxtend library.
 
 #### 2. Applying FP-Growth Algorithm for Association Rule Mining
