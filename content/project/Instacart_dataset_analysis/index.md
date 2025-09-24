@@ -343,7 +343,8 @@ plt.xticks(range(len(selected_aisles)), selected_aisles,  rotation=90)
 plt.yticks(range(len(selected_aisles)), selected_aisles)
 plt.show()
 ```
-<p style="color: gray; font-size: 0.9em;">
+![instacart](/images/instacart140406.png)
 
+<p style="color: gray; font-size: 0.9em;">
 Note: The edge and node legends were created separately.
 </p>
