@@ -1,7 +1,7 @@
 ---
 title: Market Basket Analysis with FP-Growth on Instacart Data
 summary: 
-date: 2025-08-29
+date: 
 authors:
   - admin
 tags:
