@@ -42,7 +42,7 @@ tags:
   .highlight pre,
   .chroma pre,
   pre code {
-    font-size: 0.4 rem;   /* smaller font size */
+    font-size: 0.1 rem;   /* smaller font size */
     line-height: 0.8;    /* optional: adjust line spacing */
   }
 
