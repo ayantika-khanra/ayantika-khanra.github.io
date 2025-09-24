@@ -77,8 +77,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
       <img src="/images/instacart032914.png" alt="Instacart_dataset_market_basket">
       <h3>Association Rule Mining on the Instacart Dataset: Insights from Market Basket Analysis</h3>
     </a>
-    <p class="tag">Tag:  Data Visualization, Market Basket Analysis, FP-Growth, Network plots, Python (NumPy, Pandas, matplotlib, mlxtend, networkx)
-</p>
+    <p class="tag">Tag:  Data Visualization, Market Basket Analysis, FP-Growth, Network plots, Python (NumPy, Pandas, matplotlib, mlxtend, networkx)</p>
     <p></p>
   </div>
 
