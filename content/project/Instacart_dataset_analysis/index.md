@@ -143,10 +143,17 @@ Output:
 
 Customers buying Organic Strawberries and Organic Hass Avocado together also buy Bag of Organic Bananas with 46% confidence and a lift of 3.91, and buying Organic Raspberries predicts a purchase of Organic Strawberries with 30% confidence and lift 3.63. Many rules have Bananas as a common consequent. Most of the association rules were initially dominated by produce items due to their high purchase frequency.
 
+Some other interesting patterns that are a common combination for meal or beverage recipes were found by lowering the minimum support
+- `Organic 90% Ground Beef → Organic Yellow Onion` (Conf: 0.21, Lift: 6.5)
+- `Tonic Water → Limes` (Conf: 0.28, Lift: 6.0)
+- `Organic Large Brown Eggs → Organic Avocado` (Conf: 0.23, Lift: 4.1)
+- `Organic Egg Whites → Organic Baby Spinach (Conf: 0.24, Lift: 3.2)
+- `Mild Diced Green Chiles → Limes` (Conf: 0.27, Lift: 5.9)
+- `Tortillas, Corn, Organic → Organic Hass Avocado` (Conf: 0.29, Lift: 5.18)
+
+
 **Insights like these can guide targeted marketing, promotions, product placement, and inventory planning.**
 
-
-#### 3. Interesting relationships Other than these high support items, by reducing the support threshold reducing
 
 When I performed FP growth on non-produce items, the high confidence and high lift relationships were between different flavors or variations of the same product. For example, 
 
@@ -159,8 +166,6 @@ Similar high lift relationships can be found between similar or different flavou
 - `Organic Pinto Beans →  Organic Black Beans` (Conf: 0.24, Lift: 20)
 - `Broccoli & Apple Stage 2 Baby Food → Blueberry Pear & Purple Carrot Stage 2 Baby Food` (Conf: 0.31, Lift: 131)
 
-
-
 Other than these, notable relationships are found between not completely related products such as 85% Lean Ground Beef'})	frozenset({'Boneless Skinless Chicken Breasts'})	0.004892957	0.015913542516138374	0.000785007	0.16043613707165108	10.081736163330588
 
 frozenset({'Sea Salt Pita Chips'})	frozenset({'Original Hummus'})	0.00538835	0.021782042390384806	0.0009603	0.1782178217821782	8.181869201615752
@@ -169,15 +174,6 @@ While these rules are practically useful, grouping items by aisle can help under
 
 
 
-
-Organic 90% Ground Beef	Organic Yellow Onion	0.211679	6.474165	0.000221
-Tonic Water	Limes	0.278351	6.053720	0.000412
-226108	Mild Diced Green Chiles	Limes	0.273764	5.953976	0.000549
-Bag of Large Lemons	Hass Avocados	0.225434	12.996005	0.000297
-Tortillas, Corn, Organic	Organic Hass Avocado	0.287805	5.177923	0.000450
-Organic Large Brown Eggs	Organic Avocado	0.231018	4.091188	0.001090
-Organic Tahini	Large Lemon	0.228261	3.681608	
-Organic Egg Whites	Organic Baby Spinach	0.238609	3.199884	0.001517
 
 
 
