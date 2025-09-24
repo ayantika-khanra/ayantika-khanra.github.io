@@ -155,9 +155,7 @@ Some other interesting patterns that are a common combination for meal or bevera
 **Insights like these can guide targeted marketing, promotions, product placement, and inventory planning.**
 
 
-When I performed FP growth on non-produce items, the high confidence and high lift relationships were between different flavors or variations of the same product. For example, 
-
-Similar high lift relationships can be found between similar or different flavour of the same products like 
+When I performed FP growth on non-produce items, the high confidence and high lift relationships were between different flavors or variations of the same product. For example
 - `Lime Sparkling Water → Grapefruit Sparkling Water` (Conf: 0.25, Lift:  10)
 - `(Passionfruit Sparkling Water, Lime Sparkling Water) → Grapefruit Sparkling Water` (Conf: 0.72, Lift: 28)
 - `Total 2% Lowfat Greek Strained Yogurt With Blueberry → Total 2% with Strawberry Lowfat Greek Strained Yogurt` (Conf: 0.36, Lift: 49)
@@ -166,9 +164,9 @@ Similar high lift relationships can be found between similar or different flavou
 - `Organic Pinto Beans →  Organic Black Beans` (Conf: 0.24, Lift: 20)
 - `Broccoli & Apple Stage 2 Baby Food → Blueberry Pear & Purple Carrot Stage 2 Baby Food` (Conf: 0.31, Lift: 131)
 
-Other than these, notable relationships are found between not completely related products such as 85% Lean Ground Beef'})	frozenset({'Boneless Skinless Chicken Breasts'})	0.004892957	0.015913542516138374	0.000785007	0.16043613707165108	10.081736163330588
-
-frozenset({'Sea Salt Pita Chips'})	frozenset({'Original Hummus'})	0.00538835	0.021782042390384806	0.0009603	0.1782178217821782	8.181869201615752
+Other than these, interesting relationships were observed between products that are not directly related,
+- `85% Lean Ground Beef → Boneless Skinless Chicken Breasts` (Conf: 0.16, Lift: 10.1)
+- `Sea Salt Pita Chips → Original Hummus` (Conf: 0.18, Lift: 8.2)
 
 While these rules are practically useful, grouping items by aisle can help understand broader patterns of which product categories drive purchases in other categories.
 
