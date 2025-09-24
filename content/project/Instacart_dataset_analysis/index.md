@@ -143,17 +143,13 @@ Output:
 
 Customers buying Organic Strawberries and Organic Hass Avocado together also buy Bag of Organic Bananas with 46% confidence and a lift of 3.91, and buying Organic Raspberries predicts a purchase of Organic Strawberries with 30% confidence and lift 3.63. Many rules have Bananas as a common consequent. Most of the association rules were initially dominated by produce items due to their high purchase frequency.
 
-Some other interesting patterns that are a common combination for meal or beverage recipes were found by lowering the minimum support
+Some other interesting product combinations, often seen together in meals or beverage recipes, were seen after lowering the minimum support:
 - `Organic 90% Ground Beef → Organic Yellow Onion` (Conf: 0.21, Lift: 6.5)
 - `Tonic Water → Limes` (Conf: 0.28, Lift: 6.0)
 - `Organic Large Brown Eggs → Organic Avocado` (Conf: 0.23, Lift: 4.1)
 - `Organic Egg Whites → Organic Baby Spinach (Conf: 0.24, Lift: 3.2)
 - `Mild Diced Green Chiles → Limes` (Conf: 0.27, Lift: 5.9)
 - `Tortillas, Corn, Organic → Organic Hass Avocado` (Conf: 0.29, Lift: 5.18)
-
-
-**Insights like these can guide targeted marketing, promotions, product placement, and inventory planning.**
-
 
 When I performed **FP growth on non-produce items**, the high confidence and high lift relationships were primarily between different flavors or variations of the same product. For example
 - `Lime Sparkling Water → Grapefruit Sparkling Water` (Conf: 0.25, Lift:  10)
@@ -167,6 +163,8 @@ When I performed **FP growth on non-produce items**, the high confidence and hig
 Other than this kind of pairings, interesting relationships were observed between products that are not directly related:
 - `85% Lean Ground Beef → Boneless Skinless Chicken Breasts` (Conf: 0.16, Lift: 10.1)
 - `Sea Salt Pita Chips → Original Hummus` (Conf: 0.18, Lift: 8.2)
+
+**Insights like these can guide targeted marketing, promotions, product placement, and inventory planning.**
 
 While these rules are practically useful, grouping items by aisle can help understand broader patterns of which product categories drive purchases in other categories.
 
