@@ -42,8 +42,8 @@ tags:
   .highlight pre,
   .chroma pre,
   pre code {
-    font-size: 0.6rem;   /* smaller font size */
-    line-height: 0.8;    /* optional: adjust line spacing */
+    font-size: 0.8rem;   /* smaller font size */
+    line-height: 1.1;    /* optional: adjust line spacing */
   }
 
 img {
