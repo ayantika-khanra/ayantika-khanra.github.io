@@ -1,5 +1,5 @@
 ---
-title: Market Basket Analysis with FP-Growth on Instacart Data
+title: Association Rule Mining on the Instacart Dataset: Insights from Market Basket Analysis
 summary: 
 date: 
 authors:
