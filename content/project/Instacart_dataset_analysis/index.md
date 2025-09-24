@@ -272,8 +272,9 @@ plt.show()
 ```
 ![instacart](/images/instacart032914.png)
 
+<p style="color: gray; font-size: 0.6em;">
 Note: The edge and node legends were created separately.
-
+</p>
 
 #### 5. Bubble heatmap layout to visualize all aisle to aisle relationships 
 
@@ -346,5 +347,5 @@ plt.show()
 ![instacart](/images/instacart140406.png)
 
 <p style="color: gray; font-size: 0.6em;">
-Note: The edge and node legends were created separately.
+Note: The legends were created separately.
 </p>
