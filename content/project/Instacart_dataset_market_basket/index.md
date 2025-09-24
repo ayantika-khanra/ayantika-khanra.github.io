@@ -1,15 +1,12 @@
 ---
-title: Association Rule Mining on the Instacart Dataset: Insights from Market Basket Analysis
+title: Association
 summary: 
-date: 
+date:
 authors:
   - admin
 tags:
   - Data Visualization
   - Market Basket Analysis
-  - FP-Growth
-  - Network plots 
-  - Python (NumPy, Pandas, matplotlib, mlxtend, networkx)
 ---
 
 
