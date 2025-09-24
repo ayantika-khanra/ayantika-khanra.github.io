@@ -1,5 +1,5 @@
 ---
-title: Association Rule Mining on the Instacart Dataset Insights from Market Basket Analysis
+title: Market Basket Analysis of the Instacart Dataset using Association Rule Mining
 summary: 
 date:
 authors:

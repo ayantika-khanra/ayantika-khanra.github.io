@@ -75,9 +75,9 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
   <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/instacart_dataset_market_basket/">
       <img src="/images/instacart032914.png" alt="Instacart_dataset_market_basket">
-      <h3>"Association Rule Mining on the Instacart Dataset: Insights from Market Basket Analysis"</h3>
+      <h3>Market Basket Analysis of the Instacart Dataset using Association Rule Mining</h3>
     </a>
-    <p class="tag">Tag:  Data Visualization</p>
+    <p class="tag">Tag:  Data Visualization, FP Growth, Network plots </p>
     <p></p>
   </div>
 
