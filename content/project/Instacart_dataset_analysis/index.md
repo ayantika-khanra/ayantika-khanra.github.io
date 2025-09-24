@@ -345,6 +345,6 @@ plt.show()
 ```
 ![instacart](/images/instacart140406.png)
 
-<p style="color: gray; font-size: 0.9em;">
+<p style="color: gray; font-size: 0.6em;">
 Note: The edge and node legends were created separately.
 </p>
