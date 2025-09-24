@@ -271,6 +271,7 @@ plt.axis("off")
 plt.show()
 ```
 ![instacart](/images/instacart032914.png)
+
 Note: The edge and node legends were created separately.
 
 
@@ -306,8 +307,7 @@ np.fill_diagonal(confidence_matrix, np.nan)
 lift_matrix=confidence_matrix/(np.diag(support_matrix).reshape(1,-1))
 ```
 
-A bubble heatmap was created using scatter plot, with each bubble representing relationship between two aisles. size of the bubble shows lift whereas color of the bubble represents 
-the diagonal positions were not plotted as it representa a ailes relationship with itself which is not meaningful
+A bubble heatmap was created using a scatter plot, where each bubble represents the relationship between two aisles. The size of the bubble represents the lift, while the color represents the confidence. Diagonal positions were excluded, as they represent an aisle’s relationship with itself, which is not meaningful.
 
 ```python
 import matplotlib as mpl
@@ -330,7 +330,8 @@ for i in range(len(confidence_matrix)):
   for j in range(len(confidence_matrix)):
     if (i!=j) & (size_matrix[i][j]>0):
       plt.scatter(j,i,
-                  s=size_matrix[i][j]*30,                  color=sm.to_rgba(confidence_matrix[i][j]))
+                  s=size_matrix[i][j]*30,                  
+color=sm.to_rgba(confidence_matrix[i][j]))
 
 # Axis and Label setup
 plt.gca().invert_yaxis()
@@ -342,4 +343,6 @@ plt.xticks(range(len(selected_aisles)), selected_aisles,  rotation=90)
 plt.yticks(range(len(selected_aisles)), selected_aisles)
 plt.show()
 ```
+<p style="color: gray; font-size: 0.9em;">
 Note: The edge and node legends were created separately.
+</p>
