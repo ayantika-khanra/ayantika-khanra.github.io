@@ -353,13 +353,14 @@ plt.show()
 Note: The legends were created separately.
 </p>
 
-From this heatmap we can make the following observations
-- because fresh fruits, begetables and packaging vegetables are very frequently bought items, they appear as consequent of many products with high confidence (dark colored cirlces) relationship. however not all of these relationships are relevant and not all of their lifts are high (shown with irle size). 
-- highest lift relationship is seen here in the top 40 aisles as are found to be canned meals beans bidirectional arrow sign canned jar vegetables
-- moderate lift relationships are seen
-chips pretzels fresh dips tarpanedes
-cookie cakes chips pretzels
-cookie cakes crackersfrozen breakfast frozen meals
-fresh herbs spices seasonings
-spices seasonings baking ingredients
-canned jarred vegetables spices seasonings
+Observations from the heatmap:
+- Fresh fruits, fresh vegetables, and packaged vegetables are the most frequently purchsased aisles. As a result, they appear as consequents for many products with high confidence (dark-colored circles). But, not all of these associations are meaningful, since some of their lifts (circle size) are low.
+- The strongest lift relationship in the top 40 aisles is `canned meals beans ⟷ canned jarred vegetables`.
+- Several moderate-lift relationships are also visible, including:
+	- `Chips pretzels ⟷ fresh dips tapenades`
+        - `Cookie cakes ⟷ chips  pretzels`
+        - `Cookie cakes ⟷ crackers`
+        - `frozen breakfast ⟷ frozen meals`
+        - `spices seasonings ⟷ Fresh herbs `
+        - `Spices seasonings ⟷ baking ingredients`
+        - `Spices seasonings ⟷ Canned jarred vegetables`
