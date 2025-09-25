@@ -7,7 +7,7 @@ authors:
 sidebar:
   left: true
   widgets:
-    - type: toc  
+    - type: tag_cloud 
 tags:
   - SQL
   - Postgres database
