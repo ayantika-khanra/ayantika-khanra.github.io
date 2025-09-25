@@ -4,6 +4,10 @@ summary:
 date:
 authors:
   - admin
+sidebar:
+  left: true
+  widgets:
+    - type: toc  
 tags:
   - SQL
   - Postgres database
