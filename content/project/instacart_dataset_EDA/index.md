@@ -1,15 +1,16 @@
 ---
-title: Market Basket Analysis of the Instacart Dataset using Association Rule Mining
+title: Exploratory data analysis of the Instacart Dataset
 summary: 
 date:
 authors:
   - admin
 tags:
+  - SQL
+  - Postgres database
+  - ERD diagrams
+  - Exploratory Data Analysis
   - Data Visualization
-  - Market Basket Analysis
-  - FP-Growth
-  - Network plots 
-  - Python (NumPy, Pandas, matplotlib, mlxtend, networkx)
+  - Python (Pandas, seaborn, SQLAlchemy)
 ---
 
 
