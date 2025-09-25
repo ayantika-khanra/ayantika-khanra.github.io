@@ -276,12 +276,10 @@ Note: The edge and node legends were created separately.
 
 The network plot shows a strong cluster around produce, with the following notable association rules:
 - `fresh herbs → fresh vegetables` shows a high-confidence, high-lift relationship
-- `fresh vegetables ↔ fresh fruit ↔ and packaged vegetables & fruits` form a triangle with strong bidirectional associations.
-- Similarly, `milk, packaged cheese, and yoghurt` form another triangle, with strong bidirectional associations.
+- `fresh vegetables ⟷ fresh fruit ⟷ and packaged vegetables & fruits` form a triangle with strong bidirectional associations.
+- Similarly, `milk ⟷ packaged cheese ⟷ and yoghurt` form another triangle, with strong bidirectional associations.
 
 #### 5. Bubble heatmap layout to visualize all aisle to aisle relationships 
-
-pp
 
 Here I visualize aisle-to-aisle connections, encoding **lift** and **confidence** for each pair of aisles. We focus on the top 40 aisles with the highest support in orders.  
 
@@ -354,3 +352,14 @@ plt.show()
 <p style="color: gray; font-size: 0.6em;">
 Note: The legends were created separately.
 </p>
+
+From this heatmap we can make the following observations
+- because fresh fruits, begetables and packaging vegetables are very frequently bought items, they appear as consequent of many products with high confidence (dark colored cirlces) relationship. however not all of these relationships are relevant and not all of their lifts are high (shown with irle size). 
+- highest lift relationship is seen here in the top 40 aisles as are found to be canned meals beans bidirectional arrow sign canned jar vegetables
+- moderate lift relationships are seen
+chips pretzels fresh dips tarpanedes
+cookie cakes chips pretzels
+cookie cakes crackersfrozen breakfast frozen meals
+fresh herbs spices seasonings
+spices seasonings baking ingredients
+canned jarred vegetables spices seasonings
