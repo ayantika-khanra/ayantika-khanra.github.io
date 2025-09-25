@@ -358,7 +358,7 @@ Observations from the heatmap:
 - The strongest lift relationship in the top 40 aisles is `canned meals beans ⟷ canned jarred vegetables`.
 - Several moderate-lift relationships are also visible, including:
 	- `Chips pretzels ⟷ fresh dips tapenades`
-        - `Cookie cakes ⟷ chips  pretzels`
+       - `Cookie cakes ⟷ chips  pretzels`
         - `Cookie cakes ⟷ crackers`
         - `frozen breakfast ⟷ frozen meals`
         - `spices seasonings ⟷ Fresh herbs `
