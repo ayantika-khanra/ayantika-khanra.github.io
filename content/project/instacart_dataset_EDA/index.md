@@ -106,12 +106,13 @@ sns.lineplot(data=df, x="order_hour_of_day", y="number_of_orders_placed",
 For readability, portions of the visualization code (axis labeling, legends, etc.) has been omitted.
 </p>
 
-![](images/instacart230131.png)
+![](/images/instacart230131.png)
 
 
-{{< alert tip "Insight" "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#28a745' d='M12 2L2 22h20L12 2z'/></svg>" >}}
+{{< alert tip "Insight" "<svg class='alert-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#28a745' d='M12 2L2 22h20L12 2z'/></svg>" >}}
 Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.
 {{< /alert >}}
+
 
 
 

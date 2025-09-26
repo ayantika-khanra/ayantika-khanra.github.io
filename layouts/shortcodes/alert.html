@@ -1,7 +1,7 @@
 <div class="alert alert-{{ .Get 0 }}">
   <div class="alert-header">
     {{ with .Get 2 }}
-      <span class="alert-icon">{!! . | safeHTML !!}</span>
+      <span class="alert-icon">{{ . | safeHTML }}</span>
     {{ end }}
     {{ with .Get 1 }}
       <span class="alert-title">{{ . }}</span>
