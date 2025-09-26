@@ -108,6 +108,10 @@ For readability, portions of the visualization code (axis labeling, legends, etc
 
 ![](images/instacart230131.png)
 
+> [!Insight]
+> Number of orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.  Across all days, most purchases occur between **9 AM – 4 PM**.
+
+
 
 
 
