@@ -55,29 +55,20 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
 <div class="project-container">
 
   <div class="project-block">
-    <a href="https://ayantika-khanra.github.io/project/pharmacy_dashboard/">
-      <img src="/images/Pharmacy_dashboard.jpg" alt="Pharmacy_dashboard">
-      <h3>Dashboard for sales in a Pharmacy</h3>
-    </a>
-    <p class="tag">Tag: Tableau</p>
-    <p></p>
-  </div>
-
-  <div class="project-block">
-    <a href="https://ayantika-khanra.github.io/project/spotify_2000_explicit_music_analysis/">
-      <img src="/images/spotify2000.jpg" alt="Explicit Music Trends">
-      <h3>Trends of Explicit Themes  in Music over Two Decades using Spotify’s Top 2000</h3>
-    </a>
-    <p class="tag">Tag: Tableau, Data visualization, Exploratory data analysis</p>
-    <p></p>
-  </div>
-
-  <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/instacart_dataset_market_basket/">
       <img src="/images/instacart__.png" alt="Instacart_dataset_market_basket">
       <h3>Market Basket Analysis of the Instacart Dataset using Association Rule Mining</h3>
     </a>
     <p class="tag">Market Basket Analysis, Data Visualization, FP Growth, Network plots, Python (NumPy, Pandas, matplotlib, mlxtend, networkx)</p>
+    <p></p>
+  </div>
+
+  <div class="project-block">
+    <a href="https://ayantika-khanra.github.io/project/pharmacy_dashboard/">
+      <img src="/images/Pharmacy_dashboard.jpg" alt="Pharmacy_dashboard">
+      <h3>Dashboard for sales in a Pharmacy</h3>
+    </a>
+    <p class="tag">Tag: Tableau</p>
     <p></p>
   </div>
 

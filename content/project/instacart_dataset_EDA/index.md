@@ -67,117 +67,49 @@ div + img {
 </style>
 
 
-Understanding customer purchasing behavior is important for retail businesses. Market Basket Analysis (MBA) is performed to uncover patterns in what products are frequently bought together. Here, I will discuss how I applied FP-Growth algorithm for mining frequent itemsets on a retail dataset to generate insights into customer purchase pattern.
+# Seasonality in Orders
 
-#### 1. Data Preparation
+To understand seasonal purchasing patterns, we analyze product purchase variation with:
+- Hour of the day
+- Day of the week
+- Week of the year: not directly available in this dataset. However, a proxy can be inferred from the `days since prior order` column to approximate yearly buying trends.
 
-To focus on the most popular products, I only selected the top 1000 most frequently purchased products for this analysis, and I have used `order_products__train.csv` for this analysis. Each order was then transformed into a basket format, where rows represent individual orders IDs and columns represent product names. A value of 1 indicates that the specific product was purchased in that order ID.
 
-```python
-import pandas as pd
-
-# Load relevant datasets
-orders_pt = pd.read_csv("order_products__train.csv")
-products = pd.read_csv("products.csv")
-
-# Finding the Top 1000 products purchased
-histogram_order=orders_pt.groupby(['product_id'])['product_id'].count()
-top_N_products=(histogram_order.sort_values(ascending=False).
-                iloc[0:1000].index.to_list())
-
-# Saving all order IDs before modifying the dataframe
-all_order_IDs = orders_pt['order_id'].unique() 
-
-# Selecting only rows containing atleast one of the top 1000 products
-selected_rows=orders_pt['product_id'].isin(top_N_products)
-orders_pt=orders_pt.loc[selected_rows]
-orders_pt.reset_index(drop=True, inplace=True)
-
-# Joining the orders_pt and products dataframe on product_id column,
-# and dropping the unnecessary columns
-orders_pt = orders_pt.merge(products, on='product_id', how='left')
-orders_pt=orders_pt.drop(columns=['product_id','add_to_cart_order', 
-                                  'reordered', 'aisle_id','department_id'])
-
-# Creating a multi-index Pandas Series with order_id and product_name 
-# as index. Values show purchase count in that order 
-# (converted to 1 for any purchase > 1)
-orders_pt=orders_pt.groupby(['order_id','product_name'])['product_name'].count()
-orders_pt=orders_pt.apply(lambda x: 1 if x>1 else x)
-
-# Unstacking the grouped orders_pt to create a basket dataframe
-# Rows = orders, columns = products, values = 0/1 indicating 
-# if product was purchased
-basket=orders_pt.unstack().fillna(0).astype('int8')
-basket = basket.reindex(all_order_IDs, fill_value=0)
-display(basket)
-```
-![instacart](/images/instacart145455.png)
-
-Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxtend library.
-
-#### 2. Applying FP-Growth Algorithm for Association Rule Mining
-
-**Support** measures how often an item or combination of items appears in the same order, divided by the total number of orders, indicating which items or item combinations are frequent enough to matter.
-
-**FP growth algorithm:** The frequent pattern growth algorithm is an efficient method for finding frequent itemsets. Here,  the dataset once to count the frequency, and thus support of each item. Items having support values below a chosen threshold are discarded. Then, an FP-Tree is bulit, which is a compact branched structure where each branch represent purchase patterns across orders. Then the tree is traversed bottom-up to find all frequent itemsets.
-
-**Association Rules:** After frequent itemsets are found, we can generate association rules of the form $X\rightarrow Y$ (if X is bought, Y is likely bought as well). Here item/itemset X is called the antecedant, and Y the consequent. Other than $Support(X→Y)$ = # of orders containing $X\cap Y$/ Total # of orders, two other quantites are used to queantify these association rules:
-
-**Confidence:** A measure of how often Y is purchased when X is purchased:
-$$\scriptstyle Confidence(X \rightarrow Y)= \frac{Support(X \cap Y)}{Support(X)}$$
-
-**Lift:** Measures how much more likely X and Y occur together than if they were independent:
-
-$$\scriptstyle Lift(X \rightarrow Y)= \frac{Support(X \cap Y)}{Support(X)\times Support (Y)}$$
-
-High confidence indicates a strong predictive relationship, and a lift > 1 indicates that a positive association exists that is stronger than a random chance.
-
-For this analysis, I have set:
-- Minimum support = 0.5% 
-- Minimum confidence = 0.3, to ignore weak rules
-- Lift > 1, to view only non-random associations
+## Number of Orders by Day of the Week and Hour of the Day
 
 ```python
-# Find frequent itemsets using FP-Growth
-from mlxtend.frequent_patterns import fpgrowth, association_rules
-frequent_itemsets = fpgrowth(basket, min_support=0.005, use_colnames=True)
+# Query: total orders per day of week & hour of day
+query ="""
+SELECT order_dow AS day_of_the_week, 
+       order_hour_of_day, 
+       COUNT(order_id) AS number_of_orders_placed 
+FROM orders
+GROUP BY order_dow, order_hour_of_day
+"""
+df = pd.read_sql(query, engine)
 
-# Find association rules from frequent itemsets
-rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
-rules = rules[rules['confidence'] > 0.3]
-rules = rules.sort_values(by='lift', ascending=False)
-display(rules[['antecedents', 'consequents', 'support',	'confidence',	'lift']	])
+# Map numeric days to day names
+day_of_week_dict={0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat'}
+df['day_of_the_week']=df['day_of_the_week'].map(day_of_week_dict)
+
+# Visualization 1. Orders across hours, split by weekday
+grouped_data_dow=df.groupby('day_of_the_week')['number_of_orders_placed'].sum().reset_index()
+sns.barplot(data=grouped_data_dow , x='day_of_the_week', y='number_of_orders_placed', 
+            hue='day_of_the_week', palette='viridis', ax=axes[0])
+
+# Visualization 2. Orders by weekday
+fig, axes = plt.subplots(1, 2, figsize=(14, 6)) 
+sns.lineplot(data=df, x="order_hour_of_day", y="number_of_orders_placed", 
+             hue="day_of_the_week", palette='viridis', linewidth=3,  ax=axes[1])
 ```
-Output:
-![instacart](/images/instacart232338.png)
 
-Customers buying Organic Strawberries and Organic Hass Avocado together also buy Bag of Organic Bananas with 46% confidence and a lift of 3.91, and buying Organic Raspberries predicts a purchase of Organic Strawberries with 30% confidence and lift 3.63. Many rules have Bananas as a common consequent. Most of the association rules were initially dominated by produce items due to their high purchase frequency.
+![images/instacart230131.png]
 
-Some other interesting product combinations, often seen together in meals or beverage recipes, were seen after lowering the minimum support:
-- `Organic 90% Ground Beef → Organic Yellow Onion` (Conf: 0.21, Lift: 6.5)
-- `Tonic Water → Limes` (Conf: 0.28, Lift: 6.0)
-- `Organic Large Brown Eggs → Organic Avocado` (Conf: 0.23, Lift: 4.1)
-- `Organic Egg Whites → Organic Baby Spinach (Conf: 0.24, Lift: 3.2)
-- `Mild Diced Green Chiles → Limes` (Conf: 0.27, Lift: 5.9)
-- `Tortillas, Corn, Organic → Organic Hass Avocado` (Conf: 0.29, Lift: 5.18)
+some codes for visualization has been truncated for clarity and setting of label axis, legends etc etc hasmt been shown distinctly. 
 
-When I performed **FP growth on non-produce items**, the high confidence and high lift relationships were primarily between different flavors or variations of the same product. For example
-- `Lime Sparkling Water → Grapefruit Sparkling Water` (Conf: 0.25, Lift:  10)
-- `(Passionfruit Sparkling Water, Lime Sparkling Water) → Grapefruit Sparkling Water` (Conf: 0.72, Lift: 28)
-- `Total 2% Lowfat Greek Strained Yogurt With Blueberry → Total 2% with Strawberry Lowfat Greek Strained Yogurt` (Conf: 0.36, Lift: 49)
-- `Chocolate Sea Salt → Coconut Chocolate Bar` (Conf: 0.32, Lift: 226)
-- `Apple Pie Fruit & Nut Food Bar → Cherry Pie Fruit & Nut Bar` (Conf: 0.31, Lift: 212)
-- `Organic Pinto Beans →  Organic Black Beans` (Conf: 0.24, Lift: 20)
-- `Broccoli & Apple Stage 2 Baby Food → Blueberry Pear & Purple Carrot Stage 2 Baby Food` (Conf: 0.31, Lift: 131)
-
-Other than this kind of pairings, interesting relationships were observed between products that are not directly related:
-- `85% Lean Ground Beef → Boneless Skinless Chicken Breasts` (Conf: 0.16, Lift: 10.1)
-- `Sea Salt Pita Chips → Original Hummus` (Conf: 0.18, Lift: 8.2)
-
-**Insights like these can guide targeted marketing, promotions, product placement, and inventory planning.**
-
-While these rules are practically useful, grouping items by aisle can help understand broader patterns of which product categories drive purchases in other categories.
+:::tip Insight
+Number of orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.  Across all days, most purchases occur between **9 AM – 4 PM**.
+:::
 
 
 
@@ -185,187 +117,63 @@ While these rules are practically useful, grouping items by aisle can help under
 
 
 
-#### 4. Finding Connections at the Aisle Level Using Network Visualization
 
-Instead of focusing on individual products, we now aggregate at the aisle level. Each `basket` dataframe now has `aisle` as columns and `order_ID` as rows. Values indicate whether that aisle was part of the order (0 → False, 1 → True).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### avg number of distinct products in an order depending on day of week and hour of day
 
 ```python
-import pandas as pd
+query_cte="""
+WITH cte_product_count AS (
+   SELECT COUNT(ot.product_id) AS num_of_product_bought, 
+          o.order_dow AS order_dow
+   FROM order_products__all AS ot
+   LEFT JOIN orders AS o
+          ON ot.order_id=o.order_id
+   GROUP BY o.order_id)
+"""
 
-# Merge necessary dataframes
-orders_pt = (pd.read_csv("order_products__train.csv").
-             merge(pd.read_csv("products.csv"), on='product_id', how='left')
-             .merge(pd.read_csv("aisles.csv"), on='aisle_id', how='left'))
+query=query_cte+"""
+SELECT order_dow AS day_of_the_week, 
+       AVG(num_of_product_bought) AS avg_num_of_product_bought
+FROM cte_product_count
+GROUP BY order_dow
+ORDER BY order_dow ASC
+"""
+df = pd.read_sql(query, engine)
 
-# Drop columns that are not needed
-orders_pt = orders_pt.drop(columns=['product_id','add_to_cart_order',
-                                    'reordered', 'product_name', 
-                                    'aisle_id','department_id'])
+fig, axes = plt.subplots(1, 2, figsize=(14, 6))  
+sns.barplot(data=df , x='day_of_the_week', y='avg_num_of_product_bought',              
+            hue='day_of_the_week', palette='viridis', ax=axes[0])
 
-# Creating basket dataframe: each row is an order, each column is an aisle
-orders_pt = orders_pt.groupby(['order_id','aisle'])['aisle'].count()
-orders_pt = orders_pt.apply(lambda x: 1 if x>1 else x)
-basket = orders_pt.unstack().fillna(0).astype('int8')
+query =query_cte+"""
+SELECT order_dow as day_of_the_week, 
+       order_hour_of_day, 
+       avg(num_of_product_bought) as avg_num_of_product_bought
+FROM cte_product_count
+group by order_dow, order_hour_of_day
+order by order_dow asc"""
+df = pd.read_sql(query, engine)
 
-# Association rule mining
-from mlxtend.frequent_patterns import association_rules, fpgrowth
-frequent_itemsets = fpgrowth(basket, min_support=0.075, use_colnames=True)
-rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
-rules = rules[(rules['confidence'] > 0.3) & (rules['lift'] > 1)]
-```
-Association rule mining can generate item-to-itemset or itemset-to-item relationships, but here we only focus on one aisle to one aisle relationships. This helps us create a clean network plot showing the strength of the relationships between aisles, without dealing with more complex multi-aisle combinations.
-```python
-# Each antecedent and consequent in the rules is a frozenset
-# and we only keep rules where both the antecedent and consequent
-# consist of a single item, representing a one-to-one aisle relationship.
-rules_1to1 = rules[
-    (rules['antecedents'].apply(lambda x: len(x)) == 1) &
-    (rules['consequents'].apply(lambda x: len(x)) == 1)]
-```
-In the network plot, each antecedent and consequent is represented as a circular node. We want the node size to reflect the support of that aisle (frequency of the aisle in orders). So, we create `aisle_support_dict` to map each aisle to a node size based on its support.
-
-```python
-all_aisle_names=pd.concat([rules_1to1['antecedents'],rules_1to1['consequents']]).apply(lambda x: list(x)[0]).to_list()
-node_size=pd.concat([rules_1to1['antecedent support'],rules_1to1['consequent support']])
-node_size=node_size-node_size.min()*0.6; # normalization
-node_size=(node_size/node_size.max()*0.5).to_list() # normalization
-aisle_support_dict=dict(zip(all_aisle_names,node_size))
-```
-In the network plot, the nodes are aisles, and edges represent aisle-to-aisle relationships. Node are shown as circles, with its size representing aisle support. The edges/relationships are shown as arrows, with its width and color encoding the strength of the relationship: lift and confidence.
-```python
-import networkx as nx
-G = nx.DiGraph()
-
-for _, row in rules_1to1.iterrows():
-    a = list(row['antecedents'])[0]
-    c = list(row['consequents'])[0]
-    conf = row['confidence']
-    lift = row['lift']
-    supp = row['support']
-
-    # We Use lift as a weight, higher lift pulls nodes closer in spring layout
-    G.add_edge(a, c, weight=lift, confidence=conf, support=supp, lift=lift)
-
-
-plt.figure(figsize=(12, 10))
-pos = nx.spring_layout(G, k=1.5, seed=42)
-
-edges = G.edges(data=True)
-labels = {node: node.replace(" ", "\n") for node in G.nodes()}
-
-# Node sizes scaled according to support
-node_sizes = [aisle_support_dict[node] * 2000 for node in G.nodes()]
-
-# Draw nodes and labels
-nx.draw_networkx_nodes(G, pos, node_color="lightblue", edgecolors="gray", node_size=node_sizes)
-nx.draw_networkx_labels(G, pos, labels=labels, font_size=10)
-
-# Draw edges: line width proportional to lift, color proportional to confidence
-nx.draw_networkx_edges(
-    G, pos, edgelist=edges,
-    width=[(d['lift']-1)*10 for (_,_,d) in edges],
-    edge_color=[d['confidence'] for (_,_,d) in edges],
-    edge_cmap=plt.cm.Greens, alpha=0.7,
-    edge_vmin=0, edge_vmax=rules_1to1['confidence'].max(),
-    connectionstyle="arc3,rad=0.05", arrows=True, arrowstyle='-|>', arrowsize=15
-)
-
-plt.axis("off")
-plt.show()
-```
-![instacart](/images/instacart032914.png)
-
-<p style="color: gray; font-size: 0.6em;">
-Note: The edge and node legends were created separately.
-</p>
-
-The network plot shows a strong cluster around produce, with the following notable association rules:
-- `fresh herbs → fresh vegetables` shows a high-confidence, high-lift relationship
-- `fresh vegetables ⟷ fresh fruit ⟷ and packaged vegetables & fruits` form a triangle with strong bidirectional associations.
-- Similarly, `milk ⟷ packaged cheese ⟷ and yoghurt` form another triangle, with strong bidirectional associations.
-
-#### 5. Bubble heatmap layout to visualize all aisle to aisle relationships 
-
-Here I visualize aisle-to-aisle connections, encoding **lift** and **confidence** for each pair of aisles. We focus on the top 40 aisles with the highest support in orders.  
-
-The support, confidence, and lift of relationship between every pair of these aisles were calculated from the basket using the standard equations. 
-
-```python
-# top 40 aisles with the highest support selected
-num_aisles_selected=40
-selected_aisles=(basket.sum().sort_values(ascending=False).
-                 iloc[0:num_aisles_selected].index)
-basket=basket[selected_aisles]
-
-# Compute support for each aisle to aisle relationship, store in a matrix
-support_matrix=np.zeros([num_aisles_selected,num_aisles_selected])
-for i in range(num_aisles_selected):
-  for j in range(num_aisles_selected):
-    support_matrix[i][j]=(basket[selected_aisles[i]] & basket[selected_aisles[j]]).sum()
-support_matrix=support_matrix/basket.shape[0]
-
-# Diagonal entries represent support of individual aisles, and thus
-# can be sued to calculate confidence 
-confidence_matrix=support_matrix/(np.diag(support_matrix).reshape(-1,1))
-
-# Diagonal confidence is not meaningful since it represents
-# a single aisle, thus it is set to NaN 
-np.fill_diagonal(confidence_matrix, np.nan)  
-
-# Compute lift matrix
-lift_matrix=confidence_matrix/(np.diag(support_matrix).reshape(1,-1))
+df['scaled_avg_num_of_product_bought']=df.groupby('day_of_the_week')['avg_num_of_product_bought'].transform(lambda x: x/x.max())
+df['day_of_the_week']=df['day_of_the_week'].map(day_of_week_dict)
+sns.lineplot(data=df, x="order_hour_of_day", y="scaled_avg_num_of_product_bought",
+             hue='day_of_the_week', palette='viridis', linewidth=3, , ax=axes[1])
 ```
 
-A bubble heatmap was created using a scatter plot, where each bubble represents the relationship between two aisles. The size of the bubble represents the lift, while the color represents the confidence. Diagonal positions were excluded, as they represent an aisle’s relationship with itself, which is not meaningful.
-
-```python
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-figsize=(7,7)
-plt.figure(figsize=figsize)
-
-# Bubble color represents relationship confidence
-cmap = plt.cm.magma_r
-norm = mpl.colors.Normalize(vmin=0, vmax=np.nanmax(confidence_matrix))
-sm = mpl.cm.ScalarMappable(cmap=cmap, norm=norm)
-
-# Bubble size represents relationship lift subtracted by 1. 
-# Relationships with lift<1 were not visualized (size set to 0)
-size_matrix=(lift_matrix-1); 
-size_matrix=np.where(size_matrix>0, size_matrix, 0)
-
-# Plotting the bubbles in a grid
-for i in range(len(confidence_matrix)):
-  for j in range(len(confidence_matrix)):
-    if (i!=j) & (size_matrix[i][j]>0):
-      plt.scatter(j,i,
-                  s=size_matrix[i][j]*30,                  
-color=sm.to_rgba(confidence_matrix[i][j]))
-
-# Axis and Label setup
-plt.gca().invert_yaxis()
-plt.gca().xaxis.tick_top()         # move x-axis ticks to the top
-plt.gca().xaxis.set_label_position('top')  # move x-axis label to the top
-plt.ylabel('Antecedants', fontweight='bold', fontsize=12)
-plt.xlabel('Consequents', fontweight='bold', fontsize=12)
-plt.xticks(range(len(selected_aisles)), selected_aisles,  rotation=90)
-plt.yticks(range(len(selected_aisles)), selected_aisles)
-plt.show()
-```
-![instacart](/images/instacart140406.png)
-
-<p style="color: gray; font-size: 0.6em;">
-Note: The legends were created separately.
-</p>
-
-Observations from the heatmap:
-- Fresh fruits, fresh vegetables, and packaged vegetables are the most frequently purchsased aisles. As a result, they appear as consequents for many products with high confidence (dark-colored circles). But, not all of these associations are meaningful, since some of their lifts (circle size) are low.
-- The strongest lift relationship in the top 40 aisles is `canned meals beans ⟷ canned jarred vegetables`.
-- Several moderate-lift relationships are also seen:
-	- `Chips pretzels ⟷ fresh dips tapenades`
-	- `Cookie cakes ⟷ chips  pretzels`
-	- `Cookie cakes ⟷ crackers`
-	- `frozen breakfast ⟷ frozen meals`
-	- `spices seasonings ⟷ Fresh herbs `
-	- `Spices seasonings ⟷ baking ingredients`
-	- `Spices seasonings ⟷ Canned jarred vegetables`
+insight: number of products per order on average hovers around 9-11. it is typically high in Fri-mon, sunday being the highest. On all days higher product containing orders happen between 10 pm and 1 am. in fri to mon however another peak emerges around 9 am where people place orders with more products in it.
