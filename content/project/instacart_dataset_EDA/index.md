@@ -67,7 +67,7 @@ div + img {
 </style>
 
 
-#### Seasonality in Orders
+### Seasonality in Orders
 
 To understand seasonal purchasing patterns, we analyze product purchase variation with:
 - **Hour of the day**
@@ -75,7 +75,7 @@ To understand seasonal purchasing patterns, we analyze product purchase variatio
 - **Week of the year:** not directly available in this dataset. However, a proxy can be inferred from the `days since prior order` column to approximate yearly buying trends.
 
 
-##### Number of Orders by Day of the Week and Hour of the Day
+#### Number of Orders by Day of the Week and Hour of the Day
 
 ```python
 # Query: total orders per day of week & hour of day
@@ -108,9 +108,9 @@ For readability, portions of the visualization code (axis labeling, legends, etc
 
 ![](images/instacart230131.png)
 
-:::tip Insight
+{{< alert title="Insight" color="info" >}}
 Number of orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.  Across all days, most purchases occur between **9 AM – 4 PM**.
-:::
+{{< /alert >}}s
 
 
 
