@@ -112,17 +112,6 @@ For readability, portions of the visualization code (axis labeling, legends, etc
 > Number of orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.  Across all days, most purchases occur between **9 AM – 4 PM**.
 
 
-
-> [!note]
-> This is a note to highlight important information.
-
-
-
-{{`< admonition title="Hej" color="yellow" icon="smiley.png" >}}
-Hej med dig!
-{{`< /admonition >}}
-
-
 {{< alert tip "Insight" >}}
 Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.
 {{< /alert >}}
