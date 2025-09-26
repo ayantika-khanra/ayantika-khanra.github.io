@@ -27,16 +27,12 @@
   font-size: 1rem; /* keep standard size */
 }
 
-.alert-tip { border-left-color: #28a745; }
-.alert-note { border-left-color: #1e90ff; }
-.alert-warning { border-left-color: #ffc107; }
+/* Borders and backgrounds */
+.alert-tip { border-left-color: #28a745; background-color: rgba(40, 167, 69, 0.1); }
+.alert-note { border-left-color: #1e90ff; background-color: rgba(30, 144, 255, 0.1); }
+.alert-warning { border-left-color: #ffc107; background-color: rgba(255, 193, 7, 0.1); }
 
-/* Optional: slightly transparent colored background per type */
-.alert-tip { background-color: rgba(40, 167, 69, 0.1); }
-.alert-note { background-color: rgba(30, 144, 255, 0.1); }
-.alert-warning { background-color: rgba(255, 193, 7, 0.1); }
-
-.alert-tip .alert-icon path {
-  fill: #28a745; /* green tip icon */
-}
-
+/* Icon color for SVGs */
+.alert-tip .alert-icon path { fill: #28a745; }
+.alert-note .alert-icon path { fill: #1e90ff; }
+.alert-warning .alert-icon path { fill: #ffc107; }
