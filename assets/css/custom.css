@@ -1,3 +1,37 @@
-body {
-  border: 5px solid red !important;
+.alert {
+  border-left: 4px solid;
+  border-radius: 6px;
+  margin: 1em 0;
+  padding: 1em 1.2em;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent background */
+  font-size: 1rem; /* standard font size */
+  line-height: 1.5;
 }
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.alert-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5em;
+}
+
+.alert-title {
+  font-weight: bold;
+  font-size: 1rem; /* keep standard size */
+}
+
+.alert-tip { border-left-color: #28a745; }
+.alert-note { border-left-color: #1e90ff; }
+.alert-warning { border-left-color: #ffc107; }
+
+/* Optional: slightly transparent colored background per type */
+.alert-tip { background-color: rgba(40, 167, 69, 0.1); }
+.alert-note { background-color: rgba(30, 144, 255, 0.1); }
+.alert-warning { background-color: rgba(255, 193, 7, 0.1); }
