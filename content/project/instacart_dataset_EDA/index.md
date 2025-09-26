@@ -75,7 +75,7 @@ To understand seasonal purchasing patterns, we analyze product purchase variatio
 - **Week of the year:** not directly available in this dataset. However, a proxy can be inferred from the `days since prior order` column to approximate yearly buying trends.
 
 
-#### Number of Orders by Day of the Week and Hour of the Day
+##### Number of Orders by Day of the Week and Hour of the Day
 
 ```python
 # Query: total orders per day of week & hour of day
