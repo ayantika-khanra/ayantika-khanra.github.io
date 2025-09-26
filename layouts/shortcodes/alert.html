@@ -1,5 +1,5 @@
 <div class="alert alert-{{ .Get 0 }}">
-  {{ with .Get "title" }}
+  {{ with .Get 1 }}
     <p class="alert-title">{{ . }}</p>
   {{ end }}
   <div class="alert-content">
