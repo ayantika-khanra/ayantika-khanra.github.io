@@ -134,6 +134,7 @@ Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Mon
 Here I queried the database to calculate the average number of products bought per order across different days of the week and hours of the day.
 
 ```python
+# CTE to calculate number of products per order
 query_cte="""
 WITH cte_product_count AS (
    SELECT COUNT(ot.product_id) AS num_of_product_bought, 
@@ -145,6 +146,7 @@ WITH cte_product_count AS (
 )
 """
 
+# Querying average basket size by day of the week
 query=query_cte+"""
 SELECT order_dow AS day_of_the_week, 
        AVG(num_of_product_bought) AS avg_num_of_product_bought
@@ -154,23 +156,39 @@ ORDER BY order_dow ASC
 """
 df = pd.read_sql(query, engine)
 
+# Barplot visualization
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))  
 sns.barplot(data=df , x='day_of_the_week', y='avg_num_of_product_bought',              
             hue='day_of_the_week', palette='viridis', ax=axes[0])
 
+# Querying average basket size by day of the week and hour of day
 query =query_cte+"""
-SELECT order_dow as day_of_the_week, 
+SELECT order_dow AS day_of_the_week, 
        order_hour_of_day, 
-       avg(num_of_product_bought) as avg_num_of_product_bought
+       avg(num_of_product_bought) AS avg_num_of_product_bought
 FROM cte_product_count
-group by order_dow, order_hour_of_day
-order by order_dow asc"""
+GROUP BY order_dow, order_hour_of_day
+ORDER BY order_dow ASC"""
 df = pd.read_sql(query, engine)
 
-df['scaled_avg_num_of_product_bought']=df.groupby('day_of_the_week')['avg_num_of_product_bought'].transform(lambda x: x/x.max())
+# Scale hourly basket sizes vs hour of days plots for easier comparison
+df['scaled_avg_num_of_product_bought']=(df.groupby('day_of_the_week')['avg_num_of_product_bought']
+                                        .transform(lambda x: x/x.max()))
+
+# line plot visualization
 df['day_of_the_week']=df['day_of_the_week'].map(day_of_week_dict)
 sns.lineplot(data=df, x="order_hour_of_day", y="scaled_avg_num_of_product_bought",
              hue='day_of_the_week', palette='viridis', linewidth=3, , ax=axes[1])
 ```
 
-insight: number of products per order on average hovers around 9-11. it is typically high in Fri-mon, sunday being the highest. On all days higher product containing orders happen between 10 pm and 1 am. in fri to mon however another peak emerges around 9 am where people place orders with more products in it.
+
+{{< alert tip "Insight" "<svg class='alert-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#28a745' d='m17.989,4.341l-1.709-1.041L18.266.04l1.709,1.041-1.985,3.26Zm5.161.206l-3.331,1.504.822,1.822,3.331-1.504-.822-1.822Zm-5.54,1.75c1.541,1.517,2.39,3.542,2.39,5.703,0,2.295-.99,4.481-2.718,5.999-.814.717-1.282,1.833-1.282,3.064v2.937h-8v-3.07c0-1.155-.453-2.211-1.244-2.897-1.836-1.593-2.838-3.898-2.75-6.326.149-4.179,3.675-7.636,7.858-7.705,2.15-.042,4.205.779,5.746,2.296Zm-3.61,14.767c0-.362.036-.716.092-1.063h-4.169c.046.305.077.614.077.93v1.07h4v-.937Zm4-9.063c0-1.621-.637-3.141-1.793-4.277-1.155-1.138-2.691-1.751-4.31-1.722-3.138.052-5.781,2.644-5.894,5.777-.065,1.82.687,3.549,2.062,4.744.481.417.879.919,1.188,1.478h1.745v-4.184c-1.161-.414-2-1.514-2-2.816h2c0,.552.448,1,1,1s1-.448,1-1h2c0,1.302-.839,2.402-2,2.816v4.184h1.767c.312-.569.713-1.079,1.195-1.503,1.295-1.139,2.038-2.777,2.038-4.497ZM7.725,3.3L5.739.04l-1.709,1.041,1.985,3.26,1.709-1.041ZM.854,4.547L.032,6.369l3.33,1.504.822-1.822-3.33-1.504Z'/></svg>" >}}
+Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**. Across all days, most purchases occur between **9 AM – 4 PM.
+{{< /alert >}}
+
+{{< figure src="/images/Instacart040511.png" class="round" >}}
+
+insight:
+- basket size on average hovers around 9-11. 
+- basket size is typically high in Fri-mon, sunday being the highest. '
+- On all days higher product containing orders happen between 10 pm and 1 am. in fri to mon however another peak emerges around 9 am where people place orders with more products in it.
