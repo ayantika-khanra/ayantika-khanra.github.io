@@ -190,9 +190,3 @@ sns.lineplot(data=df, x="order_hour_of_day", y="scaled_avg_num_of_product_bought
 
 
 
-
-
-- The average basket size ranges between 9–11 products.
-- Friday through Monday customers purchase with higher-than-average basket sizes, with Sunday with the largest average basket sizes.
-- On all days, customers purchase with larger basket sizes during late-night hours (10 PM – 1 AM).
-- On Friday to Monday, a second peak in basket sizes appears in morning around 9 AM.
