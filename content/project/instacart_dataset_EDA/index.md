@@ -15,12 +15,6 @@ tags:
   - Exploratory Data Analysis
   - Data Visualization
   - Python (Pandas, seaborn, SQLAlchemy)
-
-markup:
-  goldmark:
-    parser:
-      attribute:
-        block: true
 ---
 
 
