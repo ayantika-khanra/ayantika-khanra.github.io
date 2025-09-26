@@ -59,9 +59,8 @@ features:
   privacy_pack:
     enable: false
 
-markup:
-  goldmark:
-    parser:
-      attribute:
-        block: true
+# Custom CSS
+params:
+  customCSS:
+    - "css/custom.css"
 

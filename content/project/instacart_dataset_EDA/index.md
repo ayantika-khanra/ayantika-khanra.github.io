@@ -123,6 +123,10 @@ Hej med dig!
 {{`< /admonition >}}
 
 
+{{< alert tip title="Insight" >}}
+Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.
+{{< /alert >}}
+
 
 
 
