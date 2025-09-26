@@ -67,7 +67,7 @@ div + img {
 </style>
 
 
-## Seasonality in Orders
+#### Seasonality in Orders
 
 To understand seasonal purchasing patterns, we analyze product purchase variation with:
 - **Hour of the day**
