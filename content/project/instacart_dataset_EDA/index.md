@@ -126,6 +126,10 @@ Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Mon
 Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.
 {{< /alert >}}
 
+{{< alert tip "Insight" "<svg class='alert-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#28a745' d='M12 2L2 22h20L12 2z'/></svg>" >}}
+Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.
+{{< /alert >}}
+
 
 
 
