@@ -12,14 +12,15 @@
 
 .alert-header {
   display: flex;
-  align-items: center;
+  align-items: center;   /* align icon and title vertically */
+  gap: 0.5em;            /* space between icon and title */
   margin-bottom: 0.5em;
 }
 
 .alert-icon {
   width: 24px;
   height: 24px;
-  margin-left: 0.5em;
+  flex-shrink: 0;        /* prevent the icon from shrinking */
 }
 
 .alert-title {
@@ -27,6 +28,17 @@
   font-size: 1rem;
 }
 
-.alert-tip { border-left-color: #28a745; background-color: rgba(40, 167, 69, 0.1); }
-.alert-note { border-left-color: #1e90ff; background-color: rgba(30, 144, 255, 0.1); }
-.alert-warning { border-left-color: #ffc107; background-color: rgba(255, 193, 7, 0.1); }
+.alert-tip {
+  border-left-color: #28a745;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.alert-note {
+  border-left-color: #1e90ff;
+  background-color: rgba(30, 144, 255, 0.1);
+}
+
+.alert-warning {
+  border-left-color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.1);
+}
