@@ -118,7 +118,9 @@ For readability, portions of the visualization code (axis labeling, legends, etc
 
 
 
-
+{{`< admonition title="Hej" color="yellow" icon="smiley.png" >}}
+Hej med dig!
+{{`< /admonition >}}
 
 
 
