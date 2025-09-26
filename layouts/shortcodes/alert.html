@@ -1,7 +1,12 @@
 <div class="alert alert-{{ .Get 0 }}">
-  {{ with .Get 1 }}
-    <p class="alert-title">{{ . }}</p>
-  {{ end }}
+  <div class="alert-header">
+    {{ with .Get 2 }}
+      <img src="{{ . }}" class="alert-icon" alt="icon">
+    {{ end }}
+    {{ with .Get 1 }}
+      <span class="alert-title">{{ . }}</span>
+    {{ end }}
+  </div>
   <div class="alert-content">
     {{ .Inner | markdownify }}
   </div>
