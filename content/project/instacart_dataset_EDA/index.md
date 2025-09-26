@@ -75,7 +75,7 @@ To understand seasonal purchasing patterns, we analyze product purchase variatio
 - **Week of the year:** not directly available in this dataset. However, a proxy can be inferred from the `days since prior order` column to approximate yearly buying trends.
 
 
-#### Number of Orders by Day of the Week and Hour of the Day
+#### Weekly and Daily Variations in Order Volume
 
 To understand how order volume varies across different times, I queried the database and created visualizations by day of week and hour of day, as follows:
 
@@ -129,7 +129,9 @@ Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Mon
 
 
 
-#### avg number of distinct products in an order depending on day of week and hour of day
+#### Weekly and Daily Variations in Basket Size
+
+Here I queried the database to calculate the average number of products bought per order across different days of the week and hours of the day.
 
 ```python
 query_cte="""
