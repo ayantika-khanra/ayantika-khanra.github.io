@@ -113,6 +113,8 @@ For readability, portions of the visualization code (axis labeling, legends, etc
 
 
 
+> [!note]
+> This is a note to highlight important information.
 
 
 
@@ -135,8 +137,7 @@ For readability, portions of the visualization code (axis labeling, legends, etc
 
 
 
-
-### avg number of distinct products in an order depending on day of week and hour of day
+#### avg number of distinct products in an order depending on day of week and hour of day
 
 ```python
 query_cte="""
