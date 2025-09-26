@@ -117,10 +117,6 @@ For readability, portions of the visualization code (axis labeling, legends, etc
 > This is a note to highlight important information.
 
 
-{{% alert note %}}
-This is a note.
-{{% /alert %}}
-
 
 {{`< admonition title="Hej" color="yellow" icon="smiley.png" >}}
 Hej med dig!
