@@ -70,9 +70,9 @@ div + img {
 ## Seasonality in Orders
 
 To understand seasonal purchasing patterns, we analyze product purchase variation with:
-- Hour of the day
-- Day of the week
-- Week of the year: not directly available in this dataset. However, a proxy can be inferred from the `days since prior order` column to approximate yearly buying trends.
+- **Hour of the day**
+- **Day of the week**
+- **Week of the year:** not directly available in this dataset. However, a proxy can be inferred from the `days since prior order` column to approximate yearly buying trends.
 
 
 ### Number of Orders by Day of the Week and Hour of the Day
@@ -106,7 +106,7 @@ sns.lineplot(data=df, x="order_hour_of_day", y="number_of_orders_placed",
 For readability, portions of the visualization code (axis labeling, legends, etc.) has been omitted.
 </p>
 
-![images/instacart230131.png]
+![](images/instacart230131.png)
 
 :::tip Insight
 Number of orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.  Across all days, most purchases occur between **9 AM – 4 PM**.
