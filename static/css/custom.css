@@ -5,8 +5,9 @@
   padding: 1em 1.2em;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent background */
-  font-size: 1rem; /* standard font size */
+  background-color: rgba(255, 255, 255, 0.1) !important; /* semi-transparent light bg */
+  color: inherit !important; /* use the current text color */
+  font-size: 1rem; 
   line-height: 1.5;
 }
 
@@ -24,14 +25,10 @@
 
 .alert-title {
   font-weight: bold;
-  font-size: 1rem; /* keep standard size */
+  font-size: 1rem;
 }
 
-.alert-tip { border-left-color: #28a745; }
-.alert-note { border-left-color: #1e90ff; }
-.alert-warning { border-left-color: #ffc107; }
-
-/* Optional: slightly transparent colored background per type */
-.alert-tip { background-color: rgba(40, 167, 69, 0.1); }
-.alert-note { background-color: rgba(30, 144, 255, 0.1); }
-.alert-warning { background-color: rgba(255, 193, 7, 0.1); }
+/* Type-specific border and background colors */
+.alert-tip { border-left-color: #28a745 !important; background-color: rgba(40, 167, 69, 0.1) !important; }
+.alert-note { border-left-color: #1e90ff !important; background-color: rgba(30, 144, 255, 0.1) !important; }
+.alert-warning { border-left-color: #ffc107 !important; background-color: rgba(255, 193, 7, 0.1) !important; }
