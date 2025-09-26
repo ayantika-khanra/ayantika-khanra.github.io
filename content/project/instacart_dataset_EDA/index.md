@@ -102,10 +102,11 @@ fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 sns.lineplot(data=df, x="order_hour_of_day", y="number_of_orders_placed", 
              hue="day_of_the_week", palette='viridis', linewidth=3,  ax=axes[1])
 ```
+<p style="color: gray; font-size: 0.6em;">
+For readability, portions of the visualization code (axis labeling, legends, etc.) has been omitted.
+</p>
 
 ![images/instacart230131.png]
-
-some codes for visualization has been truncated for clarity and setting of label axis, legends etc etc hasmt been shown distinctly. 
 
 :::tip Insight
 Number of orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.  Across all days, most purchases occur between **9 AM – 4 PM**.
