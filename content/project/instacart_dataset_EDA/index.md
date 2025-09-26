@@ -77,6 +77,8 @@ To understand seasonal purchasing patterns, we analyze product purchase variatio
 
 #### Number of Orders by Day of the Week and Hour of the Day
 
+To understand how order volume varies across different times, I queried the database and created visualizations by day of week and hour of day, as follows:
+
 ```python
 # Query: total orders per day of week & hour of day
 query ="""
