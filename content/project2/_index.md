@@ -55,6 +55,15 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
 <div class="project-container">
 
   <div class="project-block">
+    <a href="https://ayantika-khanra.github.io/project/instacart_dataset_eda/">
+      <img src="/images/instacart_dataset-cover.jpg" alt="Instacart_dataset_EDA">
+      <h3>Exploratory data analysis of the Instacart Dataset</h3>
+    </a>
+    <p class="tag">SQL, Postgres database, ERD diagrams, Exploratory Data Analysis, Data Visualization, Python (Pandas, seaborn, SQLAlchemy)</p>
+    <p></p>
+  </div>
+
+  <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/instacart_dataset_market_basket/">
       <img src="/images/instacart__.png" alt="Instacart_dataset_market_basket">
       <h3>Market Basket Analysis of the Instacart Dataset using Association Rule Mining</h3>
@@ -63,14 +72,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
     <p></p>
   </div>
 
-  <div class="project-block">
-    <a href="https://ayantika-khanra.github.io/project/instacart_dataset_eda/">
-      <img src="/images/instacart_dataset-cover.jpg" alt="Instacart_dataset_EDA">
-      <h3>Exploratory data analysis of the Instacart Dataset</h3>
-    </a>
-    <p class="tag">SQL, Postgres database, ERD diagrams, Exploratory Data Analysis, Data Visualization, Python (Pandas, seaborn, SQLAlchemy)</p>
-    <p></p>
-  </div>
+
 
   <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/pharmacy_dashboard/">
