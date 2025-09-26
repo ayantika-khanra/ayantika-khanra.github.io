@@ -117,7 +117,7 @@ Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Mon
 {{< /alert >}}
 
 
-{{< alert tip "Insight" "img/icons/tip.png" >}}
+{{< alert tip "Insight" "images/icons/tip.png" >}}
 Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Monday mornings**.
 {{< /alert >}}
 
@@ -144,7 +144,8 @@ WITH cte_product_count AS (
    FROM order_products__all AS ot
    LEFT JOIN orders AS o
           ON ot.order_id=o.order_id
-   GROUP BY o.order_id)
+   GROUP BY o.order_id
+)
 """
 
 query=query_cte+"""
