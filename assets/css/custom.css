@@ -35,3 +35,8 @@
 .alert-tip { background-color: rgba(40, 167, 69, 0.1); }
 .alert-note { background-color: rgba(30, 144, 255, 0.1); }
 .alert-warning { background-color: rgba(255, 193, 7, 0.1); }
+
+.alert-tip .alert-icon path {
+  fill: #28a745; /* green tip icon */
+}
+
