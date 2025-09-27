@@ -279,7 +279,7 @@ sns.lineplot(df, y='reorder_ratio', x='hour_of_day', hue='day_of_week', palette=
 ```
 
 <div style="text-align: center;">
-  {{< figure src="/images/Instacart173811.png" class="round" width="50%" >}}
+  {{< figure src="/images/Instacart173811.png" class="round" >}}
 </div>
 
 {{< figure src="/images/Instacart173811.png" class="round" width="50%" style="display:block; margin:auto;" >}}
@@ -291,7 +291,69 @@ Reorders are most **common around 9 AM**, and they **peak on Sundays**.{{< /aler
 
 
 
-# Fake date
+#### Variation of order volume throughout the year
+While not eact date has been provided. it is possible to infer a relative date for the longt erm order. It is possible to calculate the longest span of customer data recorded in this dataset, because the number of days that has passed since the last order for a user has been recorded. If we consider the order 1 has been placed on day 0, we can understand the day number iof the nth order by just adding up the day since last order value for the previous orders placed by the same user. the maimum length is 365 days that has been recordee. We can look at only th epeoples purchase history that has been presented for 359-365 days. then setting the first order to be a order 0, we can set the net dates compared to that day. however one thing that should be kept in mind here is that due to this variation of timing start not being eactly coincident the summing is not gonnna be perfect. then this day is converted to a week number by dividing by 7. 
+
+and this way we can get some understanding of products that are typically purchased at similar time and products that are purchased in very different times. while this is not a hard and fast data its still a faitly qualitative data. 
+
+```python
+query="""
+WITH order_table_with_rolling_days AS (
+    SELECT 
+        order_id, user_id, order_number, days_since_prior_order,
+        SUM(COALESCE(days_since_prior_order, 0)) OVER (
+            PARTITION BY user_id 
+            ORDER BY order_number
+            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+        ) AS rolling_days
+    FROM orders
+),
+
+decision_table AS (
+    SELECT 
+        user_id
+    from order_table_with_rolling_days
+    group by user_id
+    having max(days_since_prior_order) <30
+    and max(rolling_days)>359),
+
+filtered_order_table_with_rolling_days AS (
+    SELECT otrd.* 
+    from order_table_with_rolling_days as otrd
+    inner join decision_table as dt
+    on dt.user_id=otrd.user_id)
+
+SELECT d.department, a.aisle, Ceil(rolling_days/7) as week_number, count(*) as number_of_purchase
+FROM filtered_order_table_with_rolling_days as o
+join order_products__all as ot
+    on ot.order_id=o.order_id
+join products as p
+    on p.product_id=ot.product_id
+join departments as d
+    on d.department_id=p.department_id
+join aisles as a
+    on a.aisle_id=p.aisle_id
+where Ceil(rolling_days/7)<=51
+group by d.department, a.aisle, Ceil(rolling_days/7)
+"""
+df = pd.read_sql(query, engine); 
+df['week_number']=df['week_number'].astype('int8')
+
+#week number 0 (o=corresponding to 0 day  0 is removed as all the first datapoints of each user coincide there. and week 52 onwards is because 359 is the minimum numbe of days recorded that we have sectored out of the dataser,and thus 52 onwards barplot is not trusted.
+
+df=df[(df['week_number']<=51) & (df['week_number']>0)]
+
+# scaling the week number vs purchase plots dviding by 
+df['scaled_number_of_purchase']=df.groupby('week_number')['number_of_purchase'].transform(lambda x: x/x.sum())
+df['scaled_number_of_purchase']=df.groupby('aisle')['scaled_number_of_purchase'].transform(lambda x: x/x.mean())
+
+# Visualization
+g=sns.relplot(data=df, x='week_number', y='scaled_number_of_purchase',
+              kind="line", col="aisle", facet_kws={"sharey": False})
+```
+
+
 {{< figure src="/images/Instacart034656.png" class="round" >}}
+
 
 
