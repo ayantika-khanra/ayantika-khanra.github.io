@@ -66,6 +66,14 @@ div + img {
 
 </style>
 
+### 1. Dataset description
+
+The Instacart Market Basket Analysis dataset is a publicly available dataset released by Instacart through Kaggle. It contains anonymized data on grocery orders made by users on Instacart’s platform. The goal is usually to analyze shopping patterns, predict reorders, and study customer behavior.
+
+Here are the CSV files it comes with:
+
+
+
 
 ### 4. Seasonality in Orders
 
@@ -190,7 +198,7 @@ sns.lineplot(data=df, x="order_hour_of_day", y="scaled_avg_num_of_product_bought
 
 
 
-#### 4.3 Weekly and Daily Variations in Order Volume from Different Departments
+#### 4.3 Weekly and Daily Variations in Order Volume in Different Departments
 
 To understand customer purchasing patterns across product categories, we analyze how the number of purchases varies by day of the week and by department. We normalize the purchase counts for comparison across departments 
 
@@ -285,8 +293,9 @@ Reorders are most **common around 9 AM**, and they **peak on Sundays**.{{< /aler
 
 
 
-#### Variation of order volume throughout the year
+#### 4.5 Variation of order volume throughout the year
 The dataset does not provide exact calendar dates, but it does record the number of days since each customer’s previous order. By cumulatively summing these values within each user’s history, we can approximate a “pseudo-date” for each order:
+
 $\text{rolling\_days}_n = \sum_{i=1}^{n} \text{days\_since\_prior\_order}_i $
 
 To perform this analysis:
@@ -365,8 +374,9 @@ g=sns.relplot(data=df, x='week_number', y='scaled_number_of_purchase',
 
 {{< figure src="/images/Instacart034656.png" class="round" >}}
 
-Only the strongest pattern in the aisle data are shown here. Full image available here[]
+Only the strongest aisle-level patterns are shown here. Full image available [here](/images/Instacart_hidden_1.png)
 
-insight:
-even with the uncertainty of excat day we can see around week number 10 ice cream purchase peaks ( can be considered around summer) however peaks in cold flu allergy, soup broth boullion, and  vitamins and supplements peak around week 38-41 (can be considered a swinter), which makes so much sense in reality. 
+{{< alert tip "Insight" "<svg class='alert-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#28a745' d='m17.989,4.341l-1.709-1.041L18.266.04l1.709,1.041-1.985,3.26Zm5.161.206l-3.331,1.504.822,1.822,3.331-1.504-.822-1.822Zm-5.54,1.75c1.541,1.517,2.39,3.542,2.39,5.703,0,2.295-.99,4.481-2.718,5.999-.814.717-1.282,1.833-1.282,3.064v2.937h-8v-3.07c0-1.155-.453-2.211-1.244-2.897-1.836-1.593-2.838-3.898-2.75-6.326.149-4.179,3.675-7.636,7.858-7.705,2.15-.042,4.205.779,5.746,2.296Zm-3.61,14.767c0-.362.036-.716.092-1.063h-4.169c.046.305.077.614.077.93v1.07h4v-.937Zm4-9.063c0-1.621-.637-3.141-1.793-4.277-1.155-1.138-2.691-1.751-4.31-1.722-3.138.052-5.781,2.644-5.894,5.777-.065,1.82.687,3.549,2.062,4.744.481.417.879.919,1.188,1.478h1.745v-4.184c-1.161-.414-2-1.514-2-2.816h2c0,.552.448,1,1,1s1-.448,1-1h2c0,1.302-.839,2.402-2,2.816v4.184h1.767c.312-.569.713-1.079,1.195-1.503,1.295-1.139,2.038-2.777,2.038-4.497ZM7.725,3.3L5.739.04l-1.709,1.041,1.985,3.26,1.709-1.041ZM.854,4.547L.032,6.369l3.33,1.504.822-1.822-3.33-1.504Z'/></svg>" >}}Even though the “rolling days” metric introduces some uncertainty in exact timing, the seasonal signals are still clear. Ice cream purchases peak around week 10, which is most likely near summer. In contrast, cold/flu/allergy products, soup & broth, and vitamins & supplements peak around 7 months later, in weeks 38–41, likely near winter. {{< /alert >}}
+
+
 
