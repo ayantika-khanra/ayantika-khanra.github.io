@@ -235,4 +235,35 @@ By replacing `order_dow` with `order_hour_of_day`, the same code can be used to 
 
 {{< figure src="/images/Instacart040718.png" class="round" >}}
 
+insight:
+just observing plot of day of week vs order volume for different departments is hard to interpret as there are 21 departmentas. however after careful observation, when plots are normalized and grouped together four kind of main patterns can be seen
+- peroduce daity egs pantry meat seafood frozen deli canned goods dry good pasta etc are bought on weekend times, especially a lot on sunday and we see a 43% drop at Thursday
+- babies hourhold personal care pet related product show a very similar pattern with dsunday peak however the midweek dip near thursday is lesser, 25%. Thus day to day purchase pattern is more unifrorm here
+- beverage breakfast snack related items have a  peak on Monday nstead and another small peak on Friday
+- alcohol has a very different pattern all of these, they get stocked ob Friday with a strong peak with sunday being the dip for alcohol purchase
+
+From similar grouping for the day of week vs order volume plots we find
+- In each department the allmost sme purchase is done between 9-10 am to 3-4 pm. however in that region some peaks can be seen
+- beverage breakfast snacks have a peak at morning time around 10 pm
+- produce dairy eggs household has a shorter peak at morning time.
+- bakery canned goods deli meat seafpod panry and pets department has uniform purchase in this range
+- dry goods pasta and frozen department has a small peak at 3 pm 
+- alcohol has a even larger peak around 3pm
+
+ocerall in conclusion we would say beverage breakfast snacks and alcohol are department groups that diverge strongly in purchase behaviour from other departments: alchold having a 3pm and Friday peaks, and beverage breakfast snacks has morning peaks with Monday peaks and shorter Friday peaks
+
+
+
+
+# Variation in Reorder Ratio
+
+
+{{< figure src="/images/Instacart173811.png" class="round" >}}
+
+
+
+
+# Fake date
+{{< figure src="/images/Instacart034656.png" class="round" >}}
+
 
