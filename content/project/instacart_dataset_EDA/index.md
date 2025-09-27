@@ -282,7 +282,7 @@ sns.lineplot(df, y='reorder_ratio', x='hour_of_day', hue='day_of_week', palette=
   {{< figure src="/images/Instacart173811.png" class="round" >}}
 </div>
 
-{{< figure src="/images/Instacart173811.png" class="round" width="50%" style="display:block; margin:auto;" >}}
+{{< figure src="/images/Instacart173811.png" class="round" >}}
 
 {{< figure src="/images/Instacart173811.png" class="round"  width="50%"  >}}
 
