@@ -107,7 +107,8 @@ basket=orders_pt.unstack().fillna(0).astype('int8')
 basket = basket.reindex(all_order_IDs, fill_value=0)
 display(basket)
 ```
-![instacart](/images/instacart145455.png)
+
+{{< figure src="/images/instacart145455.png" class="round" >}}
 
 Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxtend library.
 
