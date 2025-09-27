@@ -278,6 +278,10 @@ df['day_of_week']=df['day_of_week'].map(day_of_week_dict)
 sns.lineplot(df, y='reorder_ratio', x='hour_of_day', hue='day_of_week', palette='viridis', linewidth=3)
 ```
 
+<div style="text-align: center;">
+  {{< figure src="/images/Instacart173811.png" class="round" width="50%" >}}
+</div>
+
 {{< figure src="/images/Instacart173811.png" class="round" width="50%" style="display:block; margin:auto;" >}}
 
 {{< figure src="/images/Instacart173811.png" class="round"  width="50%"  >}}
