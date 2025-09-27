@@ -256,10 +256,26 @@ From hourly patterns within each department, we observe that across categories, 
 
 
 
-# Variation in Reorder Ratio
+#### Variation in Reorder Ratio
 
+```python
+query="""
+SELECT 
+    o.order_dow AS day_of_week, 
+    o.order_hour_of_day AS hour_of_day,
+    SUM(ot.reordered)*1.0 / COUNT(*) AS reorder_ratio
+FROM order_products__all AS ot
+JOIN orders AS o
+    ON o.order_id = ot.order_id
+GROUP BY o.order_hour_of_day, o.order_dow
+"""
+df = pd.read_sql(query, engine)
+df['day_of_week']=df['day_of_week'].map(day_of_week_dict)
 
-{{< figure src="/images/Instacart173811.png" class="round" >}}
+sns.lineplot(df, y='reorder_ratio', x='hour_of_day', hue='day_of_week', palette='viridis', linewidth=3)
+```
+
+{{< figure src="/images/Instacart173811.png" class="round"  width="50%"  >}}
 
 
 
