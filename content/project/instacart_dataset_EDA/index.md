@@ -298,7 +298,7 @@ These rolling days or week numbers are  not tied to exact calendar months, it on
 
 ```python
 # Calculating "rolling days" for each user
-query="""
+query_cte1="""
 WITH order_table_with_rolling_days AS (
     SELECT 
         order_id, user_id, order_number, days_since_prior_order,
@@ -309,26 +309,27 @@ WITH order_table_with_rolling_days AS (
         ) AS rolling_days
     FROM orders
 ),
-""""
+"""
+
 # Selecting only users with >359 day of history and no long gaps between orders
-+ """"
+query_cte2="""
 decision_table AS (
     SELECT user_id
     FROM order_table_with_rolling_days
     GROUP BY user_id
-    HAVING NAX(days_since_prior_order) <30
+    HAVING MAX(days_since_prior_order) <30
     AND MAX(rolling_days)>359),
-"""
-#
-+""""
+
 filtered_order_table_with_rolling_days AS (
     SELECT otrd.* 
     FROM order_table_with_rolling_days AS otrd
     INNER JOIN decision_table AS dt
     ON dt.user_id=otrd.user_id)
-
+"""
+# Querying the number of purchse per week number in each aisle
+query= query_cte1 + query_cte2 + """
 SELECT d.department, a.aisle, 
-       Ceil(rolling_days/7) AS week_number, 
+       CEIL(rolling_days/7) AS week_number, 
        COUNT(*) AS number_of_purchase
 FROM filtered_order_table_with_rolling_days AS o
 JOIN order_products__all AS ot
@@ -362,8 +363,10 @@ g=sns.relplot(data=df, x='week_number', y='scaled_number_of_purchase',
               kind="line", col="aisle", facet_kws={"sharey": False})
 ```
 
-
 {{< figure src="/images/Instacart034656.png" class="round" >}}
 
+Only the strongest pattern in the aisle data are shown here. Full image available here[]
 
+insight:
+even with the uncertainty of excat day we can see around week number 10 ice cream purchase peaks ( can be considered around summer) however peaks in cold flu allergy, soup broth boullion, and  vitamins and supplements peak around week 38-41 (can be considered a swinter), which makes so much sense in reality. 
 
