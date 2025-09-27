@@ -190,6 +190,49 @@ sns.lineplot(data=df, x="order_hour_of_day", y="scaled_avg_num_of_product_bought
 
 
 
+#### Weekly and Daily Variations in Order Volume from Different Departments
 
+To understand customer purchasing patterns across product categories, we analyze how the number of purchases varies by day of the week and by department. We normalize the purchase counts for comparison across departments 
+
+```python
+# Query the count of purchases by department, aisle, and day of week
+query="""
+SELECT COUNT(p.product_id) AS number_of_purchase, 
+       a.aisle AS aisle, 
+       d.department AS department,
+       o.order_dow AS day_of_week
+FROM order_products__all AS ot
+LEFT JOIN orders AS o
+       ON ot.order_id=o.order_id
+LEFT JOIN products AS p
+       ON p.product_id=ot.product_id
+LEFT JOIN aisles AS a
+       ON p.aisle_id = a.aisle_id
+LEFT JOIN departments AS d
+       ON d.department_id = p.department_id
+GROUP BY d.department, a.aisle, o.order_dow
+"""
+df = pd.read_sql(query, engine)
+
+# Normalize purchase count plots
+df['norm_number_of_purchase']=(df.groupby('aisle')['number_of_purchase']
+                               .transform(lambda x: x/x.mean()))
+
+# Grouping departments in 4 categories and 
+#creating visualizations with departmentwise grouping
+department_groups=[['produce','deli','dairy eggs','canned goods','meat seafood','missing','dry goods pasta','pantry','frozen'],
+                   ['other', 'pets','household','babies','personal care'],
+                   ['beverages','breakfast','snacks'],
+                   ['alcohol']];
+fig, axes = plt.subplots(1, len(department_groups), figsize=(14, 6)) 
+for i in range(len(department_groups)):
+    sns.lineplot(data=df[(df['department'].isin(department_groups[i]))], 
+                 x="day_of_week", y="norm_number_of_purchase", hue="department", ax=axes[i])
+```
+{{< figure src="/images/Instacart040647.png" class="round" >}}
+   
+By replacing `order_dow` with `order_hour_of_day`, the same code can be used to analyze order volume across hours of the day.
+
+{{< figure src="/images/Instacart040718.png" class="round" >}}
 
 
