@@ -67,7 +67,7 @@ div + img {
 </style>
 
 
-### Seasonality in Orders
+### 4. Seasonality in Orders
 
 To understand seasonal purchasing patterns, we analyze product purchase variation with:
 - **Hour of the day**
@@ -75,7 +75,7 @@ To understand seasonal purchasing patterns, we analyze product purchase variatio
 - **Week of the year:** not directly available in this dataset. However, a proxy can be inferred from the `days since prior order` column to approximate yearly buying trends.
 
 
-#### Weekly and Daily Variations in Order Volume
+#### 4.1 Weekly and Daily Variations in Order Volume
 
 To understand how order volume varies across different times, I queried the database and created visualizations by day of week and hour of day, as follows:
 
@@ -129,7 +129,7 @@ Orders peak on **Sundays and Mondays**, especially **Sunday evenings** and **Mon
 
 
 
-#### Weekly and Daily Variations in Basket Size
+#### 4.2 Weekly and Daily Variations in Basket Size
 
 Here I queried the database to calculate the average number of products bought per order across different days of the week and hours of the day.
 
@@ -190,7 +190,7 @@ sns.lineplot(data=df, x="order_hour_of_day", y="scaled_avg_num_of_product_bought
 
 
 
-#### Weekly and Daily Variations in Order Volume from Different Departments
+#### 4.3 Weekly and Daily Variations in Order Volume from Different Departments
 
 To understand customer purchasing patterns across product categories, we analyze how the number of purchases varies by day of the week and by department. We normalize the purchase counts for comparison across departments 
 
@@ -256,7 +256,7 @@ From hourly patterns within each department, we observe that across categories, 
 
 
 
-#### Variation in Reorder Ratio
+#### 4.4 Variation in Reorder Ratio
 The reorder ratio tells us how often customers repurchase products they’ve bought before. It is calculated by comparing the number of items reordered to the total number of items in a basket (or a set of baskets).
 
 ```python
@@ -278,12 +278,6 @@ df['day_of_week']=df['day_of_week'].map(day_of_week_dict)
 sns.lineplot(df, y='reorder_ratio', x='hour_of_day', hue='day_of_week', palette='viridis', linewidth=3)
 ```
 
-<div style="text-align: center;">
-  {{< figure src="/images/Instacart173811.png" class="round" >}}
-</div>
-
-{{< figure src="/images/Instacart173811.png" class="round" >}}
-
 {{< figure src="/images/Instacart173811.png" class="round"  width="50%"  >}}
 
 {{< alert tip "Insight" "<svg class='alert-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#28a745' d='m17.989,4.341l-1.709-1.041L18.266.04l1.709,1.041-1.985,3.26Zm5.161.206l-3.331,1.504.822,1.822,3.331-1.504-.822-1.822Zm-5.54,1.75c1.541,1.517,2.39,3.542,2.39,5.703,0,2.295-.99,4.481-2.718,5.999-.814.717-1.282,1.833-1.282,3.064v2.937h-8v-3.07c0-1.155-.453-2.211-1.244-2.897-1.836-1.593-2.838-3.898-2.75-6.326.149-4.179,3.675-7.636,7.858-7.705,2.15-.042,4.205.779,5.746,2.296Zm-3.61,14.767c0-.362.036-.716.092-1.063h-4.169c.046.305.077.614.077.93v1.07h4v-.937Zm4-9.063c0-1.621-.637-3.141-1.793-4.277-1.155-1.138-2.691-1.751-4.31-1.722-3.138.052-5.781,2.644-5.894,5.777-.065,1.82.687,3.549,2.062,4.744.481.417.879.919,1.188,1.478h1.745v-4.184c-1.161-.414-2-1.514-2-2.816h2c0,.552.448,1,1,1s1-.448,1-1h2c0,1.302-.839,2.402-2,2.816v4.184h1.767c.312-.569.713-1.079,1.195-1.503,1.295-1.139,2.038-2.777,2.038-4.497ZM7.725,3.3L5.739.04l-1.709,1.041,1.985,3.26,1.709-1.041ZM.854,4.547L.032,6.369l3.33,1.504.822-1.822-3.33-1.504Z'/></svg>" >}}
@@ -292,11 +286,18 @@ Reorders are most **common around 9 AM**, and they **peak on Sundays**.{{< /aler
 
 
 #### Variation of order volume throughout the year
-While not eact date has been provided. it is possible to infer a relative date for the longt erm order. It is possible to calculate the longest span of customer data recorded in this dataset, because the number of days that has passed since the last order for a user has been recorded. If we consider the order 1 has been placed on day 0, we can understand the day number iof the nth order by just adding up the day since last order value for the previous orders placed by the same user. the maimum length is 365 days that has been recordee. We can look at only th epeoples purchase history that has been presented for 359-365 days. then setting the first order to be a order 0, we can set the net dates compared to that day. however one thing that should be kept in mind here is that due to this variation of timing start not being eactly coincident the summing is not gonnna be perfect. then this day is converted to a week number by dividing by 7. 
+The dataset does not provide exact calendar dates, but it does record the number of days since each customer’s previous order. By cumulatively summing these values within each user’s history, we can approximate a “pseudo-date” for each order:
+$\text{rolling\_days}_n = \sum_{i=1}^{n} \text{days\_since\_prior\_order}_i $
 
-and this way we can get some understanding of products that are typically purchased at similar time and products that are purchased in very different times. while this is not a hard and fast data its still a faitly qualitative data. 
+To perform this analysis:
+- I have restricted to users with long purchase histories (≥ 359 days).
+- I have discarded users with any `day_since_last_order` record of 30 days, as this variable has been capped in this dataset at the value of 30. 
+- Then this was converted to to week numbers =rolling_days/7.
+
+These rolling days or week numbers are  not tied to exact calendar months, it only provides a relative measure of long-term purchasing cycles.
 
 ```python
+# Calculating "rolling days" for each user
 query="""
 WITH order_table_with_rolling_days AS (
     SELECT 
@@ -308,42 +309,51 @@ WITH order_table_with_rolling_days AS (
         ) AS rolling_days
     FROM orders
 ),
-
+""""
+# Selecting only users with >359 day of history and no long gaps between orders
++ """"
 decision_table AS (
-    SELECT 
-        user_id
-    from order_table_with_rolling_days
-    group by user_id
-    having max(days_since_prior_order) <30
-    and max(rolling_days)>359),
-
+    SELECT user_id
+    FROM order_table_with_rolling_days
+    GROUP BY user_id
+    HAVING NAX(days_since_prior_order) <30
+    AND MAX(rolling_days)>359),
+"""
+#
++""""
 filtered_order_table_with_rolling_days AS (
     SELECT otrd.* 
-    from order_table_with_rolling_days as otrd
-    inner join decision_table as dt
-    on dt.user_id=otrd.user_id)
+    FROM order_table_with_rolling_days AS otrd
+    INNER JOIN decision_table AS dt
+    ON dt.user_id=otrd.user_id)
 
-SELECT d.department, a.aisle, Ceil(rolling_days/7) as week_number, count(*) as number_of_purchase
-FROM filtered_order_table_with_rolling_days as o
-join order_products__all as ot
-    on ot.order_id=o.order_id
-join products as p
-    on p.product_id=ot.product_id
-join departments as d
-    on d.department_id=p.department_id
-join aisles as a
-    on a.aisle_id=p.aisle_id
-where Ceil(rolling_days/7)<=51
-group by d.department, a.aisle, Ceil(rolling_days/7)
+SELECT d.department, a.aisle, 
+       Ceil(rolling_days/7) AS week_number, 
+       COUNT(*) AS number_of_purchase
+FROM filtered_order_table_with_rolling_days AS o
+JOIN order_products__all AS ot
+    ON ot.order_id=o.order_id
+JOIN products AS p
+    ON p.product_id=ot.product_id
+JOIN departments AS d
+    ON d.department_id=p.department_id
+JOIN aisles AS a
+    ON a.aisle_id=p.aisle_id
+WHERE CEIL(rolling_days/7)<=51
+GROUP BY d.department, a.aisle, CEIL(rolling_days/7)
 """
 df = pd.read_sql(query, engine); 
 df['week_number']=df['week_number'].astype('int8')
 
-#week number 0 (o=corresponding to 0 day  0 is removed as all the first datapoints of each user coincide there. and week 52 onwards is because 359 is the minimum numbe of days recorded that we have sectored out of the dataser,and thus 52 onwards barplot is not trusted.
-
+# Removed week_number=0, corresponding to rolling day = 0.
+#    Because, all users start here, thus it can can give inflated spike
+# Removed week_number >= 52 
+#    Because beyond 359 days we have incomplete data for some users.
 df=df[(df['week_number']<=51) & (df['week_number']>0)]
 
-# scaling the week number vs purchase plots dviding by 
+# Scaling:
+# divided purchases of a week in one aisle, by the total number of purchases made in that week
+# Divided number of purchase per week plot with the average value
 df['scaled_number_of_purchase']=df.groupby('week_number')['number_of_purchase'].transform(lambda x: x/x.sum())
 df['scaled_number_of_purchase']=df.groupby('aisle')['scaled_number_of_purchase'].transform(lambda x: x/x.mean())
 
