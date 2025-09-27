@@ -269,7 +269,8 @@ nx.draw_networkx_edges(
 plt.axis("off")
 plt.show()
 ```
-![instacart](/images/instacart032914.png)
+{{< figure src="/images/instacart032914.png" class="round" >}}
+
 
 <p style="color: gray; font-size: 0.6em;">
 Note: The edge and node legends were created separately.
@@ -348,7 +349,7 @@ plt.xticks(range(len(selected_aisles)), selected_aisles,  rotation=90)
 plt.yticks(range(len(selected_aisles)), selected_aisles)
 plt.show()
 ```
-![instacart](/images/instacart140406.png)
+{{< figure src="/images/instacart140406.png" class="round" >}}
 
 <p style="color: gray; font-size: 0.6em;">
 Note: The legends were created separately.
