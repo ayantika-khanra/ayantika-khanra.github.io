@@ -235,22 +235,23 @@ By replacing `order_dow` with `order_hour_of_day`, the same code can be used to 
 
 {{< figure src="/images/Instacart040718.png" class="round" >}}
 
-insight:
-just observing plot of day of week vs order volume for different departments is hard to interpret as there are 21 departmentas. however after careful observation, when plots are normalized and grouped together four kind of main patterns can be seen
-- peroduce daity egs pantry meat seafood frozen deli canned goods dry good pasta etc are bought on weekend times, especially a lot on sunday and we see a 43% drop at Thursday
-- babies hourhold personal care pet related product show a very similar pattern with dsunday peak however the midweek dip near thursday is lesser, 25%. Thus day to day purchase pattern is more unifrorm here
-- beverage breakfast snack related items have a  peak on Monday nstead and another small peak on Friday
-- alcohol has a very different pattern all of these, they get stocked ob Friday with a strong peak with sunday being the dip for alcohol purchase
 
-From similar grouping for the day of week vs order volume plots we find
-- In each department the allmost sme purchase is done between 9-10 am to 3-4 pm. however in that region some peaks can be seen
-- beverage breakfast snacks have a peak at morning time around 10 pm
-- produce dairy eggs household has a shorter peak at morning time.
-- bakery canned goods deli meat seafpod panry and pets department has uniform purchase in this range
-- dry goods pasta and frozen department has a small peak at 3 pm 
-- alcohol has a even larger peak around 3pm
 
-ocerall in conclusion we would say beverage breakfast snacks and alcohol are department groups that diverge strongly in purchase behaviour from other departments: alchold having a 3pm and Friday peaks, and beverage breakfast snacks has morning peaks with Monday peaks and shorter Friday peaks
+{{< alert tip "Insight" "<svg class='alert-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#28a745' d='m17.989,4.341l-1.709-1.041L18.266.04l1.709,1.041-1.985,3.26Zm5.161.206l-3.331,1.504.822,1.822,3.331-1.504-.822-1.822Zm-5.54,1.75c1.541,1.517,2.39,3.542,2.39,5.703,0,2.295-.99,4.481-2.718,5.999-.814.717-1.282,1.833-1.282,3.064v2.937h-8v-3.07c0-1.155-.453-2.211-1.244-2.897-1.836-1.593-2.838-3.898-2.75-6.326.149-4.179,3.675-7.636,7.858-7.705,2.15-.042,4.205.779,5.746,2.296Zm-3.61,14.767c0-.362.036-.716.092-1.063h-4.169c.046.305.077.614.077.93v1.07h4v-.937Zm4-9.063c0-1.621-.637-3.141-1.793-4.277-1.155-1.138-2.691-1.751-4.31-1.722-3.138.052-5.781,2.644-5.894,5.777-.065,1.82.687,3.549,2.062,4.744.481.417.879.919,1.188,1.478h1.745v-4.184c-1.161-.414-2-1.514-2-2.816h2c0,.552.448,1,1,1s1-.448,1-1h2c0,1.302-.839,2.402-2,2.816v4.184h1.767c.312-.569.713-1.079,1.195-1.503,1.295-1.139,2.038-2.777,2.038-4.497ZM7.725,3.3L5.739.04l-1.709,1.041,1.985,3.26,1.709-1.041ZM.854,4.547L.032,6.369l3.33,1.504.822-1.822-3.33-1.504Z'/></svg>" >}} Looking at order volume by department across the week, the raw plots are hard to interpret because there are 21 departments. By normalizing the data and grouping departments, the following purchasing patterns can be seen
+- Staple goods (`produce`, `dairy eggs`, `pantry`, `meat seafood`, `frozen`, `deli`, `canned goods`, `dry goods pasta`) are purchased the **most on Sundays**, with a **~43% midweek dip** in purchase around Thursdays.
+- `Household`, `babies`, `household`, `personal care`, `pet` departments also see **purchase peak on Sundays**, but the **midweek drop** around Thursday is smaller **~25%**.
+- `beverages`, `breakfast`, `snacks` departments show a purchase **peak on Monday** instead, with a secondary peak on Fridays.
+- `Alcohol` purchase pattern is very different with purchases **peak on Fridays**, and dip on Sundays.
+
+From hourly patterns within each department, we observe that across categories, most purchases happen between **9 AM and 4 PM. Within this window,** some more pattern can be seen:
+- `Beverages`, `breakfast`, `snacks` department sees a **peak** in purchase in morning around **10 AM**.
+- `Produce`, `dairy eggs` and `household` department sees a **smaller morning peak** in purchase.
+- `Bakery`, `canned goods`, `deli`, `meat seafood`, `pantry` and `pets` shows relatively **flat demand across this time period**.
+- `Dry goods pasta` & `frozen` department has a **minor peak** in purchase around **3 PM**.
+- `Alcohol` department has a **bigger spike** in purchase at **3 PM**.
+
+**In conclusion most departments see a purchase peak in Sunday, but, `beverages`, `breakfast`, `snacks`, and `alcohol` are an anomaly: Alcohol → strong Friday + 3 PM peak, and Beverages, breakfast, snacks → 10 AM + Monday and a secondary Friday peak.** {{< /alert >}}
+
 
 
 
