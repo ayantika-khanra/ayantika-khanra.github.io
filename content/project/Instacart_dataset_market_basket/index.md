@@ -154,7 +154,7 @@ Some other interesting product combinations, often seen together in meals or bev
 - `Organic 90% Ground Beef → Organic Yellow Onion` (Conf: 0.21, Lift: 6.5)
 - `Tonic Water → Limes` (Conf: 0.28, Lift: 6.0)
 - `Organic Large Brown Eggs → Organic Avocado` (Conf: 0.23, Lift: 4.1)
-- `Organic Egg Whites → Organic Baby Spinach (Conf: 0.24, Lift: 3.2)
+- `Organic Egg Whites → Organic Baby Spinach` (Conf: 0.24, Lift: 3.2)
 - `Mild Diced Green Chiles → Limes` (Conf: 0.27, Lift: 5.9)
 - `Tortillas, Corn, Organic → Organic Hass Avocado` (Conf: 0.29, Lift: 5.18)
 
