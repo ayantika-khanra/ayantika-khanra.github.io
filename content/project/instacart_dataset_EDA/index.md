@@ -68,13 +68,64 @@ div + img {
 
 ### 1. Dataset description
 
-The Instacart Market Basket Analysis dataset is a publicly available dataset released by Instacart through Kaggle. It contains anonymized data on grocery orders made by users on Instacart’s platform. The goal is usually to analyze shopping patterns, predict reorders, and study customer behavior.
+The Instacart Market Basket Analysis dataset is a publicly available dataset released by Instacart through Kaggle. It contains anonymized detailed data on 3 million grocery orders made by users on Instacart’s platform. Here are the CSV files it comes with, and the columns of data contained in them:
 
-Here are the CSV files it comes with:
+{{< figure src="/images/Instacart045539.png" class="round" >}}
+
+Note, the primary key for each table is shown in yellow highlights. 
+
+### 2. Creating postgres database
+
+Due to ram limitations, instead of loading the entriee dataset in python I 
+ created a server in postgres sql and used sqlalchemy in python to query the server.
 
 
+```SQL
+-- Adding primary key constraints to aisles, departments and orders table
+ALTER TABLE aisles ADD PRIMARY KEY (aisle_id);
+ALTER TABLE departments ADD PRIMARY KEY (department_id);
+ALTER TABLE orders ADD PRIMARY KEY (order_id);
+
+-- Adding primary key and foreign key constraints to products table
+ALTER TABLE products 
+ADD PRIMARY KEY (product_id),
+ADD CONSTRAINT fk_products_aisles_aisle_id 
+    FOREIGN KEY (aisle_id) 
+    REFERENCES aisles(aisle_id),
+ADD CONSTRAINT fk_products_departments_department_id 
+    FOREIGN KEY (department_id) 
+    REFERENCES departments(department_id);
+
+-- Adding composite primary key and foreign key constraints to order_products__prior  table
+ALTER TABLE order_products__prior 
+ADD PRIMARY KEY (order_id, product_id),
+ADD CONSTRAINT fk_products_ordPrior_product_id 
+    FOREIGN KEY (product_id)
+    REFERENCES products(product_id),
+ADD CONSTRAINT fk_ordPrior_orders_orderid
+    FOREIGN KEY (order_id)
+    REFERENCES orders(order_id);
+
+-- Adding composite primary key and foreign key constraints to order_products__train  table
+ALTER TABLE order_products__train 
+ADD PRIMARY KEY (order_id, product_id),
+ADD CONSTRAINT fk_products_ordTrain_product_id 
+    FOREIGN KEY (product_id)
+    REFERENCES products(product_id),
+ADD CONSTRAINT fk_ordTrain_orders_orderid
+    FOREIGN KEY (order_id)
+    REFERENCES orders(order_id);
+
+-- Creating a view combining orders in prior and train tables 
+-- for ease of querying
+CREATE VIEW order_products__all AS
+SELECT * FROM order_products__train
+UNION ALL
+SELECT * FROM order_products__prior;
+```
 
 
+ 
 ### 4. Seasonality in Orders
 
 To understand seasonal purchasing patterns, we analyze product purchase variation with:
