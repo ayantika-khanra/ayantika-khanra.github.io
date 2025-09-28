@@ -121,6 +121,8 @@ UNION ALL
 SELECT * FROM order_products__prior;
 ```
 
+All tables were complete with no missing (NULL) values. The only column containing Null values was `days_since_prior_order` for each user’s first order, and this was appropriately handled during analysis.
+
 The entity relationship diagram of the created database is shown below: 
 
 {{< figure src="/images/instacart/instacart184806.png" class="round" >}}
@@ -135,7 +137,8 @@ df = pd.read_sql(query, engine);
 ```
 
 
-in there nan? describe
+
+
  
 ### 4. Seasonality in Orders
 
@@ -337,7 +340,7 @@ SELECT
     o.order_hour_of_day AS hour_of_day,
     SUM(ot.reordered)*1.0 / COUNT(*) AS reorder_ratio
 FROM order_products__all AS ot
-JOIN orders AS o
+LEFT JOIN orders AS o
     ON o.order_id = ot.order_id
 GROUP BY o.order_hour_of_day, o.order_dow
 """
@@ -403,7 +406,7 @@ SELECT d.department, a.aisle,
        CEIL(rolling_days/7) AS week_number, 
        COUNT(*) AS number_of_purchase
 FROM filtered_order_table_with_rolling_days AS o
-JOIN order_products__all AS ot
+LEFT JOIN order_products__all AS ot
     ON ot.order_id=o.order_id
 JOIN products AS p
     ON p.product_id=ot.product_id
