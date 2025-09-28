@@ -136,6 +136,44 @@ query="SELECT .... FROM ..........";
 df = pd.read_sql(query, engine); 
 ```
 
+### 3. A basic analysis of customer purchase data
+
+#### 3.1 Top Products, Aisles, and Departments by Order Volume
+
+```python
+query ="""
+SELECT p.product_name, d.department, a.aisle, 
+       COUNT(p.product_name) AS number_of_orders
+FROM order_products__all AS ot
+LEFT JOIN products AS p
+       ON p.product_id=ot.product_id
+LEFT JOIN departments AS d
+       ON d.department_id=p.department_id
+LEFT JOIN aisles AS a
+       ON a.aisle_id=p.aisle_id
+GROUP BY d.department, a.aisle, p.product_name 
+ORDER BY number_of_orders desc
+"""
+df = pd.read_sql(query, engine)
+
+# Top 25 ordered product name
+sns.barplot(data=df.iloc[0:25],y='product_name', x='number_of_orders', hue='department')
+
+# Top 25 departments by order volume
+df_grouped=(df.groupby('department')['number_of_orders'].sum()
+            .sort_values(ascending=False).reset_index())
+sns.barplot(data=df_grouped,y='department', x='number_of_orders')
+
+# Top 25 aisles by order volume
+df_grouped=(df.groupby(['aisle', 'department'])['number_of_orders'].sum()
+            .sort_values(ascending=False).reset_index())
+sns.barplot(data=df_grouped.iloc[0:20],y='aisle', x='number_of_orders', hue='department')
+```
+
+
+{{< figure src="/images/instacart/instacart212602.png" class="round" >}}
+
+
 
 
 
