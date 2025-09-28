@@ -76,7 +76,7 @@ Note, the primary key for each table is shown in yellow highlights.
 
 ### 2. Creating Postgres Database
 
-Because of RAM limitations, instead of loading the entire dataset in Python, I created a PostgreSQL database using pgAdmin. Using the GUI, I created the following tables: `products`, `aisles`, `departments`, `orders`, `order_products__train`, `order_products__prior`, set the column names, and imported the CSV files into the tables. Then I added primary and foreign key constraints in the tables, and created a view called `order_products__all` that combining train and prior order tables. `order_products__all` was used during the data analysis, not the prior and train datasets separately.
+Because of RAM limitations, instead of loading the entire dataset in Python, I created a PostgreSQL database named `instacart` using pgAdmin. Using the GUI, I created the following tables: `products`, `aisles`, `departments`, `orders`, `order_products__train`, `order_products__prior`, set the column names, and imported the CSV files into the tables. Then I added primary and foreign key constraints in the tables, and created a view called `order_products__all` that combining train and prior order tables. `order_products__all` was used during the data analysis, not the prior and train datasets separately.
 
 ```SQL
 -- Adding primary key constraints to aisles, departments and orders table
@@ -125,6 +125,14 @@ The entity relationship diagram of the created database is shown below:
 
 {{< figure src="/images/instacart/instacart184806.png" class="round" >}}
 
+To query the dataset from Python, I used SQLAlchemy to connect to the PostgreSQL server as follows:
+
+```python
+from sqlalchemy import create_engine
+engine = create_engine("postgresql://username:password@localhost:5432/instacart")
+query="SELECT .... FROM ..........";
+df = pd.read_sql(query, engine); 
+```
 
 
 in there nan? describe
