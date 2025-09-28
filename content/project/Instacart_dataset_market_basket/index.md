@@ -118,7 +118,7 @@ Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxt
 
 **FP growth algorithm:** The frequent pattern growth algorithm is an efficient method for finding frequent itemsets. Here,  the dataset once to count the frequency, and thus support of each item. Items having support values below a chosen threshold are discarded. Then, an FP-Tree is bulit, which is a compact branched structure where each branch represent purchase patterns across orders. Then the tree is traversed bottom-up to find all frequent itemsets.
 
-**Association Rules:** After frequent itemsets are found, we can generate association rules of the form $X\rightarrow Y$ (if X is bought, Y is likely bought as well). Here item/itemset X is called the antecedant, and Y the consequent. Other than $Support(X→Y)$ = # of orders containing $X\cap Y$/ Total # of orders, two other quantites are used to queantify these association rules:
+**Association Rules:** After frequent itemsets are found, I can generate association rules of the form $X\rightarrow Y$ (if X is bought, Y is likely bought as well). Here item/itemset X is called the antecedant, and Y the consequent. Other than $Support(X→Y)$ = # of orders containing $X\cap Y$/ Total # of orders, two other quantites are used to queantify these association rules:
 
 **Confidence:** A measure of how often Y is purchased when X is purchased:
 $$\scriptstyle Confidence(X \rightarrow Y)= \frac{Support(X \cap Y)}{Support(X)}$$
@@ -187,7 +187,7 @@ While these rules are practically useful, grouping items by aisle can help under
 
 #### 4. Finding Connections at the Aisle Level Using Network Visualization
 
-Instead of focusing on individual products, we now aggregate at the aisle level. Each `basket` dataframe now has `aisle` as columns and `order_ID` as rows. Values indicate whether that aisle was part of the order (0 → False, 1 → True).
+Instead of focusing on individual products, I now aggregate at the aisle level. Each `basket` dataframe now has `aisle` as columns and `order_ID` as rows. Values indicate whether that aisle was part of the order (0 → False, 1 → True).
 
 ```python
 import pandas as pd
@@ -213,16 +213,16 @@ frequent_itemsets = fpgrowth(basket, min_support=0.075, use_colnames=True)
 rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
 rules = rules[(rules['confidence'] > 0.3) & (rules['lift'] > 1)]
 ```
-Association rule mining can generate item-to-itemset or itemset-to-item relationships, but here we only focus on one aisle to one aisle relationships. This helps us create a clean network plot showing the strength of the relationships between aisles, without dealing with more complex multi-aisle combinations.
+Association rule mining can generate item-to-itemset or itemset-to-item relationships, but here I only focus on one aisle to one aisle relationships. This helps us create a clean network plot showing the strength of the relationships between aisles, without dealing with more complex multi-aisle combinations.
 ```python
 # Each antecedent and consequent in the rules is a frozenset
-# and we only keep rules where both the antecedent and consequent
+# and I only keep rules where both the antecedent and consequent
 # consist of a single item, representing a one-to-one aisle relationship.
 rules_1to1 = rules[
     (rules['antecedents'].apply(lambda x: len(x)) == 1) &
     (rules['consequents'].apply(lambda x: len(x)) == 1)]
 ```
-In the network plot, each antecedent and consequent is represented as a circular node. We want the node size to reflect the support of that aisle (frequency of the aisle in orders). So, we create `aisle_support_dict` to map each aisle to a node size based on its support.
+In the network plot, each antecedent and consequent is represented as a circular node. I wanted the node size to reflect the support of that aisle (frequency of the aisle in orders). So, I create `aisle_support_dict` to map each aisle to a node size based on its support.
 
 ```python
 all_aisle_names=pd.concat([rules_1to1['antecedents'],rules_1to1['consequents']]).apply(lambda x: list(x)[0]).to_list()
@@ -243,7 +243,7 @@ for _, row in rules_1to1.iterrows():
     lift = row['lift']
     supp = row['support']
 
-    # We Use lift as a weight, higher lift pulls nodes closer in spring layout
+    # I Use lift as a weight, higher lift pulls nodes closer in spring layout
     G.add_edge(a, c, weight=lift, confidence=conf, support=supp, lift=lift)
 
 
@@ -288,7 +288,7 @@ Note: The edge and node legends were created separately.
 
 #### 5. Bubble heatmap layout to visualize all aisle to aisle relationships 
 
-Here I visualize aisle-to-aisle connections, encoding **lift** and **confidence** for each pair of aisles. We focus on the top 40 aisles with the highest support in orders.  
+Here I visualize aisle-to-aisle connections, encoding **lift** and **confidence** for each pair of aisles. I focus on the top 40 aisles with the highest support in orders.  
 
 The support, confidence, and lift of relationship between every pair of these aisles were calculated from the basket using the standard equations. 
 

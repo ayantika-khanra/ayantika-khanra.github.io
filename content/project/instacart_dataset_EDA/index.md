@@ -77,7 +77,7 @@ Note, the primary key for each table is shown in yellow highlights.
 ### 2. Creating postgres database
 
 Due to ram limitations, instead of loading the entriee dataset in python I 
- created a server in postgres sql and used sqlalchemy in python to query the server.
+ created a server in postgres sql and used sqlalchemy in python to query the server. this was done by creating a dtabasewith ppgadmin tool, creating tables with name same as csv files, and creating 5 tables: products, aisles departments orders order_products__train nd order_products__pior. finally with the SQL code written following I added
 
 
 ```SQL
@@ -116,8 +116,7 @@ ADD CONSTRAINT fk_ordTrain_orders_orderid
     FOREIGN KEY (order_id)
     REFERENCES orders(order_id);
 
--- Creating a view combining orders in prior and train tables 
--- for ease of querying
+-- Creating a view combining orders in prior and train tables for ease of querying
 CREATE VIEW order_products__all AS
 SELECT * FROM order_products__train
 UNION ALL
@@ -128,7 +127,7 @@ in there nan? describe
  
 ### 4. Seasonality in Orders
 
-To understand seasonal purchasing patterns, we analyze product purchase variation with:
+To understand seasonal purchasing patterns, I analyze product purchase variation with:
 - **Hour of the day**
 - **Day of the week**
 - **Week of the year:** not directly available in this dataset. However, a proxy can be inferred from the `days since prior order` column to approximate yearly buying trends.
@@ -251,7 +250,7 @@ sns.lineplot(data=df, x="order_hour_of_day", y="scaled_avg_num_of_product_bought
 
 #### 4.3 Weekly and Daily Variations in Order Volume in Different Departments
 
-To understand customer purchasing patterns across product categories, we analyze how the number of purchases varies by day of the week and by department. We normalize the purchase counts for comparison across departments 
+To understand customer purchasing patterns across product categories, I analyzed how the number of purchases varies by day of the week and by department. I normalized the purchase counts for comparison across departments 
 
 ```python
 # Query the count of purchases by department, aisle, and day of week
@@ -302,7 +301,7 @@ By replacing `order_dow` with `order_hour_of_day`, the same code can be used to 
 - `beverages`, `breakfast`, `snacks` departments show a purchase **peak on Monday** instead, with a secondary peak on Fridays.
 - `Alcohol` purchase pattern is very different with purchases **peak on Fridays**, and dip on Sundays.
 
-From hourly patterns within each department, we observe that across categories, most purchases happen between **9 AM and 4 PM. Within this window,** some more pattern can be seen:
+From hourly patterns within each department, I observe that across categories, most purchases happen between **9 AM and 4 PM. Within this window,** some more pattern can be seen:
 - `Beverages`, `breakfast`, `snacks` department sees a **peak** in purchase in morning around **10 AM**.
 - `Produce`, `dairy eggs` and `household` department sees a **smaller morning peak** in purchase.
 - `Bakery`, `canned goods`, `deli`, `meat seafood`, `pantry` and `pets` shows relatively **flat demand across this time period**.
@@ -345,7 +344,7 @@ Reorders are most **common around 9 AM**, and they **peak on Sundays**.{{< /aler
 
 
 #### 4.5 Variation of order volume throughout the year
-The dataset does not provide exact calendar dates, but it does record the number of days since each customer’s previous order. By cumulatively summing these values within each user’s history, we can approximate a “pseudo-date” for each order:
+The dataset does not provide exact calendar dates, but it does record the number of days since each customer’s previous order. By cumulatively summing these values within each user’s history, I can approximate a “pseudo-date” for each order:
 
 $\text{rolling\_days}_n = \sum_{i=1}^{n} \text{days\_since\_prior\_order}_i $
 
@@ -425,7 +424,7 @@ g=sns.relplot(data=df, x='week_number', y='scaled_number_of_purchase',
 
 {{< figure src="/images/instacart/Instacart034656.png" class="round" >}}
 
-Only the strongest aisle-level patterns are shown here. Full image available [here](/images/Instacart_hidden_1.png)
+Only the strongest aisle-level patterns are shown here. Full image available [here](/images/instacart/Instacart_hidden_1.png)
 
 {{< alert tip "Insight" "<svg class='alert-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#28a745' d='m17.989,4.341l-1.709-1.041L18.266.04l1.709,1.041-1.985,3.26Zm5.161.206l-3.331,1.504.822,1.822,3.331-1.504-.822-1.822Zm-5.54,1.75c1.541,1.517,2.39,3.542,2.39,5.703,0,2.295-.99,4.481-2.718,5.999-.814.717-1.282,1.833-1.282,3.064v2.937h-8v-3.07c0-1.155-.453-2.211-1.244-2.897-1.836-1.593-2.838-3.898-2.75-6.326.149-4.179,3.675-7.636,7.858-7.705,2.15-.042,4.205.779,5.746,2.296Zm-3.61,14.767c0-.362.036-.716.092-1.063h-4.169c.046.305.077.614.077.93v1.07h4v-.937Zm4-9.063c0-1.621-.637-3.141-1.793-4.277-1.155-1.138-2.691-1.751-4.31-1.722-3.138.052-5.781,2.644-5.894,5.777-.065,1.82.687,3.549,2.062,4.744.481.417.879.919,1.188,1.478h1.745v-4.184c-1.161-.414-2-1.514-2-2.816h2c0,.552.448,1,1,1s1-.448,1-1h2c0,1.302-.839,2.402-2,2.816v4.184h1.767c.312-.569.713-1.079,1.195-1.503,1.295-1.139,2.038-2.777,2.038-4.497ZM7.725,3.3L5.739.04l-1.709,1.041,1.985,3.26,1.709-1.041ZM.854,4.547L.032,6.369l3.33,1.504.822-1.822-3.33-1.504Z'/></svg>" >}}Even though the “rolling days” metric has uncertainty in exact date, the seasonal patterns are still visible. **Ice cream purchases peak around week 10, which is most likely near summer. In contrast, cold/flu/allergy products, soup & broth, and vitamins & supplements peak around 7 months later, in weeks 38–41, likely near winter.** {{< /alert >}}
 
