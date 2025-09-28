@@ -229,7 +229,51 @@ sns.barplot(df, y='count', x='days_since_prior_order', ax=axes[2])
 - Basket sizes range from 1 to 112 items, with orders containing 5 products having the highest occurrence.
 - Days since the previous order peaks at 7, indicating a weekly ordering pattern in many users. This variable is capped at 30 days.{{< /alert >}}
 
- 
+#### 3.3 Customer reordering behaviour
+The reorder ratio tells us how often customers repurchase products they’ve bought before. It is calculated by dividing the number of items reordered to the total number of items in a basket (or a set of baskets).
+
+```python
+# Querying the top 25 aisles by reorder rate, and creating a barplot visualization
+query="""
+SELECT d.department, a.aisle, 
+       CAST(SUM(ot.reordered) AS FLOAT) / COUNT(*)  AS reorder_rate
+FROM order_products__all AS ot
+LEFT JOIN orders AS o
+       ON o.order_id = ot.order_id
+LEFT JOIN products AS p
+       ON p.product_id = ot.product_id
+LEFT JOIN departments AS d
+       ON d.department_id = p.department_id
+LEFT JOIN aisles AS a
+       ON a.aisle_id = p.aisle_id
+WHERE o.order_number > 1 # In 1st order of an user all value of `reordered` 
+                         # column is zero, thus is was excluded
+GROUP BY d.department, a.aisle
+ORDER BY reorder_rate desc;"""
+df = pd.read_sql(query, engine)
+sns.barplot(data=df.iloc[0:25], y='merged_aisle_dept', x='reorder_rate', hue='department')
+
+# Plotting if reordered_ratio of items vary by the sequence in which it’s added to the cart
+query="""
+SELECT ot.add_to_cart_order, 
+       CAST(SUM(ot.reordered) AS FLOAT) / COUNT(*)  AS reorder_rate
+FROM order_products__all AS ot
+LEFT JOIN orders AS o
+       ON o.order_id = ot.order_id
+WHERE o.order_number > 1
+GROUP BY ot.add_to_cart_order
+ORDER BY reorder_rate desc
+"""
+df = pd.read_sql(query, engine)
+sns.lineplot(data=df, x='add_to_cart_order', y='reorder_rate')
+```
+
+{{< figure src="/images/instacart/instacart041406.png" class="round" >}}
+
+
+
+
+
 ### 4. Seasonality in Orders
 
 To understand seasonal purchasing patterns, I analyze product purchase variation with:
@@ -420,7 +464,7 @@ From hourly patterns within each department, I observe that across categories, m
 
 
 #### 4.4 Variation in Reorder Ratio
-The reorder ratio tells us how often customers repurchase products they’ve bought before. It is calculated by comparing the number of items reordered to the total number of items in a basket (or a set of baskets).
+Here, the reorder ratio is calculated by dividing the number of reordered items to the total number of items in a set of basket.
 
 ```python
 # Querying the database to calculate reorder ratio by day of week and hour of day
