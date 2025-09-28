@@ -74,11 +74,9 @@ The Instacart Market Basket Analysis dataset is a publicly available dataset rel
 
 Note, the primary key for each table is shown in yellow highlights. 
 
-### 2. Creating postgres database
+### 2. Creating Postgres Database
 
-Due to ram limitations, instead of loading the entriee dataset in python I 
- created a server in postgres sql and used sqlalchemy in python to query the server. this was done by creating a dtabasewith ppgadmin tool, creating tables with name same as csv files, and creating 5 tables: products, aisles departments orders order_products__train nd order_products__pior. finally with the SQL code written following I added
-
+Because of RAM limitations, instead of loading the entire dataset in Python, I created a PostgreSQL database using pgAdmin. Using the GUI, I created the following tables: `products`, `aisles`, `departments`, `orders`, `order_products__train`, `order_products__prior`, set the column names, and imported the CSV files into the tables. Then I added primary and foreign key constraints in the tables, and created a view called `order_products__all` that combining train and prior order tables. `order_products__all` was used during the data analysis, not the prior and train datasets separately.
 
 ```SQL
 -- Adding primary key constraints to aisles, departments and orders table
@@ -122,6 +120,12 @@ SELECT * FROM order_products__train
 UNION ALL
 SELECT * FROM order_products__prior;
 ```
+
+The entity relationship diagram of the created database is shown below: 
+
+{{< figure src="/images/instacart/instacart184806.png" class="round" >}}
+
+
 
 in there nan? describe
  
