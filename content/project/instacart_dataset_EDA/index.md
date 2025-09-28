@@ -124,7 +124,7 @@ UNION ALL
 SELECT * FROM order_products__prior;
 ```
 
-
+in there nan? describe
  
 ### 4. Seasonality in Orders
 

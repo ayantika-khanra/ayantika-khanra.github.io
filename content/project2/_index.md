@@ -56,7 +56,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
 
   <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/instacart_dataset_eda/">
-      <img src="/images/instacart_dataset-cover.jpg" alt="Instacart_dataset_EDA">
+      <img src="/images/display_images/instacart_dataset-cover(1).jpg" alt="Instacart_dataset_EDA">
       <h3>Exploratory data analysis of the Instacart Dataset</h3>
     </a>
     <p class="tag">SQL, Postgres database, ERD diagrams, Exploratory Data Analysis, Data Visualization, Python (Pandas, seaborn, SQLAlchemy)</p>
@@ -65,7 +65,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
 
   <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/instacart_dataset_market_basket/">
-      <img src="/images/instacart__1.png" alt="Instacart_dataset_market_basket">
+      <img src="/images/display_images/instacart__1.png" alt="Instacart_dataset_market_basket">
       <h3>Market Basket Analysis of the Instacart Dataset using Association Rule Mining</h3>
     </a>
     <p class="tag">Market Basket Analysis, Data Visualization, FP Growth, Network plots, Python (NumPy, Pandas, matplotlib, mlxtend, networkx)</p>
@@ -76,7 +76,7 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
 
   <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/pharmacy_dashboard/">
-      <img src="/images/Pharmacy_dashboard.jpg" alt="Pharmacy_dashboard">
+      <img src="/images/display_images/Pharmacy_dashboard.jpg" alt="Pharmacy_dashboard">
       <h3>Dashboard for sales in a Pharmacy</h3>
     </a>
     <p class="tag">Tag: Tableau</p>
