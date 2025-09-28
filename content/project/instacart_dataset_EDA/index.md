@@ -180,6 +180,11 @@ sns.barplot(data=df_grouped.iloc[0:20],y='aisle', x='number_of_orders', hue='dep
 - Top aisles by order volume were `Fresh fruits`, `Fresh vegetables`, and `Packaged vegetable fruits` from produce department;  `Yoghurt`, `Packaged cheese` and `milk` from dairy eggs department. {{< /alert >}}
 
 
+
+
+
+
+
  
 ### 4. Seasonality in Orders
 
