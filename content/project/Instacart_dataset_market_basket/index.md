@@ -108,7 +108,7 @@ basket = basket.reindex(all_order_IDs, fill_value=0)
 display(basket)
 ```
 
-{{< figure src="/images/instacart145455.png" class="round" >}}
+{{< figure src="/images/instacart/instacart145455.png" class="round" >}}
 
 Now, the `basket` dataframe is ready to be used in FP growth algorithm from mlxtend library.
 
@@ -146,7 +146,7 @@ rules = rules.sort_values(by='lift', ascending=False)
 display(rules[['antecedents', 'consequents', 'support',	'confidence',	'lift']	])
 ```
 Output:
-{{< figure src="/images/instacart232338.png" class="round" >}}
+{{< figure src="/images/instacart/instacart232338.png" class="round" >}}
 
 {{< alert tip "Insight" "<svg class='alert-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#28a745' d='m17.989,4.341l-1.709-1.041L18.266.04l1.709,1.041-1.985,3.26Zm5.161.206l-3.331,1.504.822,1.822,3.331-1.504-.822-1.822Zm-5.54,1.75c1.541,1.517,2.39,3.542,2.39,5.703,0,2.295-.99,4.481-2.718,5.999-.814.717-1.282,1.833-1.282,3.064v2.937h-8v-3.07c0-1.155-.453-2.211-1.244-2.897-1.836-1.593-2.838-3.898-2.75-6.326.149-4.179,3.675-7.636,7.858-7.705,2.15-.042,4.205.779,5.746,2.296Zm-3.61,14.767c0-.362.036-.716.092-1.063h-4.169c.046.305.077.614.077.93v1.07h4v-.937Zm4-9.063c0-1.621-.637-3.141-1.793-4.277-1.155-1.138-2.691-1.751-4.31-1.722-3.138.052-5.781,2.644-5.894,5.777-.065,1.82.687,3.549,2.062,4.744.481.417.879.919,1.188,1.478h1.745v-4.184c-1.161-.414-2-1.514-2-2.816h2c0,.552.448,1,1,1s1-.448,1-1h2c0,1.302-.839,2.402-2,2.816v4.184h1.767c.312-.569.713-1.079,1.195-1.503,1.295-1.139,2.038-2.777,2.038-4.497ZM7.725,3.3L5.739.04l-1.709,1.041,1.985,3.26,1.709-1.041ZM.854,4.547L.032,6.369l3.33,1.504.822-1.822-3.33-1.504Z'/></svg>" >}} Customers buying Organic Strawberries and Organic Hass Avocado together also buy Bag of Organic Bananas with 46% confidence and a lift of 3.91, and buying Organic Raspberries predicts a purchase of Organic Strawberries with 30% confidence and lift 3.63. Many rules have Bananas as a common consequent. Most of the association rules were initially dominated by produce items due to their high purchase frequency.
 
@@ -273,7 +273,7 @@ nx.draw_networkx_edges(
 plt.axis("off")
 plt.show()
 ```
-{{< figure src="/images/instacart032914.png" class="round" >}}
+{{< figure src="/images/instacart/instacart032914.png" class="round" >}}
 
 
 <p style="color: gray; font-size: 0.6em;">
@@ -354,7 +354,7 @@ plt.xticks(range(len(selected_aisles)), selected_aisles,  rotation=90)
 plt.yticks(range(len(selected_aisles)), selected_aisles)
 plt.show()
 ```
-{{< figure src="/images/instacart140406.png" class="round" >}}
+{{< figure src="/images/instacart/instacart140406.png" class="round" >}}
 
 <p style="color: gray; font-size: 0.6em;">
 Note: The legends were created separately.
