@@ -109,8 +109,7 @@ education:
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 
-# Skills
-# Add your own SVG icons to `assets/media/icons/`
+
 skills:
   - name: Technical Skills
     items:
@@ -135,8 +134,6 @@ skills:
 #        percent: 100
         icon: chart-bar
 
-
-Gardening
  - name: Hobbies
    color: '#eeac02'
    color_border: '#f0bf23'
