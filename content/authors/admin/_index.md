@@ -157,7 +157,7 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
   <span>Scientific Data Analyst</span>
 </div>
 
-<div style="font-size: 0.9rem; margin-left: 1.6rem; line-height: 1.3;">
+<div style="font-size: 0.9rem; margin-left: 1.6rem; line-height: 1.5;">
   IISc Bangalore<br>
   Aug 2020 – Sep 2025<br>
   <span style="opacity: 0.9;">Technical Skills: Python, SQL, PowerBI, Advanced Excel, Git, Linux Shell</span>
