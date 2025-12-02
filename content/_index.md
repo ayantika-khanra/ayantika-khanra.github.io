@@ -8,7 +8,7 @@ design:
 
 sections:
 
-  - block: resume-biography-3
+  - block: resume-biography-2
     content:
       username: admin
       text: ""
