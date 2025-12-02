@@ -126,18 +126,31 @@ skills:
       - name: Git, Linux Shell
         icon: chart-bar
 
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
+  - name: Soft Skills
     items:
-      - name: Reading
-        icon: person-simple-walk
-      - name: Crafting
-        icon: cat
-      - name: Painting
-        icon: camera
-      - name: Gardening
-        icon: camera
+      - name: Problem solving
+        icon: light-bulb
+      - name: Analytical thinking
+        icon: chart-line
+      - name: Attention to detail
+        icon: check-circle
+      - name: Clear communication
+        icon: chat-bubble-left-right
+      - name: Organization
+        icon: clipboard-document
+
+  # - name: Hobbies
+  #   color: '#eeac02'
+  #   color_border: '#f0bf23'
+  #   items:
+  #     - name: Reading
+  #       icon: person-simple-walk
+  #     - name: Crafting
+  #       icon: cat
+  #     - name: Painting
+  #       icon: camera
+  #     - name: Gardening
+  #       icon: camera
 
 languages:
   - name: English
