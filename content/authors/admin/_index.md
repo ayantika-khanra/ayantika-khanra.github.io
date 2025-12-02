@@ -78,18 +78,14 @@ education:
     summary: |
       GPA: 8.9/10.0
       
-#      Courses included:
-#      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-#      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-#      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-work:
- - position: Scientific Data Analyst (Senior Research Fellow)
-   company_name: IISc Bangalore
-   company_url: ''
-   company_logo: ''
-   date_start: 2020-08-01
-   date_end: 2025-09-27
-   summary: |2-
+# work:
+#  - position: Scientific Data Analyst (Senior Research Fellow)
+#    company_name: IISc Bangalore
+#    company_url: ''
+#    company_logo: ''
+#    date_start: 2020-08-01
+#    date_end: 2025-09-27
+#    summary: |2-
 
 #  - position: Backend Software Engineer
 #    company_name: X
