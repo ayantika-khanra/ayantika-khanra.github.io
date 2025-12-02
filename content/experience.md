@@ -34,16 +34,13 @@ sections:
         <span style="font-size: 0.9rem; color:#666;">numpy, pandas, matplotlib, seaborn, openCV</span></li>
 
         <li><strong>SQL</strong><br>
-        <span style="font-size: 0.9rem; color:#666;">Querying, joins, aggregations</span></li>
 
         <li><strong>PowerBI</strong><br>
-        <span style="font-size: 0.9rem; color:#666;">Dashboards, DAX basics</span></li>
 
         <li><strong>Advanced Excel</strong><br>
-        <span style="font-size: 0.9rem; color:#666;">XLOOKUP/INDEX-MATCH, Pivot Tables, PowerQuery, Dashboards</span></li>
+        <span style="font-size: 0.9rem; color:#666;">XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language</span></li>
 
         <li><strong>Git & Linux Shell</strong><br>
-        <span style="font-size: 0.9rem; color:#666;">Version control, automation basics</span></li>
 
         <li><strong>Soft Skills</strong><br>
         <span style="font-size: 0.9rem; color:#666;">Problem solving, analytical thinking, communication</span></li>
