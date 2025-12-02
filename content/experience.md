@@ -31,7 +31,10 @@ sections:
         <ul style="list-style: none; padding-left: 0; line-height: 1.4;">
 
         <li><strong>• &nbsp Python</strong><br>
-        <span style="font-size: 0.9rem; color:#666;">&nbsp&nbsp&nbsp&nbspnumpy, pandas, matplotlib, SQLalchemy seaborn others: openCV, tkinter </span></li>
+        <span style="font-size: 0.9rem; color:#666;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; numpy, pandas, matplotlib, SQLAlchemy, seaborn<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>others:</em> openCV, tkinter
+        </span>
 
         <li><strong>• &nbsp SQL</strong><br>
 
