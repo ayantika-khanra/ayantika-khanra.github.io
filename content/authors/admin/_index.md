@@ -49,7 +49,15 @@ profiles:
 
 interests:
   - Data Analytics
-  - Digital Image Analysis
+  - Data visualization
+  - Python Programming
+  - Applied statistics
+
+experience:
+  - area: PhD, Biophysics with Microscopy Image Analysis
+    institution: IISc Bangalore
+    date_start: 2018-08-01
+    date_end: 2025-03-27
 
 education:
   - area: PhD, Biophysics with Microscopy Image Analysis
