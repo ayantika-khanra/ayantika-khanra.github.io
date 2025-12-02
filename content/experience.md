@@ -83,9 +83,7 @@ sections:
       title: Languages
       text: |
         <div style="font-size: 1rem;">
-        • English — professional proficiency<br>
-        • Bengali — native<br>
-        • Hindi — basic
+        • English — professional proficiency &nbsp;&nbsp;&nbsp; • Bengali — native &nbsp;&nbsp;&nbsp; • Hindi — basic
         </div>
 
 
