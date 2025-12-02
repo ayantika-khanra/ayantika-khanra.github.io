@@ -111,23 +111,31 @@ work:
 
 
 skills:
-  - name: 
+  - name: ""
     items:
       - name: Python
-        description: 'numpy, pandas, matplotlib, seaborn, openCV'
+        description: "numpy, pandas, matplotlib, seaborn, openCV"
         icon: code-bracket
-      - name: SQL
-        icon: code-bracket
-      - name: PowerBI
-        icon: code-bracket
-      - name: Advanced Excel
-        description: 'XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language'
-        icon: code-bracket
-      - name: Git, Linux Shell
-        icon: chart-bar
-      - name: Soft Skills
-        description: 'Problem solving, Analytical thinking, Attention to detail, Clear communication'
 
+      - name: SQL
+        icon: database
+
+      - name: PowerBI
+        icon: chart-pie
+
+      - name: Advanced Excel
+        description: "XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language"
+        icon: table-cells
+
+      - name: Git, Linux Shell
+        icon: terminal
+
+      - name: Soft Skills
+        description: "Problem solving, Analytical thinking, Attention to detail, Clear communication"
+        icon: sparkles
+
+
+        
   # - name: Hobbies
   #   color: '#eeac02'
   #   color_border: '#f0bf23'
