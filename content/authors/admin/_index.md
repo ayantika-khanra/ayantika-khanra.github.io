@@ -86,12 +86,11 @@ work:
    date_start: 2020-08-01
    date_end: 2025-09-27
    summary: |2-
-     - Analyzed complex microscopy datasets using Python codes.
-     - Independently developed the data analysis process of an interferrometric surface profiling method, increasing its accuracy by ~50%.
-     - Applied statistical analysis and mathematical modelling for interpretation of microscopy images.
-     - Created clear, insightful data visualizations to communicate findings to both scientific teams and non-specialist audiences.
-     - Communicated complex research findings to non-specialist audiences through presentations.
-
+     - Analyzed complex microscopy datasets using custom Python workflows.
+     - Independently developed the data-analysis pipeline for an interferometric surface-profiling method, improving accuracy by ~50%, and built a GUI application to streamline its use.
+     - Applied statistical analysis and mathematical modelling to interpret microscopy images.
+     - Created clear, insightful visualizations to communicate findings to scientific teams and non-specialist audiences.
+     - Presented complex research results in a simplified and structured manner for diverse audiences.
 
 # skills:
 #   - name: ""
@@ -135,28 +134,9 @@ awards:
     awarder: Coursera
     icon: coursera
     summary: |
-            This program covered the full workflow of practical data analysis. I learned how to clean and prepare data using spreadsheets, SQL, and R; perform exploratory analysis; apply descriptive statistics; and create clear, effective visualizations with Tableau. The coursework also emphasized analytical thinking, data-driven decision making, and presenting insights in a structured, business-focused manner.
+                  This course introduced the essentials of applied data analysis, including cleaning data, using spreadsheets and SQL, exploring patterns, and presenting findings clearly for decision making.
 
 
-#  - title: Blockchain Fundamentals
-#    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-#    date: '2023-07-01'
-#    awarder: edX
-#    icon: edx
-#    summary: |
-#      Learned:
-#      - Synthesize your own blockchain solutions
-#      - Gain an in-depth understanding of the specific mechanics of Bitcoin
-#      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
-
-#  - title: 'Object-Oriented Programming in R'
-#    url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
-#    certificate_url: https://www.datacamp.com
-#    date: '2023-01-21'
-#    awarder: datacamp
-#    icon: datacamp
-#    summary: |
-#      Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 
 #previously portfolio page pointed to a href="/projects"
 ---
