@@ -20,7 +20,7 @@ sections:
       background:
         color: black
         image:
-          filename: enhanced-h7S678j_2A2G-2.jpg
+          filename: diego-ph-5LOhydOtTKU-unsplash-1.jpg
           filters:
             brightness: 1.0
           size: cover
