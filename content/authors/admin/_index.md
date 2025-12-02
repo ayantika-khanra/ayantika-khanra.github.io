@@ -125,19 +125,8 @@ skills:
         icon: code-bracket
       - name: Git, Linux Shell
         icon: chart-bar
-
-  - name: Soft Skills
-    items:
-      - name: Problem solving
-        icon: light-bulb
-      - name: Analytical thinking
-        icon: chart-line
-      - name: Attention to detail
-        icon: check-circle
-      - name: Clear communication
-        icon: chat-bubble-left-right
-      - name: Organization
-        icon: clipboard-document
+      - name: Soft Skills
+        description: 'Problem solving, Analytical thinking, Attention to detail, Clear communication'
 
   # - name: Hobbies
   #   color: '#eeac02'
@@ -210,4 +199,4 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
    View Portfolio → 
 </a>
 
-**Technical Skills:** Python, MATLAB, R 
+**Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell
