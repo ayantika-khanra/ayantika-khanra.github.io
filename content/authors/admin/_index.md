@@ -71,7 +71,7 @@ education:
       GPA: 8.8/10.0
 #      Courses included:
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc, Physics (Minors: Statistics and Mathematics)
+  - area: BSc, Physics (Minors Statistics and Mathematics)
     institution: Presidency University, Kolkata
     date_start: 2013-08-01
     date_end: 2016-07-31
