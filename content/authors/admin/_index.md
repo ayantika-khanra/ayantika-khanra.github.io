@@ -145,10 +145,8 @@ awards:
 
 ## About Me
 
-I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed Python codes to turn large, complex datasets into clear, actionable insights.
-
-### Technical Skills
-Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell
+I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed Python codes to turn large, complex datasets into clear, actionable insights.  
+**Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell
 
 ### Experience
 Scientific Data Analyst (Aug 2020-Sep 2025)  
