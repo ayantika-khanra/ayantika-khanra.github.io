@@ -59,7 +59,7 @@ sections:
         </li>
 
         <li style="margin-bottom: 1rem;">
-          <strong>Soft Skills</strong>
+          <strong style="display:block; margin-bottom:0.4rem;">Soft Skills</strong>
           <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem; font-size: 1rem;">
             <li style="margin: 0 0 0.55rem 0;">Problem solving</li>
             <li style="margin: 0 0 0.55rem 0;">Analytical thinking</li>
