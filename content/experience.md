@@ -32,7 +32,7 @@ sections:
 
         <li style="margin-bottom: 1rem;">
           <strong>Python</strong>
-          <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem;">
+          <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem; font-size: 0.85rem;">
             <li style="margin: 0;">numpy, pandas, matplotlib, SQLAlchemy, seaborn</li>
             <li style="margin: 0;">others: openCV, tkinter</li>
           </ul>
@@ -48,7 +48,7 @@ sections:
 
         <li style="margin-bottom: 1rem;">
           <strong>Advanced Excel</strong>
-          <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem;">
+          <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem; font-size: 0.85rem;">
             <li style="margin: 0;">XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts</li>
             <li style="margin: 0;">PowerQuery, PowerPivot Data Modelling, DAX, basic M-language</li>
             <li style="margin: 0;">Excel Dashboards</li>
@@ -61,7 +61,7 @@ sections:
 
         <li style="margin-bottom: 1rem;">
           <strong>Soft Skills</strong>
-          <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem;">
+          <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem; font-size: 0.85rem;">
             <li style="margin: 0;">Problem solving</li>
             <li style="margin: 0;">Analytical thinking</li>
             <li style="margin: 0;">Attention to detail</li>
@@ -70,6 +70,7 @@ sections:
         </li>
 
         </ul>
+
 
 
 
