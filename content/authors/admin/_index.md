@@ -90,12 +90,7 @@ work:
    date_start: 2020-08-01
    date_end: 2025-09-27
    summary: |2-
-     Responsibilities included:
-     - Analyzed complex microscopy datasets using Python codes.
-     - Independently developed the data analysis process of an interferrometric surface profiling method, increasing its accuracy by ~50%.
-     - Applied statistical analysis and mathematical modelling for interpretation of microscopy images.
-     - Created clear, insightful data visualizations to communicate findings to both scientific teams and non-specialist audiences.
-     - Communicated complex research findings to non-specialist audiences through presentations.
+
 #  - position: Backend Software Engineer
 #    company_name: X
 #    company_url: ''
@@ -109,25 +104,25 @@ work:
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 
 
-skills:
-  - name: ""
-    items:
-      - name: Python
-        description: "numpy, pandas, matplotlib, seaborn, openCV"
-        icon: check-circle
-      - name: SQL
-        icon: check-circle
-      - name: PowerBI
-        icon: check-circle
-      - name: Advanced Excel
-        description: "XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language"
-        icon: check-circle
-      - name: Git, Linux Shell
-        icon: check-circle
+# skills:
+#   - name: ""
+#     items:
+#       - name: Python
+#         description: "numpy, pandas, matplotlib, seaborn, openCV"
+#         icon: check-circle
+#       - name: SQL
+#         icon: check-circle
+#       - name: PowerBI
+#         icon: check-circle
+#       - name: Advanced Excel
+#         description: "XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language"
+#         icon: check-circle
+#       - name: Git, Linux Shell
+#         icon: check-circle
 
-      - name: Soft Skills
-        description: "Problem solving, Analytical thinking, Attention to detail, Clear communication"
-        icon: check-circle
+#       - name: Soft Skills
+#         description: "Problem solving, Analytical thinking, Attention to detail, Clear communication"
+#         icon: check-circle
 
 
 
