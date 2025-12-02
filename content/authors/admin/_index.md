@@ -132,7 +132,7 @@ awards:
     awarder: Coursera
     icon: coursera
     summary: |
-      <div style="font-size: 0.85rem; line-height: 1.3 !important; margin-top: -1px;">
+      <div style="font-size: 0.85rem; line-height: 2 !important; margin-top: -1px;">
       This course introduced the essentials of applied data analysis, including cleaning data, using spreadsheets and SQL, exploring patterns, and presenting findings clearly for decision making.
       </div>
 
@@ -147,7 +147,7 @@ awards:
 ## About Me
 
 I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed Python codes to turn large, complex datasets into clear, actionable insights.  
-**Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell
+**Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell.
 
 ### Experience
 Scientific Data Analyst (Aug 2020-Sep 2025)  
