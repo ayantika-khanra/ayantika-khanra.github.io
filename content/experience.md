@@ -28,20 +28,28 @@ sections:
     content:
       title: Skills
       text: |
-        **Technical Skills**
+        <div style="line-height: 1.4;">
 
-        - Python (numpy, pandas, matplotlib, seaborn, openCV)  
-        - SQL  
-        - PowerBI  
-        - Advanced Excel (XLOOKUP/INDEX-MATCH, Pivot Tables, PowerQuery, DAX, etc.)  
-        - Git, Linux Shell  
+        **Python**  
+        <span style="font-size: 0.9rem; color: #666;">numpy, pandas, matplotlib, seaborn, openCV</span>
 
-        **Soft Skills**
+        **SQL**  
+        <span style="font-size: 0.9rem; color: #666;">Querying, joins, aggregations</span>
 
-        - Problem solving  
-        - Analytical thinking  
-        - Attention to detail  
-        - Clear communication  
+        **PowerBI**  
+        <span style="font-size: 0.9rem; color: #666;">Dashboards, DAX basics</span>
+
+        **Advanced Excel**  
+        <span style="font-size: 0.9rem; color: #666;">XLOOKUP/INDEX-MATCH, Pivot Tables & Charts, Dashboards, PowerQuery, PowerPivot</span>
+
+        **Git & Linux Shell**  
+        <span style="font-size: 0.9rem; color: #666;">Version control, shell commands</span>
+
+        **Soft Skills**  
+        <span style="font-size: 0.9rem; color: #666;">Problem solving, analytical thinking, attention to detail, clear communication</span>
+
+        </div>
+
   - block: resume-awards
     content:
       title: Awards
