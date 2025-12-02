@@ -82,9 +82,12 @@ sections:
     content:
       title: Languages
       text: |
-        • English — professional proficiency  
-        • Bengali — native  
+        <div style="font-size: 0.9rem;">
+        • English — professional proficiency<br>
+        • Bengali — native<br>
         • Hindi — basic
+        </div>
+
 
   # - block: resume-languages
   #   content:
