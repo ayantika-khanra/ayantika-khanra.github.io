@@ -37,7 +37,7 @@ sections:
 
         <li><strong>●  PowerBI</strong><br>
 
-        <li><strong>⬤  Advanced Excel</strong><br>
+        <li><strong>●  Advanced Excel</strong><br>
         <span style="font-size: 0.9rem; color:#666;">    XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts</span></li>
         <span style="font-size: 0.9rem; color:#666;">    PowerQuery, PowerPivot Data Modelling, DAX, basic M-language</span></li>
         <span style="font-size: 0.9rem; color:#666;">    Excel Dashboards</span></li>
