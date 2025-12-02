@@ -116,7 +116,7 @@ skills:
         description: 'numpy, pandas'
 #        percent: 80
         icon: code-bracket
-      - name: R
+      - name: SQL
         description: ''
 #        percent: 80
         icon: code-bracket
@@ -124,7 +124,11 @@ skills:
 #        description: ''
 #        percent: 100
 #        icon: chart-bar
-      - name: SQL
+      - name: PowerBI
+        description: ''
+#        percent: 40
+        icon: circle-stack
+      - name: Advanced Excel
         description: ''
 #        percent: 40
         icon: circle-stack
