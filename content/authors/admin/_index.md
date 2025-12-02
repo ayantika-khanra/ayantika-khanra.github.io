@@ -86,7 +86,6 @@ work:
    date_start: 2020-08-01
    date_end: 2025-09-27
    summary: |2-
-     Responsibilities included:
      - Analyzed complex microscopy datasets using Python codes.
      - Independently developed the data analysis process of an interferrometric surface profiling method, increasing its accuracy by ~50%.
      - Applied statistical analysis and mathematical modelling for interpretation of microscopy images.
