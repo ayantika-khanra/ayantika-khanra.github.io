@@ -30,27 +30,44 @@ sections:
       text: |
         <ul style="list-style: none; padding-left: 0; line-height: 1.4;">
 
-        <li><strong>• &nbsp; Python</strong><br>
-        <span style="font-size: 0.9rem; color:#666;">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • numpy, pandas, matplotlib, SQLAlchemy, seaborn<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • others: openCV, tkinter
-        </span>
+        <li style="margin-bottom: 1rem;">
+          <strong>• &nbsp; Python</strong><br>
+          <span style="font-size: 0.9rem; color:#666;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • numpy, pandas, matplotlib, SQLAlchemy, seaborn<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • others: openCV, tkinter
+          </span>
+        </li>
 
-        <li><strong>• &nbsp; SQL</strong><br>
+        <li style="margin-bottom: 1rem;">
+          <strong>• &nbsp; SQL</strong><br>
+        </li>
 
-        <li><strong>• &nbsp; PowerBI</strong><br>
+        <li style="margin-bottom: 1rem;">
+          <strong>• &nbsp; PowerBI</strong><br>
+        </li>
 
-        <li><strong>• &nbsp; Advanced Excel</strong><br>
-        <span style="font-size: 0.9rem; color:#666;">    XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts</span></li>
-        <span style="font-size: 0.9rem; color:#666;">    PowerQuery, PowerPivot Data Modelling, DAX, basic M-language</span></li>
-        <span style="font-size: 0.9rem; color:#666;">    Excel Dashboards</span></li>
+        <li style="margin-bottom: 1rem;">
+          <strong>• &nbsp; Advanced Excel</strong><br>
+          <span style="font-size: 0.9rem; color:#666;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • PowerQuery, PowerPivot Data Modelling, DAX, basic M-language<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • Excel Dashboards
+          </span>
+        </li>
 
-        <li><strong>• &nbsp; Git & Linux Shell</strong><br>
+        <li style="margin-bottom: 1rem;">
+          <strong>• &nbsp; Git & Linux Shell</strong><br>
+        </li>
 
-        <li><strong>• &nbsp; Soft Skills</strong><br>
-        <span style="font-size: 0.9rem; color:#666;">Problem solving, Analytical thinking, Attention to detail, Clear communication</span></li>
+        <li style="margin-bottom: 1rem;">
+          <strong>• &nbsp; Soft Skills</strong><br>
+          <span style="font-size: 0.9rem; color:#666;">
+            Problem solving, Analytical thinking, Attention to detail, Clear communication
+          </span>
+        </li>
 
         </ul>
+
 
 
   - block: resume-awards
