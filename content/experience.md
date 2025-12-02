@@ -31,7 +31,7 @@ sections:
 
         <li style="margin-bottom: 1rem;">
           <strong>Python</strong>
-          <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem; font-size: 0.85rem;">
+          <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem; font-size: 1rem;">
             <li style="margin: 0;">numpy, pandas, matplotlib, SQLAlchemy, seaborn</li>
             <li style="margin: 0;">others: openCV, tkinter</li>
           </ul>
@@ -82,7 +82,7 @@ sections:
     content:
       title: Languages
       text: |
-        <div style="font-size: 0.9rem;">
+        <div style="font-size: 1rem;">
         • English — professional proficiency<br>
         • Bengali — native<br>
         • Hindi — basic
