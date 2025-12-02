@@ -190,7 +190,7 @@ awards:
 
 ## About Me
 
-Strong foundation in programming and data analysis in context of experimental biophysics research. Experienced in developing custom Python, MATLAB, and R codes for quantitative analysis of complex data. Passionate about analyzing data into actionable insights in healthcare, biotech, and business contexts.
+I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed custom Python and MATLAB workflows to turn large, complex datasets into clear, actionable insights.
 
 <a href="/projects" 
    style="display: inline-block; padding: 14px 28px; 
