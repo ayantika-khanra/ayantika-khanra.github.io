@@ -50,10 +50,18 @@ sections:
 
   - block: resume-awards
     content:
-      title: Award
+      title: Courses & Certifications
       username: admin
   - block: resume-languages
     content:
       title: Languages
       username: admin
+
+  - block: markdown
+    content:
+      title: Hobbies
+      text: |
+        <div class="article-style" style="margin-top: 1rem;">
+          Reading, Crafting, Painting, Gardening
+        </div>
 ---
