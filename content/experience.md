@@ -30,7 +30,7 @@ sections:
       text: |
         <ul style="list-style: none; padding-left: 0; line-height: 1.4;">
 
-        <li><strong>Python</strong><br>
+        <li><strong>⬤ Python</strong><br>
         <span style="font-size: 0.9rem; color:#666;">numpy, pandas, matplotlib, seaborn, openCV</span></li>
 
         <li><strong>SQL</strong><br>
@@ -59,9 +59,9 @@ sections:
 
   - block: markdown
     content:
-      title: Hobbies
+      title: 
       text: |
         <div class="article-style" style="margin-top: 1rem;">
-          Reading, Crafting, Painting, Gardening
+         Hobbies: Reading, Crafting, Painting, Gardening
         </div>
 ---
