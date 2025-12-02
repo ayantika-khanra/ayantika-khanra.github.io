@@ -115,41 +115,29 @@ skills:
     items:
       - name: Python
         description: 'numpy, pandas, matplotlib, seaborn, openCV'
-#        percent: 80
         icon: code-bracket
       - name: SQL
-        description: ''
-#        percent: 80
         icon: code-bracket
       - name: PowerBI
-        description: ''
-#        percent: 40
         icon: code-bracket
       - name: Advanced Excel
         description: 'XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language'
-#        percent: 40
         icon: code-bracket
       - name: Git, Linux Shell
-        description: ''
-#        percent: 100
         icon: chart-bar
 
- - name: Hobbies
-   color: '#eeac02'
-   color_border: '#f0bf23'
-   items:
-     - name: Reading
-       description: ''
-#       percent: 60
-       icon: person-simple-walk
-     - name: Crafting
-       description: ''
-#       percent: 100
-       icon: cat
-     - name: Painting
-       description: ''
-#       percent: 80
-       icon: camera
+  - name: Hobbies
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: Reading
+        icon: person-simple-walk
+      - name: Crafting
+        icon: cat
+      - name: Painting
+        icon: camera
+      - name: Gardening
+        icon: camera
 
 languages:
   - name: English
