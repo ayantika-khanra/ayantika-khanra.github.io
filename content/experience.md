@@ -32,7 +32,7 @@ sections:
 
         <li style="margin-bottom: 1rem;">
           <strong>• &nbsp; Python</strong><br>
-          <span style="font-size: 0.9rem; color:#666;">
+          <span style="font-size: 0.9rem;">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • numpy, pandas, matplotlib, SQLAlchemy, seaborn<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • others: openCV, tkinter
           </span>
@@ -46,9 +46,9 @@ sections:
           <strong>• &nbsp; PowerBI</strong><br>
         </li>
 
-        <li style="margin-bottom: 1rem;">
+        <li style="margin-bottom: 1rm;">
           <strong>• &nbsp; Advanced Excel</strong><br>
-          <span style="font-size: 0.9rem; color:#666;">
+          <span style="font-size: 0.9rem;">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • PowerQuery, PowerPivot Data Modelling, DAX, basic M-language<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • Excel Dashboards
@@ -61,12 +61,13 @@ sections:
 
         <li style="margin-bottom: 1rem;">
           <strong>• &nbsp; Soft Skills</strong><br>
-          <span style="font-size: 0.9rem; color:#666;">
-            Problem solving, Analytical thinking, Attention to detail, Clear communication
+          <span style="font-size: 0.9rem;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • Problem solving, Analytical thinking, Attention to detail, Clear communication
           </span>
         </li>
 
         </ul>
+
 
 
 
