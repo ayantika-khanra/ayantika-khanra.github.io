@@ -82,7 +82,10 @@ sections:
     content:
       title: Languages
       text: |
-        English • Hindi • Bengali
+        • English — professional proficiency  
+        • Bengali — native  
+        • Hindi — basic
+
   # - block: resume-languages
   #   content:
   #     title: Languages
