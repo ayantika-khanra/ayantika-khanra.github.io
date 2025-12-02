@@ -50,7 +50,7 @@ sections:
 
   - block: resume-awards
     content:
-      title: Award
+      title: Courses & Certifications
       username: admin
   - block: resume-languages
     content:

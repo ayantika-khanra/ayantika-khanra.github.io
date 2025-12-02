@@ -113,17 +113,13 @@ skills:
       - name: Python
         description: "numpy, pandas, matplotlib, seaborn, openCV"
         icon: check-circle
-
       - name: SQL
         icon: check-circle
-
       - name: PowerBI
         icon: check-circle
-
       - name: Advanced Excel
         description: "XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language"
         icon: check-circle
-
       - name: Git, Linux Shell
         icon: check-circle
 
@@ -193,6 +189,8 @@ awards:
 
 I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed custom Python and MATLAB workflows to turn large, complex datasets into clear, actionable insights.
 
+**Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell
+
 <a href="/projects" 
    style="display: inline-block; padding: 14px 28px; 
           background: linear-gradient(135deg, #9B30FF, #6A0DAD); 
@@ -204,4 +202,3 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
    View Portfolio → 
 </a>
 
-**Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell
