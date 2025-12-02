@@ -150,12 +150,15 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
 **Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell.
 
 ### Experience
-<svg style="width:1rem; height:1rem; vertical-align:middle; margin-right:6px; opacity:0.9;" 
+<svg style="width:1rem; height:1rem; vertical-align:middle; margin-right:6px; opacity:0.9;"
      viewBox="0 0 24 24">
-  <path fill="currentColor" d="M10 2h4a2 2 0 0 1 2 2v2h4v14H4V6h4V4a2 2 0 0 1 2-2zm4 4V4h-4v2h4z"/>
+  <path fill="none" stroke="currentColor" stroke-width="2" 
+        stroke-linecap="round" stroke-linejoin="round"
+        d="M10 6V4h4v2m-9 0h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 4h14"/>
 </svg>
 Scientific Data Analyst (Aug 2020–Sep 2025)  
 <span style="font-size: 0.85rem;">IISc Bangalore</span>
+
 
 
 
