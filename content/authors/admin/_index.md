@@ -146,8 +146,7 @@ awards:
 
 ## About Me
 I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed Python codes to turn large, complex datasets into clear, actionable insights.
-<div style="height: 0.4rem;"></div>
-**Technical Skills:** Python, SQL, PowerBI, Advanced Excel, Git, Linux Shell.
+<div style="height: 0.4rem;">**Technical Skills:** Python, SQL, PowerBI, Advanced Excel, Git, Linux Shell.</div>
 
 ### Experience
 <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
