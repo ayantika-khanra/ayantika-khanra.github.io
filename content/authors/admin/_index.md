@@ -149,7 +149,7 @@ awards:
 I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed Python codes to turn large, complex datasets into clear, actionable insights.  
 **Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell.
 
-### Experienc
+### Experience
 <span class="iconify" data-icon="mdi:briefcase" style="font-size: 1.1rem; position: relative; top: 2px;"></span>  
 Scientific Data Analyst (Aug 2020–Sep 2025)  
 <span style="font-size: 0.85rem;">IISc Bangalore</span>
