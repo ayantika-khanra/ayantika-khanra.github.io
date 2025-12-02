@@ -18,12 +18,30 @@ sections:
       date_format: 'January 2006'
       # Education or Experience section first?
       is_education_first: false
-  - block: resume-skills
+  # - block: resume-skills
+  #   content:
+  #     title: Skills
+  #     username: admin
+  #   design:
+  #     show_skill_percentage: false
+  - block: markdown
     content:
       title: Skills
-      username: admin
-    design:
-      show_skill_percentage: false
+      text: |
+        **Technical Skills**
+
+        - Python (numpy, pandas, matplotlib, seaborn, openCV)  
+        - SQL  
+        - PowerBI  
+        - Advanced Excel (XLOOKUP/INDEX-MATCH, Pivot Tables, PowerQuery, DAX, etc.)  
+        - Git, Linux Shell  
+
+        **Soft Skills**
+
+        - Problem solving  
+        - Analytical thinking  
+        - Attention to detail  
+        - Clear communication  
   - block: resume-awards
     content:
       title: Awards
