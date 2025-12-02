@@ -28,27 +28,28 @@ sections:
     content:
       title: Skills
       text: |
-        <div style="line-height: 1.4;">
+        <ul style="list-style: none; padding-left: 0; line-height: 1.4;">
 
-        **Python**  
-        <span style="font-size: 0.9rem; color: #666;">numpy, pandas, matplotlib, seaborn, openCV</span>
+        <li><strong>Python</strong><br>
+        <span style="font-size: 0.9rem; color:#666;">numpy, pandas, matplotlib, seaborn, openCV</span></li>
 
-        **SQL**  
-        <span style="font-size: 0.9rem; color: #666;">Querying, joins, aggregations</span>
+        <li><strong>SQL</strong><br>
+        <span style="font-size: 0.9rem; color:#666;">Querying, joins, aggregations</span></li>
 
-        **PowerBI**  
-        <span style="font-size: 0.9rem; color: #666;">Dashboards, DAX basics</span>
+        <li><strong>PowerBI</strong><br>
+        <span style="font-size: 0.9rem; color:#666;">Dashboards, DAX basics</span></li>
 
-        **Advanced Excel**  
-        <span style="font-size: 0.9rem; color: #666;">XLOOKUP/INDEX-MATCH, Pivot Tables & Charts, Dashboards, PowerQuery, PowerPivot</span>
+        <li><strong>Advanced Excel</strong><br>
+        <span style="font-size: 0.9rem; color:#666;">XLOOKUP/INDEX-MATCH, Pivot Tables, PowerQuery, Dashboards</span></li>
 
-        **Git & Linux Shell**  
-        <span style="font-size: 0.9rem; color: #666;">Version control, shell commands</span>
+        <li><strong>Git & Linux Shell</strong><br>
+        <span style="font-size: 0.9rem; color:#666;">Version control, automation basics</span></li>
 
-        **Soft Skills**  
-        <span style="font-size: 0.9rem; color: #666;">Problem solving, analytical thinking, attention to detail, clear communication</span>
+        <li><strong>Soft Skills</strong><br>
+        <span style="font-size: 0.9rem; color:#666;">Problem solving, analytical thinking, communication</span></li>
 
-        </div>
+        </ul>
+
 
   - block: resume-awards
     content:
