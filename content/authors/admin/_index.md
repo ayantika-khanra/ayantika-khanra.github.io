@@ -20,7 +20,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role:  Analyst Focused on<br>Data-Driven Insights
+role:  Data Analyst
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -113,7 +113,7 @@ skills:
   - name: Technical Skills
     items:
       - name: Python
-        description: ''
+        description: 'numpy, pandas'
 #        percent: 80
         icon: code-bracket
       - name: R
