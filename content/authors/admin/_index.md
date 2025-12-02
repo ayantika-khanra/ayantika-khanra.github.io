@@ -113,7 +113,7 @@ skills:
   - name: Technical Skills
     items:
       - name: Python
-        description: 'numpy, pandas'
+        description: 'numpy, pandas, matplotlib, seaborn, openCV'
 #        percent: 80
         icon: code-bracket
       - name: SQL
@@ -127,11 +127,11 @@ skills:
       - name: PowerBI
         description: ''
 #        percent: 40
-        icon: circle-stack
+        icon: code-bracket
       - name: Advanced Excel
-        description: ''
+        description: 'XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language'
 #        percent: 40
-        icon: circle-stack
+        icon: code-bracket
 #  - name: Hobbies
 #    color: '#eeac02'
 #    color_border: '#f0bf23'
