@@ -154,10 +154,10 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
           stroke-linecap="round" stroke-linejoin="round"
           d="M10 7V5h4v2m-6 0h8m4 0h-2H6H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm0 4H4m16 0"/>
   </svg>
-  <span>Scientific Data Analyst (Aug 2020–Sep 2025)</span>
+  <span>Scientific Data Analyst</span>
 </div>
 
-<div style="font-size: 0.85rem; margin-left: 1.6rem; line-height: 1.3;">
+<div style="font-size: 0.9rem; margin-left: 1.6rem; line-height: 1.3;">
   IISc Bangalore<br>
   Aug 2020 – Sep 2025<br>
   <span style="opacity: 0.9;">Technical Skills: Python, SQL, PowerBI, Advanced Excel, Git, Linux Shell</span>
