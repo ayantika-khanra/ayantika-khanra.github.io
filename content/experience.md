@@ -32,8 +32,8 @@ sections:
 
         <li><strong>• &nbsp; Python</strong><br>
         <span style="font-size: 0.9rem; color:#666;">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• numpy, pandas, matplotlib, SQLAlchemy, seaborn<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• others: openCV, tkinter
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • numpy, pandas, matplotlib, SQLAlchemy, seaborn<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • others: openCV, tkinter
         </span>
 
         <li><strong>• &nbsp; SQL</strong><br>
