@@ -130,7 +130,7 @@ awards:
     url: https://coursera.org/share/35ada681127c3320d6f04a350a2f6764
     date: '2025-05-25'
     awarder: Coursera
-    icon: coursera
+#    icon: coursera
     summary: |
       <div style="font-size: 0.85rem; line-height: 1.6 !important; margin-top: -1px;">
       This course introduced the essentials of applied data analysis, including cleaning data, using spreadsheets and SQL, exploring patterns, and presenting findings clearly for decision making.
