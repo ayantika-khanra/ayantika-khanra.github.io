@@ -120,10 +120,6 @@ skills:
         description: ''
 #        percent: 80
         icon: code-bracket
-#      - name: Data Science
-#        description: ''
-#        percent: 100
-#        icon: chart-bar
       - name: PowerBI
         description: ''
 #        percent: 40
@@ -132,6 +128,10 @@ skills:
         description: 'XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language'
 #        percent: 40
         icon: code-bracket
+      - name: Git, Linux Shell
+        description: ''
+#        percent: 100
+        icon: chart-bar
 #  - name: Hobbies
 #    color: '#eeac02'
 #    color_border: '#f0bf23'
