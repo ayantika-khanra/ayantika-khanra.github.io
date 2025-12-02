@@ -115,18 +115,15 @@ work:
 
 
 
-languages:
-  - name: English
-#    percent: 100
-  - name: Hindi
-#    percent: 40
-  - name: Bengali
-#    percent: 100
+# languages:
+#   - name: English
+# #    percent: 100
+#   - name: Hindi
+# #    percent: 40
+#   - name: Bengali
+# #    percent: 100
 
 
-# Awards.
-#   Add/remove as many awards below as you like.
-#   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
   - title: "<span style='font-size: 0.9rem;'>Google Data Analytics Professional Certificate</span>"
