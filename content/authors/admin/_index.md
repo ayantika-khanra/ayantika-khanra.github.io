@@ -116,11 +116,11 @@ work:
 
 languages:
   - name: English
-    percent: 100
+#    percent: 100
   - name: Hindi
-    percent: 40
+#    percent: 40
   - name: Bengali
-    percent: 100
+#    percent: 100
 
 
 # Awards.
