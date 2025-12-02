@@ -132,7 +132,7 @@ awards:
     awarder: Coursera
     icon: coursera
     summary: |
-      <div style="font-size: 0.85rem; line-height: 1.0 !important; margin-top: -6px;">
+      <div style="font-size: 0.85rem; line-height: 1.1 !important; margin-top: -1px;">
       This course introduced the essentials of applied data analysis, including cleaning data, using spreadsheets and SQL, exploring patterns, and presenting findings clearly for decision making.
       </div>
 
