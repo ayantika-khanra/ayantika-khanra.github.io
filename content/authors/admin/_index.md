@@ -151,7 +151,7 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
 
 ### Experience
 Scientific Data Analyst (Aug 2020-Sep 2025)  
-<span style="font-size: 0.7rem;">IISc Bangalore</span>
+<span style="font-size: 0.85rem;">IISc Bangalore</span>
 
 <a href="/project2" 
    style="display: inline-block; padding: 14px 28px; 
