@@ -152,12 +152,13 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
 ### Experience
 <svg style="width:1rem; height:1rem; vertical-align:middle; margin-right:6px; opacity:0.9;"
      viewBox="0 0 24 24">
-  <path fill="none" stroke="currentColor" stroke-width="2" 
+  <path fill="none" stroke="currentColor" stroke-width="1.8"
         stroke-linecap="round" stroke-linejoin="round"
-        d="M10 6V4h4v2m-9 0h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 4h14"/>
+        d="M10 7V5h4v2m-6 0h8m4 0h-2H6H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm0 4H4m16 0"/>
 </svg>
 Scientific Data Analyst (Aug 2020–Sep 2025)  
 <span style="font-size: 0.85rem;">IISc Bangalore</span>
+
 
 
 
