@@ -160,8 +160,8 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
 </div>
 
 <div style="font-size: 0.9rem; margin-left: 1.6rem; line-height: 1.5;">
-  IISc Bangalore<br>
-  Aug 2020 – Sep 2025
+  &nbsp;&nbsp;&nbsp;IISc Bangalore<br>
+  &nbsp;&nbsp;&nbsp;Aug 2020 – Sep 2025
 </div>
 
 
