@@ -78,12 +78,17 @@ sections:
     content:
       title: Courses & Certifications
       username: admin
-  - block: resume-languages
+  - block: markdown
     content:
       title: Languages
-      username: admin
-    design:
-      show_percentage: false
+      text: |
+        English • Hindi • Bengali
+  # - block: resume-languages
+  #   content:
+  #     title: Languages
+  #     username: admin
+  #   design:
+  #     show_percentage: false
 
   # - block: markdown
   #   content:
