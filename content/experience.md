@@ -53,7 +53,7 @@ sections:
 
   - block: resume-awards
     content:
-      title: Awards
+      title: Award
       username: admin
   - block: resume-languages
     content:
