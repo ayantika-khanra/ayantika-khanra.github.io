@@ -132,7 +132,7 @@ awards:
     awarder: Coursera
     icon: coursera
     summary: |
-      <div style="font-size: 0.85rem; line-height: 1.1 !important; margin-top: -1px;">
+      <div style="font-size: 0.85rem; line-height: 1.3 !important; margin-top: -1px;">
       This course introduced the essentials of applied data analysis, including cleaning data, using spreadsheets and SQL, exploring patterns, and presenting findings clearly for decision making.
       </div>
 
@@ -151,7 +151,7 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
 
 ### Experience
 Scientific Data Analyst (Aug 2020-Sep 2025)  
-IISc Bangalore
+<span style="font-size: 0.9rem;">IISc Bangalore</span>
 
 <a href="/project2" 
    style="display: inline-block; padding: 14px 28px; 
