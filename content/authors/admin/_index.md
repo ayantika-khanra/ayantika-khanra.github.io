@@ -148,6 +148,10 @@ I'm a data analyst with a strong foundation in math, statistics, and programming
 
 **Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell
 
+#### Experience
+Scientific Data Analyst (Aug 2020-Sep 2025)
+IISc Bangalore
+
 <a href="/project2" 
    style="display: inline-block; padding: 14px 28px; 
           background: linear-gradient(135deg, #9B30FF, #6A0DAD); 
