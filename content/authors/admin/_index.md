@@ -118,7 +118,7 @@ skills:
         icon: code-bracket
 
       - name: SQL
-        icon: database
+        icon: circle-stack
 
       - name: PowerBI
         icon: chart-pie
@@ -128,14 +128,14 @@ skills:
         icon: table-cells
 
       - name: Git, Linux Shell
-        icon: terminal
+        icon: command-line
 
       - name: Soft Skills
         description: "Problem solving, Analytical thinking, Attention to detail, Clear communication"
-        icon: sparkles
+        icon: check-circle
 
 
-        
+
   # - name: Hobbies
   #   color: '#eeac02'
   #   color_border: '#f0bf23'
