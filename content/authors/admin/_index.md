@@ -129,13 +129,16 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Google Google Data Analytics Professional Certificate
+  - title: "<span style='font-size: 0.9rem;'>Google Data Analytics Professional Certificate</span>"
     url: https://coursera.org/share/35ada681127c3320d6f04a350a2f6764
     date: '2025-05-25'
     awarder: Coursera
     icon: coursera
     summary: |
-                  This course introduced the essentials of applied data analysis, including cleaning data, using spreadsheets and SQL, exploring patterns, and presenting findings clearly for decision making.
+      <span style="font-size: 0.85rem;">
+      This course introduced the essentials of applied data analysis, including cleaning data, using spreadsheets and SQL, exploring patterns, and presenting findings clearly for decision making.
+      </span>
+
 
 
 
