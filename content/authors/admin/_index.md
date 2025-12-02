@@ -86,11 +86,12 @@ work:
    date_start: 2020-08-01
    date_end: 2025-09-27
    summary: |2-
-     - Analyzed complex microscopy datasets using custom Python workflows.
-     - Independently developed the data-analysis pipeline for an interferometric surface-profiling method, improving accuracy by ~50%, and built a GUI application to streamline its use.
-     - Applied statistical analysis and mathematical modelling to interpret microscopy images.
-     - Created clear, insightful visualizations to communicate findings to scientific teams and non-specialist audiences.
-     - Presented complex research results in a simplified and structured manner for diverse audiences.
+     - **Analyzed large microscopy datasets** using custom Python codes.
+     - **Designed and built the full data-analysis pipeline** for an interferometric surface-profiling method, improving accuracy by ~50%, and created a GUI tool to make the workflow easier to use.
+     - Applied **statistical analysis and mathematical modeling** to interpret image data.
+     - Produced **clear visualizations** to explain results to scientific as well as non-technical audiences.
+     - **Communicated findings through presentations** for diverse audiences.
+
 
 # skills:
 #   - name: ""
