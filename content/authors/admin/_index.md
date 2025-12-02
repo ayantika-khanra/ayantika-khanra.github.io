@@ -71,33 +71,21 @@ education:
       GPA: 8.8/10.0
 #      Courses included:
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc, Physics (Minors Statistics and Mathematics)
+  - area: "BSc, Physics (Minors: Statistics and Mathematics)"
     institution: Presidency University, Kolkata
     date_start: 2013-08-01
     date_end: 2016-07-31
     summary: |
       GPA: 8.9/10.0
       
-# work:
-#  - position: Scientific Data Analyst (Senior Research Fellow)
-#    company_name: IISc Bangalore
-#    company_url: ''
-#    company_logo: ''
-#    date_start: 2020-08-01
-#    date_end: 2025-09-27
-#    summary: |2-
-
-#  - position: Backend Software Engineer
-#    company_name: X
-#    company_url: ''
-#    company_logo: ''
-#    date_start: 2016-01-01
-#    date_end: 2020-12-31
-#    summary: |
-#      Responsibilities include:
-#      - Migrated infrastructure to a new data center
-#      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-#      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+work:
+ - position: Scientific Data Analyst (Senior Research Fellow)
+   company_name: IISc Bangalore
+   company_url: ''
+   company_logo: ''
+   date_start: 2020-08-01
+   date_end: 2025-09-27
+   summary: |2-
 
 
 # skills:
