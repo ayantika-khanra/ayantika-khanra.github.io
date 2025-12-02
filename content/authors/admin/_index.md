@@ -49,15 +49,15 @@ profiles:
 
 interests:
   - Data Analytics
-  - Data visualization
+  - Data Visualization
   - Python Programming
-  - Applied statistics
+  - Applied Statistics
 
 education:
-  - area: PhD, Biophysics with Microscopy Image Analysis
+  - area: Junior Research Fellow
     institution: IISc Bangalore
     date_start: 2018-08-01
-    date_end: 2025-03-27
+    date_end: 2020-07-31
 #    summary: |
 #      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
 #    button:
@@ -71,7 +71,7 @@ education:
       GPA: 8.8/10.0
 #      Courses included:
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc, Physics
+  - area: BSc, Physics (Minors: Statistics and Mathematics)
     institution: Presidency University, Kolkata
     date_start: 2013-08-01
     date_end: 2016-07-31
@@ -83,17 +83,19 @@ education:
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
- - position: Director of Cloud Infrastructure
-   company_name: GenCoin
+ - position: Scientific Data Analyst (Senior Research Fellow)
+   company_name: IISc Bangalore
    company_url: ''
    company_logo: ''
-   date_start: 2021-01-01
-   date_end: ''
+   date_start: 2020-08-01
+   date_end: 2025-09-27
    summary: |2-
-     Responsibilities include:
-     - lorem ipsum dolor sit amet, consectetur adipiscing elit
-     - lorem ipsum dolor sit amet, consectetur adipiscing elit
-     - lorem ipsum dolor sit amet, consectetur adipiscing elit
+     Responsibilities included:
+     - Analyzed complex microscopy datasets using Python codes.
+     - Independently developed the data analysis process of an interferrometric surface profiling method, increasing its accuracy by ~50%.
+     - Applied statistical analysis and mathematical modelling for interpretation of microscopy images.
+     - Created clear, insightful data visualizations to communicate findings to both scientific teams and non-specialist audiences.
+     - Communicated complex research findings to non-specialist audiences through presentations.
 #  - position: Backend Software Engineer
 #    company_name: X
 #    company_url: ''
@@ -128,19 +130,6 @@ skills:
         icon: check-circle
 
 
-
-  # - name: Hobbies
-  #   color: '#eeac02'
-  #   color_border: '#f0bf23'
-  #   items:
-  #     - name: Reading
-  #       icon: person-simple-walk
-  #     - name: Crafting
-  #       icon: cat
-  #     - name: Painting
-  #       icon: camera
-  #     - name: Gardening
-  #       icon: camera
 
 languages:
   - name: English
@@ -189,7 +178,7 @@ awards:
 
 ## About Me
 
-I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed custom Python and MATLAB workflows to turn large, complex datasets into clear, actionable insights.
+I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed Python codes to turn large, complex datasets into clear, actionable insights.
 
 **Technical Skills:** Python, SQL, PowerBI ,Advanced Excel, Git, Linux Shell
 
