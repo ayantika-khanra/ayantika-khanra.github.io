@@ -20,7 +20,7 @@ sections:
       background:
         color: black
         image:
-          filename: diego-ph-5LOhydOtTKU-unsplash-1.jpg
+          filename: enhanced-blurred.png
           filters:
             brightness: 1.0
           size: cover
