@@ -141,7 +141,7 @@ awards:
 ---
 
 ## About Me
-<p style="margin-bottom: 0.35rem;">
+<p style="margin-bottom: 0.65rem;">
 I'm a data analyst with a strong foundation in math, statistics, and programming. Previously, I worked as a scientific data analyst and developed Python codes to turn large, complex datasets into clear, actionable insights.
 </p>
 <div style="margin-top: 0.35rem;">
