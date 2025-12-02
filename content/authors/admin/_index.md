@@ -69,10 +69,7 @@ education:
     date_end: 2018-07-31
     summary: |
       GPA: 8.8/10.0
-
 #      Courses included:
-#      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-#      - lorem ipsum dolor sit amet, consectetur adipiscing elit
 #      - lorem ipsum dolor sit amet, consectetur adipiscing elit
   - area: BSc, Physics
     institution: Presidency University, Kolkata
@@ -115,20 +112,20 @@ skills:
     items:
       - name: Python
         description: "numpy, pandas, matplotlib, seaborn, openCV"
-        icon: code-bracket
+        icon: check-circle
 
       - name: SQL
-        icon: circle-stack
+        icon: check-circle
 
       - name: PowerBI
-        icon: chart-pie
+        icon: check-circle
 
       - name: Advanced Excel
         description: "XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts, Excel Dashboards, PowerQuery, PowerPivot Data Modelling, DAX, basic M-language"
-        icon: table-cells
+        icon: check-circle
 
       - name: Git, Linux Shell
-        icon: command-line
+        icon: check-circle
 
       - name: Soft Skills
         description: "Problem solving, Analytical thinking, Attention to detail, Clear communication"
