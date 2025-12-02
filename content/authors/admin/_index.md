@@ -132,21 +132,24 @@ skills:
         description: ''
 #        percent: 100
         icon: chart-bar
+
+
+Gardening
  - name: Hobbies
    color: '#eeac02'
    color_border: '#f0bf23'
    items:
-     - name: Hiking
+     - name: Reading
        description: ''
-       percent: 60
+#       percent: 60
        icon: person-simple-walk
-     - name: Cats
+     - name: Crafting
        description: ''
-       percent: 100
+#       percent: 100
        icon: cat
-     - name: Photography
+     - name: Painting
        description: ''
-       percent: 80
+#       percent: 80
        icon: camera
 
 languages:
