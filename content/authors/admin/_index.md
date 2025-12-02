@@ -131,11 +131,12 @@ languages:
 awards:
   - title: Google Google Data Analytics Professional Certificate
     url: https://coursera.org/share/35ada681127c3320d6f04a350a2f6764
-    date: '2023-11-25'
+    date: '2025-05-25'
     awarder: Coursera
     icon: coursera
     summary: |
-      I studied the foundational concept of neural networks and deep learning. By the end, I was familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
+            This program covered the full workflow of practical data analysis. I learned how to clean and prepare data using spreadsheets, SQL, and R; perform exploratory analysis; apply descriptive statistics; and create clear, effective visualizations with Tableau. The coursework also emphasized analytical thinking, data-driven decision making, and presenting insights in a structured, business-focused manner.
+
 
 #  - title: Blockchain Fundamentals
 #    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals

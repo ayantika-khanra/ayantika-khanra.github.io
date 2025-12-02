@@ -82,6 +82,8 @@ sections:
     content:
       title: Languages
       username: admin
+    design:
+      show_percentage: false
 
   # - block: markdown
   #   content:
