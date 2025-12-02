@@ -35,7 +35,7 @@ sections:
 
         <li><strong>⬤  SQL</strong><br>
 
-        <li><strong>⬤  PowerBI</strong><br>
+        <li><strong>●  PowerBI</strong><br>
 
         <li><strong>⬤  Advanced Excel</strong><br>
         <span style="font-size: 0.9rem; color:#666;">    XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts</span></li>
