@@ -98,34 +98,41 @@ Short_region_country_name =
 ```
 - **Calendar table**: I parsed all date columns, including the calender table with US locale handling. I also added a year column in Calender table.
 ``` m
-ParseUSDate = Table.TransformColumns(Previous_Step, {{"Date", each Date.From(DateTimeZone.From(_, "en_US")), type date}})
+ParseUSDate = 
+       Table.TransformColumns(Previous_Step, 
+                              {{"Date", each Date.From(DateTimeZone.From(_, "en_US")), 
+                              type date}})
 ```
 ``` m
-AddYearColumn = Table.AddColumn(ParseUSDate, "Year", each Date.Year([Date]), Int64.Type)
+AddYearColumn = 
+       Table.AddColumn(ParseUSDate, "Year", each Date.Year([Date]), Int64.Type)
 ```
 
 - **Customer Table**: Here, I formatted the Annual Income column, calculated customer age from birthday, and created age groups.
 ``` m
-CleanIncome =  Table.TransformColumns(Prev, {{"AnnualIncome($)", 
-                                              each Number.FromText(Text.Remove(_, "$")), 
-                                              type number}}
-                                     ),
-IncomeBand =Table.AddColumn(CleanIncome, "Annual_Income",
-                            each "$ " & Number.ToText(Number.IntegerDivide([AnnualIncome($)], 1000)) & " K",
-                            type text)
-
-AgeCalc = Table.AddColumn(IncomeBand, "Age",
-                          each Duration.Days(#date(2017, 6, 30) - Date.From([BirthDate])) / 365,
-                          type number),
+CleanIncome =  
+       Table.TransformColumns(Prev, {{"AnnualIncome($)", 
+                              each Number.FromText(Text.Remove(_, "$")), 
+                              type number}}
+                             ),
+IncomeBand =
+       Table.AddColumn(CleanIncome, "Annual_Income",
+                       each "$ " & Number.ToText(Number.IntegerDivide([AnnualIncome($)], 1000)) & " K",
+                       type text)
+AgeCalc = 
+       Table.AddColumn(IncomeBand, "Age",
+                       each Duration.Days(#date(2017, 6, 30) - Date.From([BirthDate])) / 365,
+                       type number),
 RoundAge = Table.TransformColumnTypes(AgeCalc, {{"Age", Int64.Type}}),
-AgeGroup =Table.AddColumn(RoundAge, "Age_Group",
-                         each if [Age] < 40 then "<40"
+AgeGroup =
+       Table.AddColumn(RoundAge, "Age_Group",
+                       each if [Age] < 40 then "<40"
                               else if [Age] < 50 then "40-49"
                               else if [Age] < 60 then "50-59"
                               else if [Age] < 70 then "60-69"
                               else if [Age] < 80 then "70-79"
                               else ">=80",
-                         type text)
+                       type text)
 ```
 
 - **Sales Files (2015–2017)**: The Sales files were brought in differently because they needed to be merged. I used Data → Get Data → From Folder to load the entire folder. A text filter kept only files whose names contained "Sales". After that, I combined the files into a single fact table called fSales.
