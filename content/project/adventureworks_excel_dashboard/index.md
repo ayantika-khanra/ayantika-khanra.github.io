@@ -77,10 +77,11 @@ I built a Excel-based dashboard using the AdventureWorks dataset from [Kaggle](h
 All CSV files were imported through Data → Get Data → From File (except sales files).
 - **Territory Table**: I brought all source files into Power Query and applied a series of transformations. Most of the auto-generated steps (header promotion, simple type changes) weren't reused in the write-up, but I kept the parts where I performed non-trivial logic.
 ``` m
-Merged_region_country_name =  Table.AddColumn(Previous_step, "Clean_region_name", 
-                                              each if [Region] = [Country] then [Region] 
-                                                   else [Country]&" ("&[Region]&")" 
-                                             ),
+Merged_region_country_name =  
+       Table.AddColumn(Previous_step, "Clean_region_name", 
+                       each if [Region] = [Country] then [Region] 
+                              else [Country]&" ("&[Region]&")" 
+                       ),
 Short_region_country_name = Table.TransformColumns(Merged_region_country_name,
                                                    {{"Clean_region_name",
                                                      each
@@ -138,3 +139,36 @@ After loading all queries, I modeled the data in powerpivot:
 Then relationships were set up as follows:
 
 {{< figure src="/images/excel/schema.png" class="round" >}}
+
+
+
+
+
+
+3. Revenue, Profit & Volume Dashboard
+
+The first page focused on business metrics. I designed it around four KPI cards:
+
+Total Revenue (YTD)
+
+Total Profit (YTD)
+
+Profit Margin (YTD)
+
+Units Sold (YTD)
+
+Each KPI displayed the year-over-year growth using the same YTD window (Jan–Jun) for consistency with the 2017 incomplete data.
+
+Below the KPIs, I built several visuals:
+
+Monthly Revenue Trend:
+I intentionally used area charts for 2015 and 2016, and a thin line for 2017 with a highlighted endpoint. The idea was to emphasize that 2017 is still “in progress” and to visually separate it without overwhelming the layout.
+
+Revenue by Category, Subcategory, and Products:
+Bar charts showing top performers. I limited products and subcategories to top 10 to avoid clutter.
+
+Revenue by Country:
+A filled map, with labels only where the region size allowed. The labels were generated from the cleaned region names.
+
+Metric Switching Mechanism:
+Excel doesn’t allow native metric switching in pivot charts, so I simulated the behavior with a set of buttons styled to look like slicers. Each button hyperlinks to a sheet containing identical visuals but using a different measure (Revenue, Profit, Margin, Volume). It’s not the most elegant workaround, but it gives the user a feeling of “switching the metric” without breaking the visual flow.
