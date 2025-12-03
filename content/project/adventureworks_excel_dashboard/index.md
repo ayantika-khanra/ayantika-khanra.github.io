@@ -97,7 +97,7 @@ Short_region_country_name =
                               }}
                               )
 ```
-- **Calendar table**: I parsed all date columns, including the calender table with US locale handling. I also added a year column in Calender table.
+● **Calendar table**: I parsed all date columns, including the calender table with US locale handling. I also added a year column in Calender table.
 ``` m
 ParseUSDate = 
        Table.TransformColumns(Previous_Step, 
@@ -108,8 +108,7 @@ ParseUSDate =
 AddYearColumn = 
        Table.AddColumn(ParseUSDate, "Year", each Date.Year([Date]), Int64.Type)
 ```
-
-- **Customer Table**: Here, I formatted the Annual Income column, calculated customer age from birthday, and created age groups.
+● **Customer Table**: Here, I formatted the Annual Income column, calculated customer age from birthday, and created age groups.
 ``` m
 CleanIncome =  
        Table.TransformColumns(Prev, {{"AnnualIncome($)", 
@@ -135,8 +134,7 @@ AgeGroup =
                               else ">=80",
                        type text)
 ```
-
-- **Sales Files (2015–2017)**: The Sales files were brought in differently because they needed to be merged. I used Data → Get Data → From Folder to load the entire folder. A text filter kept only files whose names contained "Sales". After that, I combined the files into a single fact table called fSales.
+● **Sales Files (2015–2017)**: The Sales files were brought in differently because they needed to be merged. I used Data → Get Data → From Folder to load the entire folder. A text filter kept only files whose names contained "Sales". After that, I combined the files into a single fact table called fSales.
 
 
 ### Data Modeling in Power Pivot
