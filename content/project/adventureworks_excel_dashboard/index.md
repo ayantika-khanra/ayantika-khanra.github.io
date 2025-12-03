@@ -75,7 +75,8 @@ I built a Excel-based dashboard using the AdventureWorks dataset from [Kaggle](h
 ### Data Preparation in Power Query
 
 All CSV files were imported through Data → Get Data → From File (except sales files).
-- **Territory Table**: I brought all source files into Power Query and applied a series of transformations. Most of the auto-generated steps (header promotion, simple type changes) weren't reused in the write-up, but I kept the parts where I performed non-trivial logic.
+
+● **Territory Table**: I brought all source files into Power Query and applied a series of transformations. Most of the auto-generated steps (header promotion, simple type changes) weren't reused in the write-up, but I kept the parts where I performed non-trivial logic.
 ``` m
 Merged_region_country_name =  
        Table.AddColumn(Previous_step, "Clean_region_name", 
