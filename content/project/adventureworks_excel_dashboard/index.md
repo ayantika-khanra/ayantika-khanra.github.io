@@ -136,7 +136,6 @@ AgeGroup =
 ```
 ● **Sales Files (2015–2017)**: The Sales files were brought in differently because they needed to be merged. I used Data → Get Data → From Folder to load the entire folder. A text filter kept only files whose names contained "Sales". After that, I combined the files into a single fact table called fSales.
 
-
 ### Data Modeling in Power Pivot
 
 After loading all queries, I modeled the data in powerpivot:
