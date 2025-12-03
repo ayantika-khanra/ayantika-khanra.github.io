@@ -82,18 +82,19 @@ Merged_region_country_name =
                        each if [Region] = [Country] then [Region] 
                               else [Country]&" ("&[Region]&")" 
                        ),
-Short_region_country_name = Table.TransformColumns(Merged_region_country_name,
-                                                   {{"Clean_region_name",
-                                                     each
-                                                         let
-                                                            str  = _,
-                                                            rep1 = Text.Replace(str, "United Kingdom", "U.K."),
-                                                            rep2 = Text.Replace(rep1, "United States", "U.S.")
-                                                         in
-                                                            rep2,
-                                                     type text
-                                                   }}
-                                                  )
+Short_region_country_name = 
+       Table.TransformColumns(Merged_region_country_name,
+                              {{"Clean_region_name",
+                              each
+                                     let
+                                     str  = _,
+                                     rep1 = Text.Replace(str, "United Kingdom", "U.K."),
+                                     rep2 = Text.Replace(rep1, "United States", "U.S.")
+                                     in
+                                     rep2,
+                              type text
+                              }}
+                              )
 ```
 - **Calendar table**: I parsed all date columns, including the calender table with US locale handling. I also added a year column in Calender table.
 ``` m
