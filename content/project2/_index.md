@@ -73,13 +73,22 @@ Here are some of the projects I’ve worked on. Click on the titles to learn mor
   </div>
 
 
+  <div class="project-block">
+    <a href="https://ayantika-khanra.github.io/project/adventureworks_excel_dashboard/">
+      <img src="/images/display_images/excel_dashboard.png" alt="adventureworks_excel_dashboard">
+      <h3>Sales Dashboard from AdventureWorks Dataset</h3>
+    </a>
+    <p class="tag">Excel, Pivot Table and Pivot Charts, PowerQuery, PowerPivot, M language, DAX</p>
+    <p></p>
+  </div>
+
 
   <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/pharmacy_dashboard/">
       <img src="/images/display_images/Pharmacy_dashboard.jpg" alt="Pharmacy_dashboard">
       <h3>Dashboard for sales in a Pharmacy</h3>
     </a>
-    <p class="tag">Tag: Tableau</p>
+    <p class="tag">Tableau</p>
     <p></p>
   </div>
 
