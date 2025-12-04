@@ -172,7 +172,7 @@ DAX:
 ### Dashboard structure
 **"Revenue, Profit & Volume" page** of the Dashboard focused on business metrics. 
 
-- **KPI cards:** **Total Revenue (YTD)**, **Total Profit (YTD)**, **Profit Margin (YTD)** and **Units Sold (YTD)**. Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD window (Jan–Jun) for consistency. Conditional formatting was addded to color increase in green and decrease in red.
+- **KPI cards:** **Total Revenue (YTD)**, **Total Profit (YTD)**, **Profit Margin (YTD)** and **Units Sold (YTD)**. Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD window (Jan–Jun) for consistency. I used conditional formatting to highlight positive changes in green and negative changes in red.
 
 - **Visualizations:**
     - **Monthly Revenue Trend:** area charts for 2015 and 2016. A thin line for 2017 with a highlighted endpoint + data label. 
@@ -185,15 +185,12 @@ DAX:
 
 **"Customer Demographics"** page of the Dashboard has
 
-**KPI cards:**
-- **Number of Customers (YTD)**, **Average Order Value (YTD)**, **Revenue per Customer (YTD)** and **Orders per Customer (YTD)**. Each one includes a YoY comparison.
-
-**Visualizations:**
-- **Revenue by Income Band** (stacked bar chart), **by Gender** (donut chart), **by Marital Status & Home Ownership** (sunburst chart), **by Number of Children** (grouped bar chart), **by Occupation** (horizontal bar chart), **by Education Level** (horizontal bar chart) and **by Age Group** (horizontal bar chart).
+- **KPI cards:**
+    - **Number of Customers (YTD)**, **Average Order Value (YTD)**, **Revenue per Customer (YTD)** and **Orders per Customer (YTD)**. Each one includes a YoY comparison.
+- **Visualizations:**
+    - **Revenue by Income Band** (stacked bar chart), **by Gender** (donut chart), **by Marital Status & Home Ownership** (sunburst chart), **by Number of Children** (grouped bar chart), **by Occupation** (horizontal bar chart), **by Education Level** (horizontal bar chart) and **by Age Group** (horizontal bar chart).
 
 
 add the dax
 
 add the insights
-
-add downlaod video button
