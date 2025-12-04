@@ -84,7 +84,7 @@ div + img {
       text-decoration:none;
       font-weight:500;
    ">
-   Download the Dashboard (.xlsx)
+   Download the Dashboard ⤓ 
 </a>
 
 
@@ -171,26 +171,42 @@ DAX:
 The first page focused on business metrics. 
 
 **KPI cards:**
-- Total Revenue (YTD)
-- Total Profit (YTD)
-- Profit Margin (YTD)
-- Units Sold (YTD)
+- **Total Revenue (YTD)**
+- **Total Profit (YTD)**
+- **Profit Margin (YTD)**
+- **Units Sold (YTD)**
 
-Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD window (Jan–Jun) for consistency.
+Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD window (Jan–Jun) for consistency. Conditional formatting was addded to color increase in green and decrease in red.
 
 **Visualizations:**
-- Monthly Revenue Trend: area charts for 2015 and 2016. A thin line for 2017 with a highlighted endpoint + data label. 
-- Revenue by Category, Subcategory, and Products: Bar charts showing top performers.
-- Revenue by Country: A filled map chart, with data labels.
+- **Monthly Revenue Trend:** area charts for 2015 and 2016. A thin line for 2017 with a highlighted endpoint + data label. 
+- **Revenue by Category, Subcategory, and Products:** Bar charts showing top performers.
+- **Revenue by Country:** A filled map chart, with data labels.
 
 **Slicers:**
-- Category, Subcategory and Region slicers
-- Metric Switching: Users may want to switch between revenue, profit, and volume, since the highest-revenue item isn’t always the most profitable. I built duplicate sheets using different metrics and linked them with hyperlinked buttons that look like slicers, to keep the dashboard consistent.
+- **Category, Subcategory and Region slicers**
+- **Metric Switching:** Users may want to switch between revenue, profit, and volume, since the highest-revenue item isn’t always the most profitable. I built duplicate sheets using different metrics and linked them with hyperlinked buttons that look like slicers, to keep the dashboard consistent.
 
+### "Customer Demographics" page of the Dashboard
 
+**KPI cards:**
+- **Number of Customers (YTD)**
+- **Average Order Value (YTD)**
+- **Revenue per Customer (YTD)**
+- **Orders per Customer (YTD)**
+Each one includes a YoY comparison.
 
+**Visualizations:**
+Revenue by Income Band
+Revenue Contribution by Gender (donut chart)
+Revenue by Marital Status & Home Ownership
+Revenue by Number of Children
+Revenue by Occupation
+Revenue by Education Level
+Revenue by Age Group
 
-
+**Slicers:**
+- **Category, Subcategory and Region slicers**
 
 
 add the dax
