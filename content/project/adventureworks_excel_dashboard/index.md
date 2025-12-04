@@ -149,27 +149,36 @@ Then relationships were set up as follows:
 
 {{< figure src="/images/excel/schema.png" class="round" >}}
 
+DAX:
 
 ### "Revenue, Profit & Volume" page of the Dashboard
 
 The first page focused on business metrics. 
-- KPI cards:
-  - Total Revenue (YTD)
-  - Total Profit (YTD)
-  - Profit Margin (YTD)
-  - Units Sold (YTD)
+
+**KPI cards:**
+- Total Revenue (YTD)
+- Total Profit (YTD)
+- Profit Margin (YTD)
+- Units Sold (YTD)
+
 Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD window (Jan–Jun) for consistency.
 
-Below the KPIs, I built several visuals:
+**Visualizations:**
+- Monthly Revenue Trend: area charts for 2015 and 2016. A thin line for 2017 with a highlighted endpoint + data label. 
+- Revenue by Category, Subcategory, and Products: Bar charts showing top performers.
+- Revenue by Country: A filled map chart, with data labels.
 
-Monthly Revenue Trend:
-I intentionally used area charts for 2015 and 2016, and a thin line for 2017 with a highlighted endpoint. The idea was to emphasize that 2017 is still “in progress” and to visually separate it without overwhelming the layout.
+**Slicers:**
+- Category, Subcategory and Region slicers
+- Metric Switching: Users may want to switch between revenue, profit, and volume, since the highest-revenue item isn’t always the most profitable. Excel doesn’t natively support metric switching for this layout, so I built duplicate sheets using different metrics and linked them with hyperlinked buttons designed to look like slicers to keep the dashboard consistent.
 
-Revenue by Category, Subcategory, and Products:
-Bar charts showing top performers. I limited products and subcategories to top 10 to avoid clutter.
-
-Revenue by Country:
-A filled map, with labels only where the region size allowed. The labels were generated from the cleaned region names.
-
-Metric Switching Mechanism:
 Excel doesn’t allow native metric switching in pivot charts, so I simulated the behavior with a set of buttons styled to look like slicers. Each button hyperlinks to a sheet containing identical visuals but using a different measure (Revenue, Profit, Margin, Volume). It’s not the most elegant workaround, but it gives the user a feeling of “switching the metric” without breaking the visual flow.
+
+
+
+
+
+
+add the dax
+
+add the insights
