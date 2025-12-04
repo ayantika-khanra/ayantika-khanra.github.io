@@ -15,7 +15,7 @@ title:
 
   .project-block {
     background: rgba(255, 255, 255, 0.05);
-    padding: 20px 14px 12px;
+    padding: 14px 14px 12px;
     border-radius: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: left;
