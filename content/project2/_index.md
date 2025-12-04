@@ -15,9 +15,8 @@ title:
 
   .project-block {
     background: rgba(255, 255, 255, 0.05);
-    padding: 0 14px 12px;
+    padding: 10px 14px 12px;
     border-radius: 12px;
-    overflow: hidden; /* crops image corners cleanly */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: left;
   }
@@ -31,8 +30,9 @@ title:
     width: 100%;
     height: 150px;
     object-fit: cover;
-    border-radius: 0; /* flush with top */
-    margin-bottom: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    margin-top: -2px; /* pulls image up slightly */
   }
 
   .project-block h3 {
@@ -54,7 +54,6 @@ title:
     opacity: 0.85;
   }
 </style>
-
 
 
 
