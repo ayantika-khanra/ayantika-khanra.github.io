@@ -14,11 +14,11 @@ title:
   }
 
   .project-block {
-    background: rgba(255, 255, 255, 0.05); /* subtle card */
-    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 14px 16px;
     border-radius: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-align: center;
+    text-align: left;
   }
 
   .project-block:hover {
@@ -28,35 +28,33 @@ title:
 
   .project-block img {
     width: 100%;
-    height: 160px;
+    height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .project-block h3 {
-    font-size: 1rem;
-    margin: 6px 0 10px;
-    line-height: 1.25;
+    font-size: 0.95rem;
+    margin: 4px 0 6px;
+    line-height: 1.22;
     font-weight: 600;
   }
 
   .project-block .tag {
     font-size: 0.78rem;
-    line-height: 1.35;
+    line-height: 1.3;
     opacity: 0.9;
+    margin-bottom: 6px;
   }
 
   .project-block p {
-    font-size: 0.75rem;
-    margin-top: 5px;
-    line-height: 1.35;
+    font-size: 0.74rem;
+    line-height: 1.33;
     opacity: 0.85;
   }
 </style>
 
-
-Here are some of the projects I’ve worked on. Click on the titles to learn more.
 
 <div class="project-container">
 
