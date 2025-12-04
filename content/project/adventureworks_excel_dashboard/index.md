@@ -67,12 +67,26 @@ div + img {
 </style>
 
 
-<video controls width="100%">
+<video controls autoplay muted loop playsinline width="100%">
   <source src="/videos/dashboard_excel2.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 [Download the dashboard here](/uploads/AdventureWorks_dashboard_2015-2017.xlsx)
+
+<a href="link-to-your-file.xlsx" download
+   style="
+      display:inline-block;
+      padding:10px 18px;
+      background:#007acc;
+      color:white;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:500;
+   ">
+   Download the Dashboard (.xlsx)
+</a>
+
 
 I built a Excel-based dashboard using the [AdventureWorks dataset from Kaggle](https://www.kaggle.com/datasets/ukveteran/adventure-works). The dataset came as several CSV files: Calendar, Customers, Product Categories, Product Subcategories, Products, Territories, and three years of Sales (2015–2017). My goal was to clean and model the data with Power Query and Power Pivot, then design an interactive dashboard highlighting sales trends and customer demographics.
 
@@ -182,5 +196,3 @@ Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD w
 add the dax
 
 add the insights
-
-link the actua; excel file
