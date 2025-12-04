@@ -91,7 +91,13 @@ Demo Video
 
 
 
-I built a Excel-based dashboard using the [AdventureWorks dataset from Kaggle](https://www.kaggle.com/datasets/ukveteran/adventure-works). The dataset came as several CSV files: Calendar, Customers, Product Categories, Product Subcategories, Products, Territories, and three years of Sales (2015–2017). My goal was to clean and model the data with Power Query and Power Pivot, then design an interactive dashboard highlighting sales trends and customer demographics.
+
+
+
+
+# How this Dashboard Was Built
+
+I built this Excel-based dashboard using the [AdventureWorks dataset from Kaggle](https://www.kaggle.com/datasets/ukveteran/adventure-works). The dataset came as several CSV files: Calendar, Customers, Product Categories, Product Subcategories, Products, Territories, and three years of Sales (2015–2017). My goal was to clean and model the data with Power Query and Power Pivot, then design an interactive dashboard highlighting sales trends and customer demographics.
 
 ### Data Preparation in Power Query
 
@@ -192,5 +198,62 @@ DAX:
 
 
 add the dax
-
 add the insights
+
+
+
+``` dax
+-- page 1: revenue/profit/margin page
+total_sales:=SUMX( fSales,  fSales[OrderQuantity] * RELATED(dProducts[ProductPrice]))
+total_cost:=SUMX(fSales, fSales[OrderQuantity]*RELATED(dProducts[ProductCost]))
+total_profit:=[total_sales]-[total_cost]
+total_profit_margin:=IF([total_sales] = 0, BLANK(), [total_profit] / [total_sales])
+total_units_sold:=SUM(fSales[OrderQuantity])
+
+-- page 1 KPI
+this_year:=YEAR([max_date])
+this_year_start_date:=DATE(YEAR([max_date]),1,1)
+max_date:=CALCULATE(MAX(fSales[OrderDate]),
+                    ALL(fSales),ALL(dProducts), ALL(fReturns),ALL(dProduct_Categories),
+                    ALL(dTerritories),ALL(dCustomers), ALL('Calendar'))
+
+last_year:=[this_year]-1
+last_year_corr_max_date:=DATE(YEAR([max_date])-1,
+                              MONTH([max_date]),
+                              DAY([max_date]))
+last_year_start_date:=DATE(YEAR([max_date])-1,1,1)
+
+this_year_revenue:=
+       CALCULATE([total_sales],
+                 DATESBETWEEN(Calendar[Date],[this_year_start_date], [max_date]) ,
+                 ALL(fSales),ALL(dProducts), ALL(fReturns),ALL(dProduct_Categories),
+                 ALL(dTerritories),ALL(dCustomers))
+this_year_profit:=CALCULATE([total_profit],DATESBETWEEN(......) ,ALL(...
+this_year_unitsSold:=CALCULATE([total_units_sold],DATESBETWEEN(......) ,ALL(...
+
+Last_year_revenue:=
+       CALCULATE([total_sales],
+                 DATESBETWEEN(Calendar[Date],[last_year_start_date], [last_year_corr_max_date]) ,
+                 ALL(fSales),ALL(dProducts), ALL(fReturns),ALL(dProduct_Categories),
+                 ALL(dTerritories),ALL(dCustomers))
+Last_year_profit:=CALCULATE([total_profit],DATESBETWEEN(......) ,ALL(...
+Last_year_unitsSold:=CALCULATE([total_units_sold],DATESBETWEEN(......) ,ALL(...
+
+
+
+
+-- Page 2: Customer demographics page
+num_of_customers:=DISTINCTCOUNT(fSales[CustomerKey])
+num_of_orders:=var s=DISTINCTCOUNT(fSales[OrderNumber])
+               RETURN IF(ISBLANK(s), 0, s)
+
+-- page2 KPI
+this_year_numCustomers:=CALCULATE([num_of_customers],DATESBETWEEN(......) ,ALL(...
+this_year_numOrders:=CALCULATE([num_of_orders],DATESBETWEEN(......) ,ALL(...
+Last_year_numCustomers:=CALCULATE([num_of_customers],DATESBETWEEN(......) ,ALL(...
+Last_year_numOrders:=CALCULATE([num_of_orders],DATESBETWEEN(......) ,ALL(...
+```
+
+
+
+
