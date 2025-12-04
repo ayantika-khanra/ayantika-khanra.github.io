@@ -99,7 +99,7 @@ Demo Video
 
 I built this Excel-based dashboard using the [AdventureWorks dataset from Kaggle](https://www.kaggle.com/datasets/ukveteran/adventure-works). The dataset came as several CSV files: Calendar, Customers, Product Categories, Product Subcategories, Products, Territories, and three years of Sales (2015–2017). My goal was to clean and model the data with Power Query and Power Pivot, then design an interactive dashboard highlighting sales trends and customer demographics.
 
-### Data Preparation in Power Query
+### Data Preparation in Power Query + m code
 
 All CSV files were imported through Data → Get Data → From File (except sales files).
 
@@ -173,35 +173,7 @@ Then relationships were set up as follows:
 
 {{< figure src="/images/excel/schema.png" class="round" >}}
 
-DAX:
-
-### Dashboard structure
-**"Revenue, Profit & Volume" page** of the Dashboard focused on business metrics. 
-
-- **KPI cards:** **Total Revenue (YTD)**, **Total Profit (YTD)**, **Profit Margin (YTD)** and **Units Sold (YTD)**. Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD window (Jan–Jun) for consistency. I used conditional formatting to highlight positive changes in green and negative changes in red.
-
-- **Visualizations:**
-    - **Monthly Revenue Trend:** area charts for 2015 and 2016. A thin line for 2017 with a highlighted endpoint + data label. 
-    - **Revenue by Category, Subcategory, and Products:** Bar charts showing top performers.
-    - **Revenue by Country:** A filled map chart, with data labels.
-
-- **Slicers:**
-    - **Category, Subcategory and Region slicers**
-    - **Metric Switching:** Users may want to switch between revenue, profit, and volume, since the highest-revenue item isn’t always the most profitable. I built duplicate sheets using different metrics and linked them with hyperlinked buttons that look like slicers, to keep the dashboard consistent.
-
-**"Customer Demographics"** page of the Dashboard has
-
-- **KPI cards:**
-    - **Number of Customers (YTD)**, **Average Order Value (YTD)**, **Revenue per Customer (YTD)** and **Orders per Customer (YTD)**. Each one includes a YoY comparison.
-- **Visualizations:**
-    - **Revenue by Income Band** (stacked bar chart), **by Gender** (donut chart), **by Marital Status & Home Ownership** (sunburst chart), **by Number of Children** (grouped bar chart), **by Occupation** (horizontal bar chart), **by Education Level** (horizontal bar chart) and **by Age Group** (horizontal bar chart).
-
-
-add the dax
-add the insights
-
-
-
+##### DAX:
 ``` dax
 -- page 1: revenue/profit/margin page
 total_sales:=SUMX( fSales,  fSales[OrderQuantity] * RELATED(dProducts[ProductPrice]))
@@ -239,9 +211,6 @@ Last_year_revenue:=
 Last_year_profit:=CALCULATE([total_profit],DATESBETWEEN(......) ,ALL(...
 Last_year_unitsSold:=CALCULATE([total_units_sold],DATESBETWEEN(......) ,ALL(...
 
-
-
-
 -- Page 2: Customer demographics page
 num_of_customers:=DISTINCTCOUNT(fSales[CustomerKey])
 num_of_orders:=var s=DISTINCTCOUNT(fSales[OrderNumber])
@@ -253,6 +222,31 @@ this_year_numOrders:=CALCULATE([num_of_orders],DATESBETWEEN(......) ,ALL(...
 Last_year_numCustomers:=CALCULATE([num_of_customers],DATESBETWEEN(......) ,ALL(...
 Last_year_numOrders:=CALCULATE([num_of_orders],DATESBETWEEN(......) ,ALL(...
 ```
+
+
+
+
+### Dashboard structure
+**"Revenue, Profit & Volume" page** of the Dashboard focused on business metrics. 
+
+- **KPI cards:** **Total Revenue (YTD)**, **Total Profit (YTD)**, **Profit Margin (YTD)** and **Units Sold (YTD)**. Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD window (Jan–Jun) for consistency. I used conditional formatting to highlight positive changes in green and negative changes in red.
+
+- **Visualizations:**
+    - **Monthly Revenue Trend:** area charts for 2015 and 2016. A thin line for 2017 with a highlighted endpoint + data label. 
+    - **Revenue by Category, Subcategory, and Products:** Bar charts showing top performers.
+    - **Revenue by Country:** A filled map chart, with data labels.
+
+- **Slicers:**
+    - **Category, Subcategory and Region slicers**
+    - **Metric Switching:** Users may want to switch between revenue, profit, and volume, since the highest-revenue item isn’t always the most profitable. I built duplicate sheets using different metrics and linked them with hyperlinked buttons that look like slicers, to keep the dashboard consistent.
+
+**"Customer Demographics"** page of the Dashboard has
+
+- **KPI cards:**
+    - **Number of Customers (YTD)**, **Average Order Value (YTD)**, **Revenue per Customer (YTD)** and **Orders per Customer (YTD)**. Each one includes a YoY comparison.
+- **Visualizations:**
+    - **Revenue by Income Band** (stacked bar chart), **by Gender** (donut chart), **by Marital Status & Home Ownership** (sunburst chart), **by Number of Children** (grouped bar chart), **by Occupation** (horizontal bar chart), **by Education Level** (horizontal bar chart) and **by Age Group** (horizontal bar chart).
+
 
 
 
