@@ -7,48 +7,54 @@ title:
 <style>
   .project-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 20px;
-    justify-items: center;
-    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    padding: 20px;
     margin-top: 20px;
   }
 
   .project-block {
-    width: 100%;
+    background: rgba(255, 255, 255, 0.05); /* subtle card */
+    padding: 16px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: center;
-    font-size: 0.8rem;
-    line-height: 1.3;
+  }
+
+  .project-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   }
 
   .project-block img {
     width: 100%;
-    max-height: 150px;
+    height: 160px;
     object-fit: cover;
     border-radius: 8px;
+    margin-bottom: 12px;
   }
 
   .project-block h3 {
-    font-size: 0.95rem;
-    margin: 8px 0 4px;
-    line-height: 1.2;
-    color: inherit;
+    font-size: 1rem;
+    margin: 6px 0 10px;
+    line-height: 1.25;
+    font-weight: 600;
   }
 
   .project-block .tag {
-    font-size: 0.75rem;
-    font-weight: bold;
-    line-height: 1.1;
-    color: inherit;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    opacity: 0.9;
   }
 
   .project-block p {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     margin-top: 5px;
-    line-height: 1.3;
-    color: inherit;
+    line-height: 1.35;
+    opacity: 0.85;
   }
 </style>
+
 
 Here are some of the projects I’ve worked on. Click on the titles to learn more.
 
