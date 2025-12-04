@@ -74,11 +74,15 @@ div + img {
 
 
 
-<a href="link-to-your-file.xlsx" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#007acc;color:white;border-radius:6px;text-decoration:none;font-weight:500;">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/><path d="M5 19h14"/></svg>
-Dashboard File
+
+<a href="/uploads/AdventureWorks_dashboard_2015-2017.xlsx" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#007acc;color:white;border-radius:6px;text-decoration:none;font-weight:500;">
+Dashboard File <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/><path d="M5 19h14"/></svg>
 </a>
 
+
+<a href="/videos/dashboard_excel2.mp4" download style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#007acc;color:white;border-radius:6px;text-decoration:none;font-weight:500;">
+Demo Video <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/><path d="M5 19h14"/></svg>
+</a>
 
 
 I built a Excel-based dashboard using the [AdventureWorks dataset from Kaggle](https://www.kaggle.com/datasets/ukveteran/adventure-works). The dataset came as several CSV files: Calendar, Customers, Product Categories, Product Subcategories, Products, Territories, and three years of Sales (2015–2017). My goal was to clean and model the data with Power Query and Power Pivot, then design an interactive dashboard highlighting sales trends and customer demographics.
