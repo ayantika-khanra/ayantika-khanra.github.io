@@ -150,23 +150,15 @@ Then relationships were set up as follows:
 {{< figure src="/images/excel/schema.png" class="round" >}}
 
 
+### "Revenue, Profit & Volume" page of the Dashboard
 
-
-
-
-3. Revenue, Profit & Volume Dashboard
-
-The first page focused on business metrics. I designed it around four KPI cards:
-
-Total Revenue (YTD)
-
-Total Profit (YTD)
-
-Profit Margin (YTD)
-
-Units Sold (YTD)
-
-Each KPI displayed the year-over-year growth using the same YTD window (Jan–Jun) for consistency with the 2017 incomplete data.
+The first page focused on business metrics. 
+- KPI cards:
+  - Total Revenue (YTD)
+  - Total Profit (YTD)
+  - Profit Margin (YTD)
+  - Units Sold (YTD)
+Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD window (Jan–Jun) for consistency.
 
 Below the KPIs, I built several visuals:
 

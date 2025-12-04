@@ -15,7 +15,7 @@ title:
 
   .project-block {
     background: rgba(255, 255, 255, 0.05);
-    padding: 14px 16px;
+    padding: 10px 14px 12px;
     border-radius: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: left;
@@ -31,29 +31,30 @@ title:
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    margin-top: -2px; /* pulls image up slightly */
   }
 
   .project-block h3 {
     font-size: 0.95rem;
-    margin: 4px 0 6px;
+    margin: 2px 0 4px;
     line-height: 1.22;
-    font-weight: 600;
   }
 
   .project-block .tag {
-    font-size: 0.78rem;
-    line-height: 1.3;
+    font-size: 0.76rem;
+    line-height: 1.28;
     opacity: 0.9;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .project-block p {
     font-size: 0.74rem;
-    line-height: 1.33;
+    line-height: 1.3;
     opacity: 0.85;
   }
 </style>
+
 
 
 <div class="project-container">
