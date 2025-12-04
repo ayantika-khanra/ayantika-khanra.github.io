@@ -76,7 +76,9 @@ div + img {
 
 <a href="link-to-your-file.xlsx" download
    style="
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       padding:10px 18px;
       background:#007acc;
       color:white;
@@ -84,8 +86,18 @@ div + img {
       text-decoration:none;
       font-weight:500;
    ">
-   Download the Dashboard ⤓ 
+   
+   <!-- SVG Icon -->
+   <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14"/>
+      <path d="M5 12l7 7 7-7"/>
+      <path d="M5 19h14"/>
+   </svg>
+
+   Dashboard File
 </a>
+
 
 
 I built a Excel-based dashboard using the [AdventureWorks dataset from Kaggle](https://www.kaggle.com/datasets/ukveteran/adventure-works). The dataset came as several CSV files: Calendar, Customers, Product Categories, Product Subcategories, Products, Territories, and three years of Sales (2015–2017). My goal was to clean and model the data with Power Query and Power Pivot, then design an interactive dashboard highlighting sales trends and customer demographics.
@@ -197,13 +209,13 @@ Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD w
 Each one includes a YoY comparison.
 
 **Visualizations:**
-Revenue by Income Band
-Revenue Contribution by Gender (donut chart)
-Revenue by Marital Status & Home Ownership
-Revenue by Number of Children
-Revenue by Occupation
-Revenue by Education Level
-Revenue by Age Group
+- **Revenue by Income Band** (stacked bar chart)
+- **Revenue Contribution by Gender** (donut chart)
+- **Revenue by Marital Status & Home Ownership** (sunburst chart)
+- **Revenue by Number of Children** (grouped bar chart)
+- **Revenue by Occupation** (horizontal bar chart)
+- **Revenue by Education Level** (horizontal bar chart)
+- **Revenue by Age Group** (horizontal bar chart)
 
 **Slicers:**
 - **Category, Subcategory and Region slicers**
@@ -212,3 +224,5 @@ Revenue by Age Group
 add the dax
 
 add the insights
+
+add downlaod video button
