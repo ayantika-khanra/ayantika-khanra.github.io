@@ -72,6 +72,7 @@ div + img {
   Your browser does not support the video tag.
 </video>
 
+[Download the dashboard here](/uploads/AdventureWorks_dashboard_2015-2017.xlsx)
 
 I built a Excel-based dashboard using the [AdventureWorks dataset from Kaggle](https://www.kaggle.com/datasets/ukveteran/adventure-works). The dataset came as several CSV files: Calendar, Customers, Product Categories, Product Subcategories, Products, Territories, and three years of Sales (2015–2017). My goal was to clean and model the data with Power Query and Power Pivot, then design an interactive dashboard highlighting sales trends and customer demographics.
 
@@ -170,9 +171,8 @@ Each KPI displayed the year-over-year growth (2017 vs 2016) using the same YTD w
 
 **Slicers:**
 - Category, Subcategory and Region slicers
-- Metric Switching: Users may want to switch between revenue, profit, and volume, since the highest-revenue item isn’t always the most profitable. Excel doesn’t natively support metric switching for this layout, so I built duplicate sheets using different metrics and linked them with hyperlinked buttons designed to look like slicers to keep the dashboard consistent.
+- Metric Switching: Users may want to switch between revenue, profit, and volume, since the highest-revenue item isn’t always the most profitable. I built duplicate sheets using different metrics and linked them with hyperlinked buttons that look like slicers, to keep the dashboard consistent.
 
-Excel doesn’t allow native metric switching in pivot charts, so I simulated the behavior with a set of buttons styled to look like slicers. Each button hyperlinks to a sheet containing identical visuals but using a different measure (Revenue, Profit, Margin, Volume). It’s not the most elegant workaround, but it gives the user a feeling of “switching the metric” without breaking the visual flow.
 
 
 
@@ -182,3 +182,5 @@ Excel doesn’t allow native metric switching in pivot charts, so I simulated th
 add the dax
 
 add the insights
+
+link the actua; excel file
