@@ -133,7 +133,16 @@ awards:
     icon: coursera
     summary: |
       <div style="font-size: 0.85rem; line-height: 1.6 !important; margin-top: -1px;">
-      This course introduced the essentials of applied data analysis, including cleaning data, using spreadsheets and SQL, exploring patterns, and presenting findings clearly for decision making.
+      This course taught me the essentials of applied data analysis, including cleaning data, using spreadsheets and SQL, exploring patterns, and presenting findings clearly for decision making.
+      </div>
+  - title: "<span style='font-size: 0.9rem;'>Power BI Fundamentals</span>"
+    url: https://www.datacamp.com/completed/statement-of-accomplishment/track/4cc9dabff8d7797781796364a81f42080c67abd0
+    date: '2025-05-25'
+    awarder: DataCamp
+    icon: datacamp
+    summary: |
+      <div style="font-size: 0.85rem; line-height: 1.6 !important; margin-top: -1px;">
+      This course taught me how to load, clean, transform, model, visualize, and analyze data using Power BI's interface and tools, including Power Query and DAX, and how to build interactive dashboards and reports.
       </div>
 
 
