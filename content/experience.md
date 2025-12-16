@@ -49,7 +49,7 @@ sections:
           <strong style="display:block; margin-bottom:0.7rem;">Advanced Excel</strong>
           <ul style="margin: 0.2rem 0 0 1.2rem; padding-left: 1rem; font-size: 1rem;">
             <li style="margin: 0 0 0.45rem 0;">XLOOKUP/INDEX-MATCH, Pivot Tables & Pivot Charts</li>
-            <li style="margin: 0 0 0.45rem 0;">PowerQuery, PowerPivot Data Modelling, DAX, basic M-language</li>
+            <li style="margin: 0 0 0.45rem 0;">PowerQuery, PowerPivot Data Modelling, DAX, M-language</li>
             <li style="margin: 0 0 0.45rem 0;">Excel Dashboards</li>
           </ul>
         </li>
