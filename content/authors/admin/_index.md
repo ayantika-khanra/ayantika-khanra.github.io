@@ -137,7 +137,7 @@ awards:
       </div>
   - title: "<span style='font-size: 0.9rem;'>Power BI Fundamentals</span>"
     url: https://www.datacamp.com/completed/statement-of-accomplishment/track/4cc9dabff8d7797781796364a81f42080c67abd0
-    date: '2025-05-25'
+    date: '2025-12-1'
     awarder: DataCamp
     icon: datacamp
     summary: |
