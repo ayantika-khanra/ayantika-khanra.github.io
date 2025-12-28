@@ -92,7 +92,7 @@ title:
       <img src="/images/display_images/1179029438-612x612.jpg" alt="Scientific Projects">
       <h3>Academic Projects</h3>
     </a>
-    <p class="tag">Tableau</p>
+    <p class="tag">Scientific data analysis, Python, Statistics, MATLAB, Image Processing, OpenCV</p>
     <p></p>
   </div>
 
