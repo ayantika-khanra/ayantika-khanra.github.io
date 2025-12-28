@@ -87,6 +87,15 @@ title:
     <p></p>
   </div>
 
+  <div class="project-block">
+    <a href="https://drive.google.com/drive/folders/1-_FICJsIgqI1ujNCcL0-PTkahMuEJJ7O">
+      <img src="/images/display_images/1179029438-612x612.jpg" alt="Scientific Projects">
+      <h3>Academic Projects</h3>
+    </a>
+    <p class="tag">Tableau</p>
+    <p></p>
+  </div>
+
 
   <div class="project-block">
     <a href="https://ayantika-khanra.github.io/project/pharmacy_dashboard/">
