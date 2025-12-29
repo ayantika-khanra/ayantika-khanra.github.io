@@ -72,7 +72,7 @@ div + img {
 
 <div style="display:flex; gap:24px; flex-wrap:wrap;">
 
-<a href="/uploads/HR_analytics_dashboard_short.pbix" download 
+<a href="/uploads/HR_analytics_dashboard_short_f.pbix" download 
    style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#007acc;color:white;border-radius:6px;text-decoration:none;font-weight:500;white-space:nowrap;">
 .pbix File 
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/><path d="M5 19h14"/></svg>
