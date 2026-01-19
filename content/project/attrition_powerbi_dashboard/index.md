@@ -85,3 +85,12 @@ Demo Video
 </a>
 
 </div>
+
+
+
+<div style="display:flex; gap:24px; flex-wrap:wrap;">
+
+<a href="https://colab.research.google.com/drive/1oqAOG3hVlZFzKK_FXHew9bOfFvKX441i?usp=sharing" download 
+   style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#007acc;color:white;border-radius:6px;text-decoration:none;font-weight:500;white-space:nowrap;">
+Employee Attrition Risk w. Random Rorest (Google Collab) ↗
+</a>
