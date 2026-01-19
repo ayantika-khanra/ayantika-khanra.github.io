@@ -96,6 +96,16 @@ title:
     <p></p>
   </div>
 
+  <div class="project-block">
+    <a href="https://ayantika-khanra.github.io/project/irm_gui/">
+      <img src="/images/display_images/attrition_page1_dashbaord.png" alt="attrition_powerbidashboard">
+      <h3>GUI Companion Application for IRM Data analysis</h3>
+    </a>
+    <p class="tag">GUI, TkInter, numpy, OpenCV, Gradient Descent</p>
+    <p></p>
+  </div>
+  
+
 
   <div class="project-block">
     <a href="https://drive.google.com/drive/folders/1-_FICJsIgqI1ujNCcL0-PTkahMuEJJ7O">
