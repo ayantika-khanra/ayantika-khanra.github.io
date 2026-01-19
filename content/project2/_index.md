@@ -101,7 +101,7 @@ title:
       <img src="/images/display_images/irm_app.png" alt="GUI_python">
       <h3>GUI Companion Application for IRM Data analysis</h3>
     </a>
-    <p class="tag">GUI, TkInter, numpy, OpenCV, Gradient Descent</p>
+    <p class="tag">GUI, TkInter, NumPy, Matplotlib,OpenCV, Gradient Descent</p>
     <p></p>
   </div>
   

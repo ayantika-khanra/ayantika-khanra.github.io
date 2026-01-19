@@ -1,5 +1,5 @@
 ---
-title: Employee Attrition Dashboard
+title: GUI Companion Application for IRM Data analysis
 summary: 
 date:
 authors:
@@ -68,20 +68,20 @@ div + img {
 
 
 <video controls autoplay muted loop playsinline width="100%">
-  <source src="/videos/attrition_dashboard.mp4" type="video/mp4">
+  <source src="/videos/IRM Processing App.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 
 <div style="display:flex; gap:24px; flex-wrap:wrap;">
 
-<a href="/uploads/HR_analytics_dashboard_short_f.pbix" download 
+<a href="/uploads/IRM_processing_GUI_code.zip" download 
    style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#007acc;color:white;border-radius:6px;text-decoration:none;font-weight:500;white-space:nowrap;">
-.pbix File 
+Code
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/><path d="M5 19h14"/></svg>
 </a>
 
-<a href="/videos/attrition_dashboard.mp4" download 
+<a href="/videos/IRM Processing App.mp4" download 
    style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#007acc;color:white;border-radius:6px;text-decoration:none;font-weight:500;white-space:nowrap;">
 Demo Video 
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/><path d="M5 19h14"/></svg>
@@ -90,10 +90,3 @@ Demo Video
 </div>
 
 
-
-<div style="display:flex; gap:24px; flex-wrap:wrap;">
-
-<a href="https://colab.research.google.com/drive/1oqAOG3hVlZFzKK_FXHew9bOfFvKX441i?usp=sharing" download 
-   style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#007acc;color:white;border-radius:6px;text-decoration:none;font-weight:500;white-space:nowrap;">
-Employee Attrition Risk w. Random Rorest (Google Collab) ↗
-</a>
