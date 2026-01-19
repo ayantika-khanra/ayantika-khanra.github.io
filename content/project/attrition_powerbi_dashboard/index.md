@@ -12,6 +12,7 @@ tags:
   - PowerBI
   - PowerQuery
   - DAX
+  - Random Forest
 ---
 
 
