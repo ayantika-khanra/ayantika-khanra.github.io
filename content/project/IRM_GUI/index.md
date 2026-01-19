@@ -9,10 +9,12 @@ sidebar:
   widgets:
     - type: tag_cloud 
 tags:
-  - PowerBI
-  - PowerQuery
-  - DAX
-  - Random Forest
+  - GUI
+  - TkInter
+  - NumPy
+  - Matplotlib
+  - OpenCV
+  - Gradient Descent
 ---
 
 
