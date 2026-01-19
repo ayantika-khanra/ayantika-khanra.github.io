@@ -92,7 +92,7 @@ title:
       <img src="/images/display_images/attrition_page1_dashbaord.png" alt="attrition_powerbidashboard">
       <h3>Employee Attrition Dashboard</h3>
     </a>
-    <p class="tag">PowerBI, PowerQuery, DAX</p>
+    <p class="tag">PowerBI, PowerQuery, DAX, Random Forest</p>
     <p></p>
   </div>
 
